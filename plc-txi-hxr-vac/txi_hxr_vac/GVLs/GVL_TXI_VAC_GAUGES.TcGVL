@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <GVL Name="GVL_TXI_VAC_GAUGES" Id="{716e6ff7-4b20-47dc-ba4c-6ff2f55b9074}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	
+	// B940-008-L0S23-PNL-1
+	// MKS500 Gauges
+	{attribute 'pytmc' := ' pv: TXI:GCC:01 '}
+	fb_ST1L1_GCC_01: FB_MKS500;
+	st_ST1L1_GCC_01: ST_VG;
+	
+	
+	// MKS 275 Gauges
+	{attribute 'pytmc' := ' pv: TXI:GPI:01 '}
+	fb_ST1L1_GPI_01: FB_MKS275;
+	st_ST1L1_GPI_01: ST_VG;
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
