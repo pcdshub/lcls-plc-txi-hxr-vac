@@ -7,10 +7,10 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[// MSK275 Gauges
-fb_ST1L1_GPI_01(PG=>st_ST1L1_GPI_01);
+fb_ST1L1_GPI_01(PG=>);
 
 // MSK 500 Gauges
-fb_ST1L1_GCC_01(PG := fb_ST1L1_GPI_01.PG, bEP := TRUE, IG=>st_ST1L1_GCC_01);]]></ST>
+fb_ST1L1_GCC_01(PG := fb_ST1L1_GPI_01.PG, bEP := TRUE);]]></ST>
     </Implementation>
     <LineIds Name="PRG_TXI_VAC">
       <LineId Id="13" Count="0" />

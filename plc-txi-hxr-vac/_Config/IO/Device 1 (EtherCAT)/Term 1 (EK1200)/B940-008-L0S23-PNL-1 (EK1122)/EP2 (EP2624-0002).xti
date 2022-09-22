@@ -14,7 +14,7 @@
 					<Type>BIT</Type>
 				</Entry>
 			</Pdo>
-			<Pdo Name="Channel 2" Index="#x1601" InOut="1" Flags="#x0011" SyncMan="0">
+			<Pdo Name="ST1L1-GCC-01" Index="#x1601" InOut="1" Flags="#x0011" SyncMan="0">
 				<Entry Name="Output" Index="#x7010" Sub="#x01">
 					<Type>BIT</Type>
 				</Entry>

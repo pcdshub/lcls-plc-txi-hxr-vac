@@ -7,13 +7,12 @@
 	// MKS500 Gauges
 	{attribute 'pytmc' := ' pv: TXI:GCC:01 '}
 	fb_ST1L1_GCC_01: FB_MKS500;
-	st_ST1L1_GCC_01: ST_VG;
 	
 	
 	// MKS 275 Gauges
 	{attribute 'pytmc' := ' pv: TXI:GPI:01 '}
 	fb_ST1L1_GPI_01: FB_MKS275;
-	st_ST1L1_GPI_01: ST_VG;
+	
 	
 END_VAR]]></Declaration>
   </GVL>

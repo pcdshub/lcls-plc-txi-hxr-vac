@@ -110,4 +110,15 @@
 			</TaskPouOids>
 		</Instance>
 	</Project>
+	<Mappings>
+		<OwnerA Name="txi_hxr_vac Instance">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^B940-008-L0S23-PNL-1 (EK1122)^EP1  (EP3174-0002)">
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.i_iPRESS_R" VarB="ST1L1-GCC-01^Status"/>
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.i_iPRESS_R" VarB="ST1L1-GPI-01^Status"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^B940-008-L0S23-PNL-1 (EK1122)^EP2 (EP2624-0002)">
+				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.q_xHV_DIS" VarB="ST1L1-GCC-01^Output" Size="1"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
 </TcSmItem>
