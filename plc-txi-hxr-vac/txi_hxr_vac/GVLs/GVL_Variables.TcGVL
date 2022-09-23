@@ -2,6 +2,31 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <GVL Name="GVL_Variables" Id="{27ae65ae-78a3-402e-be34-0df9196b381e}">
     <Declaration><![CDATA[VAR_GLOBAL
+{attribute 'pytmc' := 'pv: TXI:FEE:VAC:OVRDON;
+	field: ZNAM Override OFF; 	
+     field: ONAM Override ON;
+ 	 io: io;	
+'}
+xSystemOverrideMode1: BOOL; (* Global system override*)
+
+//Example implementation of the FFO
+//{attribute 'pytmc' := '
+//	pv: PLC:TXI:VAC:FFO:01
+//'}
+//{attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO (EL2202)]^Channel 1^Output'}
+//g_FastFaultOutput1: FB_HardwareFFOutput:= (i_sNetID:='172.21.42.126.1.1');
+
+{attribute 'pytmc' := '
+	pv: PLC:TXI:VAC:ARB:01
+'}
+fbArbiter1: FB_Arbiter(1);
+{attribute 'pytmc' := '
+	pv: PLC:TXI:VAC:ARB:02
+'}
+fbArbiter2: FB_Arbiter(2);
+
+fbLogHandler: FB_loghandler;		
+
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

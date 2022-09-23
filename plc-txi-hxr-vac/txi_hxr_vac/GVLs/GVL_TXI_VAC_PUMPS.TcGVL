@@ -2,10 +2,15 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <GVL Name="GVL_TXI_VAC_PUMPS" Id="{90b18ceb-1c3e-4845-8d8c-a86724f4d309}">
     <Declaration><![CDATA[VAR_GLOBAL
-	//B940-009-R17-PCI-03
+	//B940-009-R17
 	{attribute 'pytmc' := ' pv: TXI:PIP:01 '}
 	fb_ST1L1_PIP_01: FB_PIP_GAMMA;
-	
+	{attribute 'pytmc' := ' pv: TXI:PIP:02 '}
+	fb_TV4L1_PIP_01: FB_PIP_GAMMA;
+	{attribute 'pytmc' := ' pv: TXI:PIP:03 '}
+	fb_TV3L1_PIP_01: FB_PIP_GAMMA;
+	{attribute 'pytmc' := ' pv: TXI:PIP:04 '}
+	fb_TV5L1_PIP_01: FB_PIP_GAMMA;
 	
 END_VAR]]></Declaration>
   </GVL>
