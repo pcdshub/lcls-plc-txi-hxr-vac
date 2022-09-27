@@ -6,7 +6,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[PRG_TXI_VAC();]]></ST>
+      <ST><![CDATA[PRG_TXI_VAC_GAUGES();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="13" Count="0" />

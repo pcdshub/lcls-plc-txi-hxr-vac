@@ -3,7 +3,7 @@
   <POU Name="PRG_TXI_VAC_VALVES" Id="{e927dcd4-ebf1-4ef3-837f-3b457a096b9c}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_TXI_VAC_VALVES
 VAR
-	bTV3L1_VGC_01_ILK: BOOL := FALSE;
+
 END_VAR
 ]]></Declaration>
     <Implementation>
