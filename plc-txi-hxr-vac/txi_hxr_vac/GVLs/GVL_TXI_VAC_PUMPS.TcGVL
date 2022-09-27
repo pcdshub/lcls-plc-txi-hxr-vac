@@ -11,7 +11,6 @@ fb_TV4L1_PIP_01: FB_PIP_GAMMA;
 fb_TV3L1_PIP_01: FB_PIP_GAMMA;
 {attribute 'pytmc' := ' pv: TXI:PIP:04 '}
 fb_TV5L1_PIP_01: FB_PIP_GAMMA;
-	
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
