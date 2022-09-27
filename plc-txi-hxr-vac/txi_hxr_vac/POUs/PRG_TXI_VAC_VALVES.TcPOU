@@ -3,9 +3,7 @@
   <POU Name="PRG_TXI_VAC_VALVES" Id="{e927dcd4-ebf1-4ef3-837f-3b457a096b9c}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_TXI_VAC_VALVES
 VAR
-
-END_VAR
-]]></Declaration>
+END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[]]></ST>
     </Implementation>
