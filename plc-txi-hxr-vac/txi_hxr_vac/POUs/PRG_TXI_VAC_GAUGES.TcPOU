@@ -16,10 +16,5 @@ fb_TV3L1_GCC_01(PG := fb_TV3L1_GPI_01.PG, bEP := TRUE);
 fb_TV5L1_GPI_01(PG=>);
 fb_TV5L1_GCC_01(PG := fb_TV5L1_GPI_01.PG, bEP := TRUE);]]></ST>
     </Implementation>
-    <LineIds Name="PRG_TXI_VAC_GAUGES">
-      <LineId Id="13" Count="0" />
-      <LineId Id="6" Count="6" />
-      <LineId Id="5" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
