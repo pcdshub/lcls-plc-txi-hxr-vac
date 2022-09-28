@@ -12,14 +12,14 @@ fb_ST1L1_GPI_01: FB_MKS275;
 // B950-100H1-L1S1-PNL-1 (H1.1)
 {attribute 'pytmc' := ' pv: TXI:TV3L1:GCC:01 '}
 fb_TV3L1_GCC_01: FB_MKS500;
-{attribute: 'pytmc' := ' pv: TXI:TV3L1:GPI:01 '}
+{attribute 'pytmc' := ' pv: TXI:TV3L1:GPI:01 '}
 fb_TV3L1_GPI_01: FB_MKS275;
 
 
 // B950-100H1-L1S3-DRL-1 (H1.1)
-{attribute: 'pytmc' := ' pv: TXI:TV5L1:GCC:01 '}
+{attribute 'pytmc' := ' pv: TXI:TV5L1:GCC:01 '}
 fb_TV5L1_GCC_01: FB_MKS500;
-{attribute: 'pytmc' := ' pv: TXI:TV5L1:GPI:01 '}
+{attribute 'pytmc' := ' pv: TXI:TV5L1:GPI:01 '}
 fb_TV5L1_GPI_01: FB_MKS275;
 
 END_VAR]]></Declaration>
