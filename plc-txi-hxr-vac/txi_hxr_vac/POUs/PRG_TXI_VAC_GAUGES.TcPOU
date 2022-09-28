@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="PRG_TXI_VAC_GAUGES" Id="{76913ddf-a32b-46e6-aed6-520cb4659897}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_TXI_VAC_GAUGES
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// B940-008-L0S23-PNL-1
+fb_ST1L1_GPI_01(PG=>);
+fb_ST1L1_GCC_01(PG := fb_ST1L1_GPI_01.PG, bEP := TRUE);
+// B950-100H1-L1S1-PNL-1 (H1.1)
+fb_TV3L1_GPI_01(PG=>);
+fb_TV3L1_GCC_01(PG := fb_TV3L1_GPI_01.PG, bEP := TRUE);
+// B950-100H1-L1S3-DRL-1(H1.1)
+fb_TV5L1_GPI_01(PG=>);
+fb_TV5L1_GCC_01(PG := fb_TV5L1_GPI_01.PG, bEP := TRUE);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
