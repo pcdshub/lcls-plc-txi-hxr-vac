@@ -8,8 +8,5 @@ END_VAR
     <Implementation>
       <ST><![CDATA[PRG_TXI_VAC_GAUGES();]]></ST>
     </Implementation>
-    <LineIds Name="MAIN">
-      <LineId Id="13" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
