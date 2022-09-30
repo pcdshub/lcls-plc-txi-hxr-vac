@@ -42,6 +42,9 @@
     <Compile Include="POUs\PRG_TXI_VAC_GAUGES.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_TXI_VAC_PUMPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_TXI_VAC_VALVES.TcPOU">
       <SubType>Code</SubType>
     </Compile>

@@ -7,55 +7,55 @@
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
 		<EtherCAT PdiType="#x0100" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x04b02c52" RevisionNo="#x00001388" InfoDataState="false" PortPhys="49" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1200-5000 EtherCAT Power supply (2A E-Bus)" Desc="EK1200"/>
-		<Box File="Term 2 (EL3064).xti" Id="2">
+		<Box File="E1 (EL3064).xti" Id="2">
 			<EtherCAT PortABoxInfo="#x01000001"/>
 		</Box>
-		<Box File="Term 3 (EL3064).xti" Id="3">
+		<Box File="E2 (EL3064).xti" Id="3">
 			<EtherCAT PortABoxInfo="#x01000002"/>
 		</Box>
-		<Box File="Term 4 (EL2794).xti" Id="4">
+		<Box File="E3 (EL2794).xti" Id="4">
 			<EtherCAT PortABoxInfo="#x01000003"/>
 		</Box>
-		<Box File="Term 5 (EL6070).xti" Id="5">
+		<Box File="E4 (EL6070).xti" Id="5">
 			<EtherCAT PortABoxInfo="#x01000004"/>
 		</Box>
-		<Box File="Term 6 (EL9505).xti" Id="6">
+		<Box File="E5 (EL9505).xti" Id="6">
 			<EtherCAT PortABoxInfo="#x01000005"/>
 		</Box>
-		<Box File="Term 7 (EL1124).xti" Id="7">
+		<Box File="E6 (EL1124).xti" Id="7">
 			<EtherCAT PortABoxInfo="#x01000006"/>
 		</Box>
-		<Box File="Term 8 (EL9410).xti" Id="8">
+		<Box File="E7 (EL9410).xti" Id="8">
 			<EtherCAT PortABoxInfo="#x01000007"/>
 		</Box>
-		<Box File="Term 9 (EL3064).xti" Id="9">
+		<Box File="E8 (EL3064).xti" Id="9">
 			<EtherCAT PortABoxInfo="#x01000008"/>
 		</Box>
-		<Box File="Term 10 (EL2794).xti" Id="10">
+		<Box File="E9 (EL2794).xti" Id="10">
 			<EtherCAT PortABoxInfo="#x01000009"/>
 		</Box>
-		<Box File="Term 11 (EL1004).xti" Id="11">
+		<Box File="E10 (EL1004).xti" Id="11">
 			<EtherCAT PortABoxInfo="#x0100000a"/>
 		</Box>
-		<Box File="Term 12 (EL3064).xti" Id="12">
+		<Box File="E11 (EL3064).xti" Id="12">
 			<EtherCAT PortABoxInfo="#x0100000b"/>
 		</Box>
-		<Box File="Term 13 (EL2794).xti" Id="13">
+		<Box File="E12 (EL2794).xti" Id="13">
 			<EtherCAT PortABoxInfo="#x0100000c"/>
 		</Box>
-		<Box File="Term 14 (EL1004).xti" Id="14">
+		<Box File="E13 (EL1004).xti" Id="14">
 			<EtherCAT PortABoxInfo="#x0100000d"/>
 		</Box>
-		<Box File="Term 15 (EL2202).xti" Id="15">
+		<Box File="E14 (EL2202).xti" Id="15">
 			<EtherCAT PortABoxInfo="#x0100000e"/>
 		</Box>
-		<Box File="Term 16 (EL6692).xti" Id="16">
+		<Box File="E15 (EL6692).xti" Id="16">
 			<EtherCAT PortABoxInfo="#x0100000f"/>
 		</Box>
-		<Box File="B940-008-L0S23-PNL-1 (EK1122).xti" Id="17">
+		<Box File="E16 (EK1122).xti" Id="17">
 			<EtherCAT PortABoxInfo="#x01000010"/>
 		</Box>
-		<Box File="Term 21 (EK1122).xti" Id="21">
+		<Box File="E17 (EK1122).xti" Id="21">
 			<EtherCAT PortABoxInfo="#x02000011"/>
 		</Box>
 		<Box File="Term 22 (EL9011).xti" Id="22">
