@@ -1,0 +1,4320 @@
+record(bi, "$(PREFIX)LCLSGeneral:GlobalLogTrickleTrip_RBV") {
+  field(DESC, "Tripped by overall log count")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Logger.bTrickleTripped?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(longin, "$(PREFIX)LCLSGeneral:LogPort_RBV") {
+  field(DESC, "The log host UDP port")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Logger.iLogPort?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(PREFIX)LCLSGeneral:LogPort") {
+  field(DESC, "The log host UDP port")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Logger.iLogPort=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(PREFIX)LCLSGeneral:LogHost_RBV") {
+  field(DESC, "The log host IP address")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Logger.cLogHost?")
+  field(FTVL, "CHAR")
+  field(NELM, "15")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(archive, "VAL")
+}
+
+record(waveform, "$(PREFIX)LCLSGeneral:LogHost") {
+  field(DESC, "The log host IP address")
+  field(DTYP, "asynInt8ArrayOut")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Logger.cLogHost=")
+  field(FTVL, "CHAR")
+  field(NELM, "15")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(PREFIX)LCLSGeneral:LogMessageCount_RBV") {
+  field(DESC, "Total log messages on the last cycle")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Logger.nGlobAccEvents?")
+  info(archive, "VAL")
+}
+
+record(ai, "$(PREFIX)RequestedBP:Transmission_RBV") {
+  field(DESC, "PMPS_GVL.stRequestedBeamParameters.nTran")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.nTran?")
+  field(PREC, "2")
+  field(HOPR, "1")
+  field(LOPR, "0")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)RequestedBP:Rate_RBV") {
+  field(DESC, "PMPS_GVL.stRequestedBeamParameters.nRate")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.nRate?")
+  field(EGU, "Hz")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)RequestedBP:PhotonEnergyRanges_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.neVRange
+  field(DESC, "PMPS_GVL.stRequested...rameters.neVRange")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.neVRange?")
+  field(EGU, "eV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(waveform, "$(PREFIX)RequestedBP:Veto_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.aVetoDevices
+  field(DESC, "PMPS_GVL.stRequested...ters.aVetoDevices")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.aVetoDevices?")
+  field(FTVL, "CHAR")
+  field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)RequestedBP:Valid_RBV") {
+  # PMPS_GVL.stRequestedBeamParameters.xValid
+  field(DESC, "PMPS_GVL.stRequested...Parameters.xValid")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.xValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)RequestedBP:Cohort_RBV") {
+  field(DESC, "Cohort inc on each arb cycle")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.nCohortInt?")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)CurrentBP:Transmission_RBV") {
+  field(DESC, "PMPS_GVL.stCurrentBeamParameters.nTran")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.nTran?")
+  field(PREC, "2")
+  field(HOPR, "1")
+  field(LOPR, "0")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)CurrentBP:Rate_RBV") {
+  field(DESC, "PMPS_GVL.stCurrentBeamParameters.nRate")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.nRate?")
+  field(EGU, "Hz")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)CurrentBP:PhotonEnergyRanges_RBV") {
+  # PMPS_GVL.stCurrentBeamParameters.neVRange
+  field(DESC, "PMPS_GVL.stCurrentBe...rameters.neVRange")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.neVRange?")
+  field(EGU, "eV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(waveform, "$(PREFIX)CurrentBP:Veto_RBV") {
+  # PMPS_GVL.stCurrentBeamParameters.aVetoDevices
+  field(DESC, "PMPS_GVL.stCurrentBe...ters.aVetoDevices")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.aVetoDevices?")
+  field(FTVL, "CHAR")
+  field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)CurrentBP:Valid_RBV") {
+  field(DESC, "PMPS_GVL.stCurrentBeamParameters.xValid")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.xValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)CurrentBP:Cohort_RBV") {
+  field(DESC, "Cohort inc on each arb cycle")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.nCohortInt?")
+  info(archive, "monitor 1: VAL")
+}
+
+record(waveform, "$(PREFIX)eVRangeCnst_RBV") {
+  field(DESC, "Active eV Range constants")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat32ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.g_areVBoundaries?")
+  field(FTVL, "FLOAT")
+  field(EGU, "eV")
+  field(NELM, "32")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)FullBeamCnst:Transmission_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.nTran?")
+  field(PREC, "2")
+  field(HOPR, "1")
+  field(LOPR, "0")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)FullBeamCnst:Rate_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.nRate?")
+  field(EGU, "Hz")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)FullBeamCnst:PhotonEnergyRanges_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.neVRange?")
+  field(EGU, "eV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(waveform, "$(PREFIX)FullBeamCnst:Veto_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.aVetoDevices?")
+  field(FTVL, "CHAR")
+  field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)FullBeamCnst:Valid_RBV") {
+  field(DESC, "Full beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.xValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)FullBeamCnst:Cohort_RBV") {
+  field(DESC, "Cohort inc on each arb cycle")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.nCohortInt?")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)0RateBeamCnst:Transmission_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.nTran?")
+  field(PREC, "2")
+  field(HOPR, "1")
+  field(LOPR, "0")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)0RateBeamCnst:Rate_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.nRate?")
+  field(EGU, "Hz")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)0RateBeamCnst:PhotonEnergyRanges_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.neVRange?")
+  field(EGU, "eV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(waveform, "$(PREFIX)0RateBeamCnst:Veto_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.aVetoDevices?")
+  field(FTVL, "CHAR")
+  field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)0RateBeamCnst:Valid_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.xValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)0RateBeamCnst:Cohort_RBV") {
+  field(DESC, "Cohort inc on each arb cycle")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.nCohortInt?")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)eVRangeHyst_RBV") {
+  field(DESC, "eV Range hystersis")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.reVHyst?")
+  field(PREC, "3")
+  field(EGU, "eV")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "monitor 1: VAL")
+}
+
+record(waveform, "$(PREFIX)L:eVRangeCnst_RBV") {
+  field(DESC, "eV Range constants")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat32ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.g_areVBoundariesL?")
+  field(FTVL, "FLOAT")
+  field(EGU, "eV")
+  field(NELM, "32")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(archive, "monitor 1: VAL")
+}
+
+record(waveform, "$(PREFIX)K:eVRangeCnst_RBV") {
+  field(DESC, "eV Range constants")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat32ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.g_areVBoundariesK?")
+  field(FTVL, "FLOAT")
+  field(EGU, "eV")
+  field(NELM, "32")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "TXI:ST1L1:GCC:01:PRESS_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.rPRESS
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GCC_01.IG.rPRESS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.rPRESS?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:ST1L1:GCC:01:AT_VAC_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.xAT_VAC
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.xAT_VAC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.xAT_VAC?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:ST1L1:GCC:01:PRESS_OK_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.xPRESS_OK
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...C_01.IG.xPRESS_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.xPRESS_OK?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(mbbi, "TXI:ST1L1:GCC:01:STATE_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.eState
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GCC_01.IG.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(ZRST, "Off")
+  field(ONST, "GaugeDisconnected")
+  field(TWST, "OoR")
+  field(THST, "PressInvalid")
+  field(FRST, "Starting")
+  field(FVST, "Valid")
+  field(SXST, "ValidHi")
+  field(SVST, "ValidLo")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:ST1L1:GCC:01:HV_SW_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.xHV_SW
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GCC_01.IG.xHV_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.xHV_SW?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:ST1L1:GCC:01:HV_SW") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.xHV_SW
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GCC_01.IG.xHV_SW")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.xHV_SW=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:ST1L1:GCC:01:Auto_On_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.xAutoOn
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.xAutoOn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.xAutoOn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:ST1L1:GCC:01:Auto_On") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.xAutoOn
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.xAutoOn")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.xAutoOn=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:ST1L1:GCC:01:AutoOn_timer_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.iAutoOnTimer
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...1.IG.iAutoOnTimer")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.iAutoOnTimer?")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:ST1L1:GCC:01:PRESS_AI_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.i_iPRESS_R
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._01.IG.i_iPRESS_R")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.i_iPRESS_R?")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:ST1L1:GCC:01:HV_ON_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.i_xHV_ON
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...CC_01.IG.i_xHV_ON")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.i_xHV_ON?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:ST1L1:GCC:01:DISC_ACTIVE_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.i_xDisc_Active
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...IG.i_xDisc_Active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.i_xDisc_Active?")
+  field(ZNAM, "NO DISC")
+  field(ONAM, "DISC ACTIVE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:ST1L1:GCC:01:HV_DIS_DO_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.q_xHV_DIS
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...C_01.IG.q_xHV_DIS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.q_xHV_DIS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:ST1L1:GCC:01:VAC_SP_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.rVAC_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.rVAC_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.rVAC_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:ST1L1:GCC:01:VAC_SP") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.rVAC_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.rVAC_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.rVAC_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:ST1L1:GCC:01:PRO_SP_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.rPRO_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.rPRO_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.rPRO_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:ST1L1:GCC:01:PRO_SP") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.rPRO_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.rPRO_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.rPRO_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:ST1L1:GCC:01:SP_HYS_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.rHYS_PR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.rHYS_PR?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:ST1L1:GCC:01:SP_HYS") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.rHYS_PR")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.rHYS_PR=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:ST1L1:GCC:01:ILK_OK_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.xILKOk
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GCC_01.IG.xILKOk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.xILKOk?")
+  field(ZNAM, "NOT OK")
+  field(ONAM, "OK")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:ST1L1:GCC:01:LOGGER_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.xLog
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...L1_GCC_01.IG.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:ST1L1:GCC:01:LOGGER") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.xLog
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...L1_GCC_01.IG.xLog")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.IG.xLog=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:ST1L1:GPI:01:PRESS_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.rPRESS
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.rPRESS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.rPRESS?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:ST1L1:GPI:01:AT_VAC_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.xAT_VAC
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.xAT_VAC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.xAT_VAC?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:ST1L1:GPI:01:PRESS_OK_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.xPRESS_OK
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...I_01.PG.xPRESS_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.xPRESS_OK?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(mbbi, "TXI:ST1L1:GPI:01:STATE_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.eState
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(ZRST, "Off")
+  field(ONST, "GaugeDisconnected")
+  field(TWST, "OoR")
+  field(THST, "PressInvalid")
+  field(FRST, "Starting")
+  field(FVST, "Valid")
+  field(SXST, "ValidHi")
+  field(SVST, "ValidLo")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:ST1L1:GPI:01:HV_SW_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.xHV_SW
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.xHV_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.xHV_SW?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:ST1L1:GPI:01:HV_SW") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.xHV_SW
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.xHV_SW")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.xHV_SW=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:ST1L1:GPI:01:Auto_On_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.xAutoOn
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.xAutoOn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.xAutoOn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:ST1L1:GPI:01:Auto_On") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.xAutoOn
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.xAutoOn")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.xAutoOn=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:ST1L1:GPI:01:AutoOn_timer_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.iAutoOnTimer
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...1.PG.iAutoOnTimer")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.iAutoOnTimer?")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:ST1L1:GPI:01:PRESS_AI_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.i_iPRESS_R
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._01.PG.i_iPRESS_R")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.i_iPRESS_R?")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:ST1L1:GPI:01:HV_ON_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.i_xHV_ON
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...PI_01.PG.i_xHV_ON")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.i_xHV_ON?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:ST1L1:GPI:01:DISC_ACTIVE_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.i_xDisc_Active
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...PG.i_xDisc_Active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.i_xDisc_Active?")
+  field(ZNAM, "NO DISC")
+  field(ONAM, "DISC ACTIVE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:ST1L1:GPI:01:HV_DIS_DO_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.q_xHV_DIS
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...I_01.PG.q_xHV_DIS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.q_xHV_DIS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:ST1L1:GPI:01:VAC_SP_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.rVAC_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rVAC_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.rVAC_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:ST1L1:GPI:01:VAC_SP") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.rVAC_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rVAC_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.rVAC_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:ST1L1:GPI:01:PRO_SP_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.rPRO_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rPRO_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.rPRO_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:ST1L1:GPI:01:PRO_SP") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.rPRO_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rPRO_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.rPRO_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:ST1L1:GPI:01:SP_HYS_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rHYS_PR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.rHYS_PR?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:ST1L1:GPI:01:SP_HYS") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rHYS_PR")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.rHYS_PR=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:ST1L1:GPI:01:ILK_OK_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.xILKOk
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.xILKOk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.xILKOk?")
+  field(ZNAM, "NOT OK")
+  field(ONAM, "OK")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:ST1L1:GPI:01:LOGGER_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.xLog
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...L1_GPI_01.PG.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:ST1L1:GPI:01:LOGGER") {
+  # GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.xLog
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...L1_GPI_01.PG.xLog")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.PG.xLog=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:TV3L1:GCC:01:PRESS_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.rPRESS
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GCC_01.IG.rPRESS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.rPRESS?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV3L1:GCC:01:AT_VAC_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.xAT_VAC
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.xAT_VAC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.xAT_VAC?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV3L1:GCC:01:PRESS_OK_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.xPRESS_OK
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...C_01.IG.xPRESS_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.xPRESS_OK?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(mbbi, "TXI:TV3L1:GCC:01:STATE_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.eState
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GCC_01.IG.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(ZRST, "Off")
+  field(ONST, "GaugeDisconnected")
+  field(TWST, "OoR")
+  field(THST, "PressInvalid")
+  field(FRST, "Starting")
+  field(FVST, "Valid")
+  field(SXST, "ValidHi")
+  field(SVST, "ValidLo")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV3L1:GCC:01:HV_SW_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.xHV_SW
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GCC_01.IG.xHV_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.xHV_SW?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:TV3L1:GCC:01:HV_SW") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.xHV_SW
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GCC_01.IG.xHV_SW")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.xHV_SW=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV3L1:GCC:01:Auto_On_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.xAutoOn
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.xAutoOn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.xAutoOn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:TV3L1:GCC:01:Auto_On") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.xAutoOn
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.xAutoOn")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.xAutoOn=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:TV3L1:GCC:01:AutoOn_timer_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.iAutoOnTimer
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...1.IG.iAutoOnTimer")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.iAutoOnTimer?")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:TV3L1:GCC:01:PRESS_AI_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.i_iPRESS_R
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._01.IG.i_iPRESS_R")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.i_iPRESS_R?")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV3L1:GCC:01:HV_ON_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.i_xHV_ON
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...CC_01.IG.i_xHV_ON")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.i_xHV_ON?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV3L1:GCC:01:DISC_ACTIVE_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.i_xDisc_Active
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...IG.i_xDisc_Active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.i_xDisc_Active?")
+  field(ZNAM, "NO DISC")
+  field(ONAM, "DISC ACTIVE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV3L1:GCC:01:HV_DIS_DO_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.q_xHV_DIS
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...C_01.IG.q_xHV_DIS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.q_xHV_DIS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:TV3L1:GCC:01:VAC_SP_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.rVAC_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.rVAC_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.rVAC_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:TV3L1:GCC:01:VAC_SP") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.rVAC_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.rVAC_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.rVAC_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:TV3L1:GCC:01:PRO_SP_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.rPRO_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.rPRO_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.rPRO_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:TV3L1:GCC:01:PRO_SP") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.rPRO_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.rPRO_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.rPRO_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:TV3L1:GCC:01:SP_HYS_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.rHYS_PR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.rHYS_PR?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:TV3L1:GCC:01:SP_HYS") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.rHYS_PR")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.rHYS_PR=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV3L1:GCC:01:ILK_OK_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.xILKOk
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GCC_01.IG.xILKOk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.xILKOk?")
+  field(ZNAM, "NOT OK")
+  field(ONAM, "OK")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV3L1:GCC:01:LOGGER_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.xLog
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...L1_GCC_01.IG.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:TV3L1:GCC:01:LOGGER") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.xLog
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...L1_GCC_01.IG.xLog")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.IG.xLog=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:TV3L1:GPI:01:PRESS_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.rPRESS
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.rPRESS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.rPRESS?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV3L1:GPI:01:AT_VAC_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.xAT_VAC
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.xAT_VAC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.xAT_VAC?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV3L1:GPI:01:PRESS_OK_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.xPRESS_OK
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...I_01.PG.xPRESS_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.xPRESS_OK?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(mbbi, "TXI:TV3L1:GPI:01:STATE_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.eState
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(ZRST, "Off")
+  field(ONST, "GaugeDisconnected")
+  field(TWST, "OoR")
+  field(THST, "PressInvalid")
+  field(FRST, "Starting")
+  field(FVST, "Valid")
+  field(SXST, "ValidHi")
+  field(SVST, "ValidLo")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV3L1:GPI:01:HV_SW_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.xHV_SW
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.xHV_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.xHV_SW?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:TV3L1:GPI:01:HV_SW") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.xHV_SW
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.xHV_SW")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.xHV_SW=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV3L1:GPI:01:Auto_On_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.xAutoOn
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.xAutoOn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.xAutoOn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:TV3L1:GPI:01:Auto_On") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.xAutoOn
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.xAutoOn")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.xAutoOn=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:TV3L1:GPI:01:AutoOn_timer_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.iAutoOnTimer
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...1.PG.iAutoOnTimer")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.iAutoOnTimer?")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:TV3L1:GPI:01:PRESS_AI_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.i_iPRESS_R
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._01.PG.i_iPRESS_R")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.i_iPRESS_R?")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV3L1:GPI:01:HV_ON_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.i_xHV_ON
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...PI_01.PG.i_xHV_ON")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.i_xHV_ON?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV3L1:GPI:01:DISC_ACTIVE_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.i_xDisc_Active
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...PG.i_xDisc_Active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.i_xDisc_Active?")
+  field(ZNAM, "NO DISC")
+  field(ONAM, "DISC ACTIVE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV3L1:GPI:01:HV_DIS_DO_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.q_xHV_DIS
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...I_01.PG.q_xHV_DIS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.q_xHV_DIS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:TV3L1:GPI:01:VAC_SP_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.rVAC_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rVAC_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.rVAC_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:TV3L1:GPI:01:VAC_SP") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.rVAC_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rVAC_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.rVAC_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:TV3L1:GPI:01:PRO_SP_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.rPRO_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rPRO_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.rPRO_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:TV3L1:GPI:01:PRO_SP") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.rPRO_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rPRO_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.rPRO_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:TV3L1:GPI:01:SP_HYS_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rHYS_PR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.rHYS_PR?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:TV3L1:GPI:01:SP_HYS") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rHYS_PR")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.rHYS_PR=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV3L1:GPI:01:ILK_OK_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.xILKOk
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.xILKOk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.xILKOk?")
+  field(ZNAM, "NOT OK")
+  field(ONAM, "OK")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV3L1:GPI:01:LOGGER_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.xLog
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...L1_GPI_01.PG.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:TV3L1:GPI:01:LOGGER") {
+  # GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.xLog
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...L1_GPI_01.PG.xLog")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.PG.xLog=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:TV5L1:GCC:01:PRESS_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.rPRESS
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GCC_01.IG.rPRESS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.rPRESS?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV5L1:GCC:01:AT_VAC_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.xAT_VAC
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.xAT_VAC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.xAT_VAC?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV5L1:GCC:01:PRESS_OK_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.xPRESS_OK
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...C_01.IG.xPRESS_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.xPRESS_OK?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(mbbi, "TXI:TV5L1:GCC:01:STATE_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.eState
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GCC_01.IG.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(ZRST, "Off")
+  field(ONST, "GaugeDisconnected")
+  field(TWST, "OoR")
+  field(THST, "PressInvalid")
+  field(FRST, "Starting")
+  field(FVST, "Valid")
+  field(SXST, "ValidHi")
+  field(SVST, "ValidLo")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV5L1:GCC:01:HV_SW_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.xHV_SW
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GCC_01.IG.xHV_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.xHV_SW?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:TV5L1:GCC:01:HV_SW") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.xHV_SW
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GCC_01.IG.xHV_SW")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.xHV_SW=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV5L1:GCC:01:Auto_On_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.xAutoOn
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.xAutoOn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.xAutoOn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:TV5L1:GCC:01:Auto_On") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.xAutoOn
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.xAutoOn")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.xAutoOn=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:TV5L1:GCC:01:AutoOn_timer_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.iAutoOnTimer
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...1.IG.iAutoOnTimer")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.iAutoOnTimer?")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:TV5L1:GCC:01:PRESS_AI_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.i_iPRESS_R
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._01.IG.i_iPRESS_R")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.i_iPRESS_R?")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV5L1:GCC:01:HV_ON_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.i_xHV_ON
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...CC_01.IG.i_xHV_ON")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.i_xHV_ON?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV5L1:GCC:01:DISC_ACTIVE_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.i_xDisc_Active
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...IG.i_xDisc_Active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.i_xDisc_Active?")
+  field(ZNAM, "NO DISC")
+  field(ONAM, "DISC ACTIVE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV5L1:GCC:01:HV_DIS_DO_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.q_xHV_DIS
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...C_01.IG.q_xHV_DIS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.q_xHV_DIS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:TV5L1:GCC:01:VAC_SP_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.rVAC_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.rVAC_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.rVAC_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:TV5L1:GCC:01:VAC_SP") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.rVAC_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.rVAC_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.rVAC_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:TV5L1:GCC:01:PRO_SP_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.rPRO_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.rPRO_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.rPRO_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:TV5L1:GCC:01:PRO_SP") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.rPRO_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.rPRO_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.rPRO_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:TV5L1:GCC:01:SP_HYS_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.rHYS_PR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.rHYS_PR?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:TV5L1:GCC:01:SP_HYS") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GCC_01.IG.rHYS_PR")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.rHYS_PR=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV5L1:GCC:01:ILK_OK_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.xILKOk
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GCC_01.IG.xILKOk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.xILKOk?")
+  field(ZNAM, "NOT OK")
+  field(ONAM, "OK")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV5L1:GCC:01:LOGGER_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.xLog
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...L1_GCC_01.IG.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:TV5L1:GCC:01:LOGGER") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.xLog
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...L1_GCC_01.IG.xLog")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.IG.xLog=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:TV5L1:GPI:01:PRESS_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.rPRESS
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.rPRESS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.rPRESS?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV5L1:GPI:01:AT_VAC_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.xAT_VAC
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.xAT_VAC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.xAT_VAC?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV5L1:GPI:01:PRESS_OK_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.xPRESS_OK
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...I_01.PG.xPRESS_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.xPRESS_OK?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(mbbi, "TXI:TV5L1:GPI:01:STATE_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.eState
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(ZRST, "Off")
+  field(ONST, "GaugeDisconnected")
+  field(TWST, "OoR")
+  field(THST, "PressInvalid")
+  field(FRST, "Starting")
+  field(FVST, "Valid")
+  field(SXST, "ValidHi")
+  field(SVST, "ValidLo")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV5L1:GPI:01:HV_SW_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.xHV_SW
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.xHV_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.xHV_SW?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:TV5L1:GPI:01:HV_SW") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.xHV_SW
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.xHV_SW")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.xHV_SW=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV5L1:GPI:01:Auto_On_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.xAutoOn
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.xAutoOn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.xAutoOn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:TV5L1:GPI:01:Auto_On") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.xAutoOn
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.xAutoOn")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.xAutoOn=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:TV5L1:GPI:01:AutoOn_timer_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.iAutoOnTimer
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...1.PG.iAutoOnTimer")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.iAutoOnTimer?")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:TV5L1:GPI:01:PRESS_AI_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.i_iPRESS_R
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._01.PG.i_iPRESS_R")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.i_iPRESS_R?")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV5L1:GPI:01:HV_ON_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.i_xHV_ON
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...PI_01.PG.i_xHV_ON")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.i_xHV_ON?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV5L1:GPI:01:DISC_ACTIVE_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.i_xDisc_Active
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...PG.i_xDisc_Active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.i_xDisc_Active?")
+  field(ZNAM, "NO DISC")
+  field(ONAM, "DISC ACTIVE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV5L1:GPI:01:HV_DIS_DO_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.q_xHV_DIS
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...I_01.PG.q_xHV_DIS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.q_xHV_DIS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:TV5L1:GPI:01:VAC_SP_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.rVAC_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rVAC_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.rVAC_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:TV5L1:GPI:01:VAC_SP") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.rVAC_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rVAC_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.rVAC_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:TV5L1:GPI:01:PRO_SP_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.rPRO_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rPRO_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.rPRO_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:TV5L1:GPI:01:PRO_SP") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.rPRO_SP
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rPRO_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.rPRO_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:TV5L1:GPI:01:SP_HYS_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rHYS_PR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.rHYS_PR?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:TV5L1:GPI:01:SP_HYS") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rHYS_PR")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.rHYS_PR=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV5L1:GPI:01:ILK_OK_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.xILKOk
+  field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.xILKOk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.xILKOk?")
+  field(ZNAM, "NOT OK")
+  field(ONAM, "OK")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:TV5L1:GPI:01:LOGGER_RBV") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.xLog
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...L1_GPI_01.PG.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:TV5L1:GPI:01:LOGGER") {
+  # GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.xLog
+  field(DESC, "GVL_TXI_VAC_GAUGES.f...L1_GPI_01.PG.xLog")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.PG.xLog=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:01:ILK_OK_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xILKOk
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.xILKOk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xILKOk?")
+  field(ZNAM, "NOT OK")
+  field(ONAM, "OK")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:01:ERROR_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xError
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.xError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xError?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:PIP:01:AT_VAC_SP_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.rHVEna_SP
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.rHVEna_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.rHVEna_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:PIP:01:AT_VAC_SP") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.rHVEna_SP
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.rHVEna_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.rHVEna_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(waveform, "TXI:PIP:01:ILK_DEVICE_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.sIlkDeviceName
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...mp.sIlkDeviceName")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.sIlkDeviceName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:01:HV_SW_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xHVEna_SW
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.xHVEna_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xHVEna_SW?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:01:HV_SW") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xHVEna_SW
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.xHVEna_SW")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xHVEna_SW=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:01:Auto_On_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xAutoOn
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.xAutoOn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xAutoOn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:01:Auto_On") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xAutoOn
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.xAutoOn")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xAutoOn=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:PIP:01:AutoOn_timer_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.iAutoOnTimer
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...Pump.iAutoOnTimer")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.iAutoOnTimer?")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:01:OVRD_ON_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xOverrideMode
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.xOverrideMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xOverrideMode?")
+  field(ZNAM, "Override OFF")
+  field(ONAM, "Override ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:01:OVRD_ON") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xOverrideMode
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.xOverrideMode")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xOverrideMode=")
+  field(ZNAM, "Override OFF")
+  field(ONAM, "Override ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:01:FORCE_START_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.pv_xOvrdStart
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.pv_xOvrdStart")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.pv_xOvrdStart?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE START")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:01:FORCE_START") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.pv_xOvrdStart
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.pv_xOvrdStart")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.pv_xOvrdStart=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE START")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:PIP:01:SP_HYS_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.rHYS_PR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.rHYS_PR?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:PIP:01:SP_HYS") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.rHYS_PR")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.rHYS_PR=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:PIP:01:AI_Offset_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.iOffset
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.iOffset")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.iOffset?")
+  info(archive, "VAL")
+}
+
+record(longout, "TXI:PIP:01:AI_Offset") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.iOffset
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.iOffset")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.iOffset=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:01:Inverted_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.bOutputInverted
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...p.bOutputInverted")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.bOutputInverted?")
+  field(ZNAM, "NORMAL")
+  field(ONAM, "INVERTED")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:01:Inverted") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.bOutputInverted
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...p.bOutputInverted")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.bOutputInverted=")
+  field(ZNAM, "NORMAL")
+  field(ONAM, "INVERTED")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:01:HV_DO_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.q_xHVEna_DO
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...tPump.q_xHVEna_DO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.q_xHVEna_DO?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:PIP:01:PRESS_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.rPRESS
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.rPRESS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.rPRESS?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:PIP:01:PRESS_AI_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.i_iPRESS
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...1.stPump.i_iPRESS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.i_iPRESS?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:01:HV_DI_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.i_xHV_DI
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...1.stPump.i_xHV_DI")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.i_xHV_DI?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(mbbi, "TXI:PIP:01:STATE_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.eState
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(ZRST, "STOPPED")
+  field(ONST, "STARTING")
+  field(TWST, "RUNNING")
+  field(THST, "FAULT")
+  field(FRST, "STOPPING")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:01:LOGGER_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xLog
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...IP_01.stPump.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:01:LOGGER") {
+  # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xLog
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...IP_01.stPump.xLog")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xLog=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:02:ILK_OK_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xILKOk
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.xILKOk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xILKOk?")
+  field(ZNAM, "NOT OK")
+  field(ONAM, "OK")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:02:ERROR_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xError
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.xError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xError?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:PIP:02:AT_VAC_SP_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.rHVEna_SP
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.rHVEna_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.rHVEna_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:PIP:02:AT_VAC_SP") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.rHVEna_SP
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.rHVEna_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.rHVEna_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(waveform, "TXI:PIP:02:ILK_DEVICE_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.sIlkDeviceName
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...mp.sIlkDeviceName")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.sIlkDeviceName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:02:HV_SW_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xHVEna_SW
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.xHVEna_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xHVEna_SW?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:02:HV_SW") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xHVEna_SW
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.xHVEna_SW")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xHVEna_SW=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:02:Auto_On_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xAutoOn
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.xAutoOn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xAutoOn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:02:Auto_On") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xAutoOn
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.xAutoOn")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xAutoOn=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:PIP:02:AutoOn_timer_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.iAutoOnTimer
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...Pump.iAutoOnTimer")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.iAutoOnTimer?")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:02:OVRD_ON_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xOverrideMode
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.xOverrideMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xOverrideMode?")
+  field(ZNAM, "Override OFF")
+  field(ONAM, "Override ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:02:OVRD_ON") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xOverrideMode
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.xOverrideMode")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xOverrideMode=")
+  field(ZNAM, "Override OFF")
+  field(ONAM, "Override ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:02:FORCE_START_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.pv_xOvrdStart
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.pv_xOvrdStart")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.pv_xOvrdStart?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE START")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:02:FORCE_START") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.pv_xOvrdStart
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.pv_xOvrdStart")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.pv_xOvrdStart=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE START")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:PIP:02:SP_HYS_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.rHYS_PR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.rHYS_PR?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:PIP:02:SP_HYS") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.rHYS_PR")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.rHYS_PR=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:PIP:02:AI_Offset_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.iOffset
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.iOffset")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.iOffset?")
+  info(archive, "VAL")
+}
+
+record(longout, "TXI:PIP:02:AI_Offset") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.iOffset
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.iOffset")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.iOffset=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:02:Inverted_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.bOutputInverted
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...p.bOutputInverted")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.bOutputInverted?")
+  field(ZNAM, "NORMAL")
+  field(ONAM, "INVERTED")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:02:Inverted") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.bOutputInverted
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...p.bOutputInverted")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.bOutputInverted=")
+  field(ZNAM, "NORMAL")
+  field(ONAM, "INVERTED")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:02:HV_DO_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.q_xHVEna_DO
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...tPump.q_xHVEna_DO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.q_xHVEna_DO?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:PIP:02:PRESS_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.rPRESS
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.rPRESS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.rPRESS?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:PIP:02:PRESS_AI_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.i_iPRESS
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...1.stPump.i_iPRESS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.i_iPRESS?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:02:HV_DI_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.i_xHV_DI
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...1.stPump.i_xHV_DI")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.i_xHV_DI?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(mbbi, "TXI:PIP:02:STATE_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.eState
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(ZRST, "STOPPED")
+  field(ONST, "STARTING")
+  field(TWST, "RUNNING")
+  field(THST, "FAULT")
+  field(FRST, "STOPPING")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:02:LOGGER_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xLog
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...IP_01.stPump.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:02:LOGGER") {
+  # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xLog
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...IP_01.stPump.xLog")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xLog=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:03:ILK_OK_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xILKOk
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.xILKOk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xILKOk?")
+  field(ZNAM, "NOT OK")
+  field(ONAM, "OK")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:03:ERROR_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xError
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.xError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xError?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:PIP:03:AT_VAC_SP_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.rHVEna_SP
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.rHVEna_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.rHVEna_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:PIP:03:AT_VAC_SP") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.rHVEna_SP
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.rHVEna_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.rHVEna_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(waveform, "TXI:PIP:03:ILK_DEVICE_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.sIlkDeviceName
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...mp.sIlkDeviceName")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.sIlkDeviceName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:03:HV_SW_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xHVEna_SW
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.xHVEna_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xHVEna_SW?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:03:HV_SW") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xHVEna_SW
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.xHVEna_SW")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xHVEna_SW=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:03:Auto_On_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xAutoOn
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.xAutoOn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xAutoOn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:03:Auto_On") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xAutoOn
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.xAutoOn")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xAutoOn=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:PIP:03:AutoOn_timer_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.iAutoOnTimer
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...Pump.iAutoOnTimer")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.iAutoOnTimer?")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:03:OVRD_ON_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xOverrideMode
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.xOverrideMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xOverrideMode?")
+  field(ZNAM, "Override OFF")
+  field(ONAM, "Override ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:03:OVRD_ON") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xOverrideMode
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.xOverrideMode")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xOverrideMode=")
+  field(ZNAM, "Override OFF")
+  field(ONAM, "Override ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:03:FORCE_START_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.pv_xOvrdStart
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.pv_xOvrdStart")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.pv_xOvrdStart?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE START")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:03:FORCE_START") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.pv_xOvrdStart
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.pv_xOvrdStart")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.pv_xOvrdStart=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE START")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:PIP:03:SP_HYS_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.rHYS_PR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.rHYS_PR?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:PIP:03:SP_HYS") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.rHYS_PR")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.rHYS_PR=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:PIP:03:AI_Offset_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.iOffset
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.iOffset")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.iOffset?")
+  info(archive, "VAL")
+}
+
+record(longout, "TXI:PIP:03:AI_Offset") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.iOffset
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.iOffset")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.iOffset=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:03:Inverted_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.bOutputInverted
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...p.bOutputInverted")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.bOutputInverted?")
+  field(ZNAM, "NORMAL")
+  field(ONAM, "INVERTED")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:03:Inverted") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.bOutputInverted
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...p.bOutputInverted")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.bOutputInverted=")
+  field(ZNAM, "NORMAL")
+  field(ONAM, "INVERTED")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:03:HV_DO_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.q_xHVEna_DO
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...tPump.q_xHVEna_DO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.q_xHVEna_DO?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:PIP:03:PRESS_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.rPRESS
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.rPRESS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.rPRESS?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:PIP:03:PRESS_AI_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.i_iPRESS
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...1.stPump.i_iPRESS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.i_iPRESS?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:03:HV_DI_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.i_xHV_DI
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...1.stPump.i_xHV_DI")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.i_xHV_DI?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(mbbi, "TXI:PIP:03:STATE_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.eState
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(ZRST, "STOPPED")
+  field(ONST, "STARTING")
+  field(TWST, "RUNNING")
+  field(THST, "FAULT")
+  field(FRST, "STOPPING")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:03:LOGGER_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xLog
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...IP_01.stPump.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:03:LOGGER") {
+  # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xLog
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...IP_01.stPump.xLog")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xLog=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:04:ILK_OK_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xILKOk
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.xILKOk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xILKOk?")
+  field(ZNAM, "NOT OK")
+  field(ONAM, "OK")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:04:ERROR_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xError
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.xError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xError?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:PIP:04:AT_VAC_SP_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.rHVEna_SP
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.rHVEna_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.rHVEna_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:PIP:04:AT_VAC_SP") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.rHVEna_SP
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.rHVEna_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.rHVEna_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(waveform, "TXI:PIP:04:ILK_DEVICE_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.sIlkDeviceName
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...mp.sIlkDeviceName")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.sIlkDeviceName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:04:HV_SW_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xHVEna_SW
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.xHVEna_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xHVEna_SW?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:04:HV_SW") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xHVEna_SW
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.xHVEna_SW")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xHVEna_SW=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:04:Auto_On_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xAutoOn
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.xAutoOn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xAutoOn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:04:Auto_On") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xAutoOn
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.xAutoOn")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xAutoOn=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:PIP:04:AutoOn_timer_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.iAutoOnTimer
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...Pump.iAutoOnTimer")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.iAutoOnTimer?")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:04:OVRD_ON_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xOverrideMode
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.xOverrideMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xOverrideMode?")
+  field(ZNAM, "Override OFF")
+  field(ONAM, "Override ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:04:OVRD_ON") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xOverrideMode
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.xOverrideMode")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xOverrideMode=")
+  field(ZNAM, "Override OFF")
+  field(ONAM, "Override ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:04:FORCE_START_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.pv_xOvrdStart
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.pv_xOvrdStart")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.pv_xOvrdStart?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE START")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:04:FORCE_START") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.pv_xOvrdStart
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.pv_xOvrdStart")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.pv_xOvrdStart=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE START")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:PIP:04:SP_HYS_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.rHYS_PR")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.rHYS_PR?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:PIP:04:SP_HYS") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.rHYS_PR
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.rHYS_PR")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.rHYS_PR=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "TXI:PIP:04:AI_Offset_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.iOffset
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.iOffset")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.iOffset?")
+  info(archive, "VAL")
+}
+
+record(longout, "TXI:PIP:04:AI_Offset") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.iOffset
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.iOffset")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.iOffset=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:04:Inverted_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.bOutputInverted
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...p.bOutputInverted")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.bOutputInverted?")
+  field(ZNAM, "NORMAL")
+  field(ONAM, "INVERTED")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:04:Inverted") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.bOutputInverted
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...p.bOutputInverted")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.bOutputInverted=")
+  field(ZNAM, "NORMAL")
+  field(ONAM, "INVERTED")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:04:HV_DO_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.q_xHVEna_DO
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...tPump.q_xHVEna_DO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.q_xHVEna_DO?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:PIP:04:PRESS_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.rPRESS
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.rPRESS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.rPRESS?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:PIP:04:PRESS_AI_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.i_iPRESS
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...1.stPump.i_iPRESS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.i_iPRESS?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:04:HV_DI_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.i_xHV_DI
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...1.stPump.i_xHV_DI")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.i_xHV_DI?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(mbbi, "TXI:PIP:04:STATE_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.eState
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(ZRST, "STOPPED")
+  field(ONST, "STARTING")
+  field(TWST, "RUNNING")
+  field(THST, "FAULT")
+  field(FRST, "STOPPING")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:PIP:04:LOGGER_RBV") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xLog
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...IP_01.stPump.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:PIP:04:LOGGER") {
+  # GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xLog
+  field(DESC, "GVL_TXI_VAC_PUMPS.fb...IP_01.stPump.xLog")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.stPump.xLog=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:Dis_DPIlk_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.i_xDis_DPIlk
+  field(DESC, "GVL_TXI_VAC_VALVES.f...C_01.i_xDis_DPIlk")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.i_xDis_DPIlk?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:VGC:01:Dis_DPIlk") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.i_xDis_DPIlk
+  field(DESC, "GVL_TXI_VAC_VALVES.f...C_01.i_xDis_DPIlk")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.i_xDis_DPIlk=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:EPS_OK_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.i_xEPS_OK
+  field(DESC, "GVL_TXI_VAC_VALVES.f..._VGC_01.i_xEPS_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.i_xEPS_OK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:VGC:01:EPS_OK") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.i_xEPS_OK
+  field(DESC, "GVL_TXI_VAC_VALVES.f..._VGC_01.i_xEPS_OK")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.i_xEPS_OK=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:FF_Reset_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.i_xReset
+  field(DESC, "GVL_TXI_VAC_VALVES.f...1_VGC_01.i_xReset")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.i_xReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:VGC:01:FF_Reset") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.i_xReset
+  field(DESC, "GVL_TXI_VAC_VALVES.f...1_VGC_01.i_xReset")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.i_xReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:OPN_SW_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.pv_xOPN_SW
+  field(DESC, "GVL_TXI_VAC_VALVES.f...tValve.pv_xOPN_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.pv_xOPN_SW?")
+  field(ZNAM, "CLOSE")
+  field(ONAM, "OPEN")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:VGC:01:OPN_SW") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.pv_xOPN_SW
+  field(DESC, "GVL_TXI_VAC_VALVES.f...tValve.pv_xOPN_SW")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.pv_xOPN_SW=")
+  field(ZNAM, "CLOSE")
+  field(ONAM, "OPEN")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:ALM_RST_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.pv_xAlmRst
+  field(DESC, "GVL_TXI_VAC_VALVES.f...tValve.pv_xAlmRst")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.pv_xAlmRst?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:VGC:01:ALM_RST") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.pv_xAlmRst
+  field(DESC, "GVL_TXI_VAC_VALVES.f...tValve.pv_xAlmRst")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.pv_xAlmRst=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:FORCE_OPN_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.pv_xOvrdOpn
+  field(DESC, "GVL_TXI_VAC_VALVES.f...Valve.pv_xOvrdOpn")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.pv_xOvrdOpn?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE OPEN")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:VGC:01:FORCE_OPN") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.pv_xOvrdOpn
+  field(DESC, "GVL_TXI_VAC_VALVES.f...Valve.pv_xOvrdOpn")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.pv_xOvrdOpn=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "FORCE OPEN")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:OVRD_ON_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xOverrideMode
+  field(DESC, "GVL_TXI_VAC_VALVES.f...lve.xOverrideMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xOverrideMode?")
+  field(ZNAM, "Override OFF")
+  field(ONAM, "Override ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:VGC:01:OVRD_ON") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xOverrideMode
+  field(DESC, "GVL_TXI_VAC_VALVES.f...lve.xOverrideMode")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xOverrideMode=")
+  field(ZNAM, "Override OFF")
+  field(ONAM, "Override ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:OPN_DI_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.i_xOpnLS
+  field(DESC, "GVL_TXI_VAC_VALVES.f..._stValve.i_xOpnLS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.i_xOpnLS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "OPEN")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:CLS_DI_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.i_xClsLS
+  field(DESC, "GVL_TXI_VAC_VALVES.f..._stValve.i_xClsLS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.i_xClsLS?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "CLOSE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:OPN_DO_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.q_xOPN_DO
+  field(DESC, "GVL_TXI_VAC_VALVES.f...stValve.q_xOPN_DO")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.q_xOPN_DO?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:EXT_ILK_OK_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xEXT_OK
+  field(DESC, "GVL_TXI_VAC_VALVES.f...q_stValve.xEXT_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xEXT_OK?")
+  field(ZNAM, "NOT OK")
+  field(ONAM, "OK")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:OPN_OK_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xOPN_OK
+  field(DESC, "GVL_TXI_VAC_VALVES.f...q_stValve.xOPN_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xOPN_OK?")
+  field(ZNAM, "OPN ILK NOT OK")
+  field(ONAM, "OPN ILK OK")
+  info(archive, "VAL")
+}
+
+record(mbbi, "TXI:VGC:01:POS_STATE_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.eState
+  field(DESC, "GVL_TXI_VAC_VALVES.f...iq_stValve.eState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.eState?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(ZRST, "OPEN")
+  field(ONST, "CLOSED")
+  field(TWST, "MOVING")
+  field(THST, "INVALID")
+  field(FRST, "OPEN_F")
+  info(archive, "VAL")
+}
+
+record(mbbi, "TXI:VGC:01:STATE_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.eVGC_State
+  field(DESC, "GVL_TXI_VAC_VALVES.f...tValve.eVGC_State")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.eVGC_State?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(EIVL, "8")
+  field(NIVL, "9")
+  field(ZRST, "Vented")
+  field(ONST, "At Vacuum")
+  field(TWST, "Differential Pressure")
+  field(THST, "Lost Vacuum")
+  field(FRST, "Ext Fault")
+  field(FVST, "AT Vacuum")
+  field(SXST, "Triggered")
+  field(SVST, "Vacuum Fault")
+  field(EIST, "Close Timeout")
+  field(NIST, "Open Timeout")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:ERROR_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.bErrorPresent
+  field(DESC, "GVL_TXI_VAC_VALVES.f...lve.bErrorPresent")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.bErrorPresent?")
+  field(ZNAM, "NO ERROR")
+  field(ONAM, "ERROR PRESENT")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:VGC:01:ERROR") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.bErrorPresent
+  field(DESC, "GVL_TXI_VAC_VALVES.f...lve.bErrorPresent")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.bErrorPresent=")
+  field(ZNAM, "NO ERROR")
+  field(ONAM, "ERROR PRESENT")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(waveform, "TXI:VGC:01:ErrMsg_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.sErrorMessage
+  field(DESC, "GVL_TXI_VAC_VALVES.f...lve.sErrorMessage")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.sErrorMessage?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(archive, "VAL")
+}
+
+record(waveform, "TXI:VGC:01:ErrMsg") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.sErrorMessage
+  field(DESC, "GVL_TXI_VAC_VALVES.f...lve.sErrorMessage")
+  field(DTYP, "asynInt8ArrayOut")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.sErrorMessage=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:LOGGER_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xLog
+  field(DESC, "GVL_TXI_VAC_VALVES.f...1.iq_stValve.xLog")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xLog?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:VGC:01:LOGGER") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xLog
+  field(DESC, "GVL_TXI_VAC_VALVES.f...1.iq_stValve.xLog")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xLog=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:DP_OK_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xDP_OK
+  field(DESC, "GVL_TXI_VAC_VALVES.f...iq_stValve.xDP_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xDP_OK?")
+  field(ZNAM, "DP NOT OK")
+  field(ONAM, "DP OK")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:VGC:01:AT_VAC_SP_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.rAT_VAC_SP
+  field(DESC, "GVL_TXI_VAC_VALVES.f...tValve.rAT_VAC_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.rAT_VAC_SP?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:VGC:01:AT_VAC_SP") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.rAT_VAC_SP
+  field(DESC, "GVL_TXI_VAC_VALVES.f...tValve.rAT_VAC_SP")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.rAT_VAC_SP=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:VGC:01:AT_VAC_HYS_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.rAT_VAC_HYS
+  field(DESC, "GVL_TXI_VAC_VALVES.f...Valve.rAT_VAC_HYS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.rAT_VAC_HYS?")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:VGC:01:AT_VAC_HYS") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.rAT_VAC_HYS
+  field(DESC, "GVL_TXI_VAC_VALVES.f...Valve.rAT_VAC_HYS")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.rAT_VAC_HYS=")
+  field(PREC, "2")
+  field(EGU, "TORR")
+  field(HOPR, "1000")
+  field(LOPR, "0")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "TXI:VGC:01:HYST_PERC_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.rHYST_PERC
+  field(DESC, "GVL_TXI_VAC_VALVES.f...tValve.rHYST_PERC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.rHYST_PERC?")
+  field(PREC, "3")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "TXI:VGC:01:HYST_PERC") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.rHYST_PERC
+  field(DESC, "GVL_TXI_VAC_VALVES.f...tValve.rHYST_PERC")
+  field(PINI, "1")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.rHYST_PERC=")
+  field(PREC, "3")
+  info(autosaveFields, "DESC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:AT_VAC_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xAT_VAC
+  field(DESC, "GVL_TXI_VAC_VALVES.f...q_stValve.xAT_VAC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xAT_VAC?")
+  field(ZNAM, "NOT AT VAC")
+  field(ONAM, "AT VAC")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:ERR_DifPres_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xERR_DifPres
+  field(DESC, "GVL_TXI_VAC_VALVES.f...alve.xERR_DifPres")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xERR_DifPres?")
+  field(ZNAM, "NO ERROR")
+  field(ONAM, "Diffrential error present")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:ERR_SP_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xERR_SP
+  field(DESC, "GVL_TXI_VAC_VALVES.f...q_stValve.xERR_SP")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xERR_SP?")
+  field(ZNAM, "NO ERROR")
+  field(ONAM, "Setpoint error present")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:ERR_Ext_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xERR_ExtFault
+  field(DESC, "GVL_TXI_VAC_VALVES.f...lve.xERR_ExtFault")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.xERR_ExtFault?")
+  field(ZNAM, "NO ERROR")
+  field(ONAM, "External error present")
+  info(archive, "VAL")
+}
+
+record(waveform, "TXI:VGC:01:ILK_DEVICE_US_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.sIlkUSDeviceName
+  field(DESC, "GVL_TXI_VAC_VALVES.f....sIlkUSDeviceName")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.sIlkUSDeviceName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(archive, "VAL")
+}
+
+record(waveform, "TXI:VGC:01:ILK_DEVICE_DS_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.sIlkDSDeviceName
+  field(DESC, "GVL_TXI_VAC_VALVES.f....sIlkDSDeviceName")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.iq_stValve.sIlkDSDeviceName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:MPS_FAULT_OK_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.xMPS_OK
+  field(DESC, "GVL_TXI_VAC_VALVES.f...L1_VGC_01.xMPS_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.xMPS_OK?")
+  field(ZNAM, "MPS FAULT")
+  field(ONAM, "MPS OK")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:VGC:01:MPS_FAULT_OK") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.xMPS_OK
+  field(DESC, "GVL_TXI_VAC_VALVES.f...L1_VGC_01.xMPS_OK")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.xMPS_OK=")
+  field(ZNAM, "MPS FAULT")
+  field(ONAM, "MPS OK")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "TXI:VGC:01:MPS_OK_RBV") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.xPMPS_OK
+  field(DESC, "GVL_TXI_VAC_VALVES.f...1_VGC_01.xPMPS_OK")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.xPMPS_OK?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "TXI:VGC:01:MPS_OK") {
+  # GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.xPMPS_OK
+  field(DESC, "GVL_TXI_VAC_VALVES.f...1_VGC_01.xPMPS_OK")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.xPMPS_OK=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(PREFIX)SuccessfulPreemptions_RBV") {
+  field(DESC, "PMPS_GVL.SuccessfulPreemption")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.SuccessfulPreemption?")
+  info(archive, "VAL")
+}
+
+record(longin, "$(PREFIX)AccumulatedFastFaults_RBV") {
+  field(DESC, "PMPS_GVL.AccumulatedFF")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.AccumulatedFF?")
+  info(archive, "VAL")
+}
