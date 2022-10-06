@@ -16,6 +16,9 @@
     <Implicit_Jitter_Distribution>{a5b29550-86de-4d83-84b6-6035053b8bac}</Implicit_Jitter_Distribution>
     <LibraryReferences>{a68b67d8-017b-4803-800b-b3addf39e879}</LibraryReferences>
     <Released>false</Released>
+    <Company>SLAC</Company>
+    <Title>txi_hxr_vac</Title>
+    <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="GVLs\GVL_TXI_VAC_GAUGES.TcGVL">
