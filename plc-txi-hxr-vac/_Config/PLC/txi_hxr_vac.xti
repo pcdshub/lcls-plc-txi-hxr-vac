@@ -37,6 +37,60 @@
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.i_iPRESS</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.i_xSP_DI</Name>
+					<Comment><![CDATA[ NO contact //function of relay set on the QPC to HV output state]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.i_iPRESS</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.i_xSP_DI</Name>
+					<Comment><![CDATA[ NO contact //function of relay set on the QPC to HV output state]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.i_iPRESS</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.i_xSP_DI</Name>
+					<Comment><![CDATA[ NO contact //function of relay set on the QPC to HV output state]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.i_iPRESS</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.i_xSP_DI</Name>
+					<Comment><![CDATA[ NO contact //function of relay set on the QPC to HV output state]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.i_iPRESS</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.i_xSP_DI</Name>
+					<Comment><![CDATA[ NO contact //function of relay set on the QPC to HV output state]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.i_xOpnLS</Name>
+					<Comment><![CDATA[IO]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.i_xClsLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.i_iPRESS_R</Name>
 					<Comment><![CDATA[ Controls and I/Os]]></Comment>
 					<Type>INT</Type>
@@ -57,115 +111,55 @@
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.i_iPRESS_R</Name>
+					<Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_GCC_01.i_iPRESS_R</Name>
 					<Comment><![CDATA[ Controls and I/Os]]></Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.i_xHV_ON</Name>
+					<Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_GCC_01.i_xHV_ON</Name>
 					<Comment><![CDATA[  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.i_xDisc_Active</Name>
+					<Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_GCC_01.i_xDisc_Active</Name>
 					<Comment><![CDATA[ Discharge Current Active // 'TcLinkTo' (EL1124) ^Input]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_GAUGES.fb_TV3L1_GPI_01.i_iPRESS_R</Name>
+					<Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_GPI_01.i_iPRESS_R</Name>
 					<Comment><![CDATA[ input Pressure // Link to analog Input]]></Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.i_iPRESS_R</Name>
+					<Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_GCC_01.i_iPRESS_R</Name>
 					<Comment><![CDATA[ Controls and I/Os]]></Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.i_xHV_ON</Name>
+					<Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_GCC_01.i_xHV_ON</Name>
 					<Comment><![CDATA[  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.i_xDisc_Active</Name>
+					<Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_GCC_01.i_xDisc_Active</Name>
 					<Comment><![CDATA[ Discharge Current Active // 'TcLinkTo' (EL1124) ^Input]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_GAUGES.fb_TV5L1_GPI_01.i_iPRESS_R</Name>
+					<Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.i_iPRESS_R</Name>
 					<Comment><![CDATA[ input Pressure // Link to analog Input]]></Comment>
 					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.i_iPRESS</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.i_xSP_DI</Name>
-					<Comment><![CDATA[ NO contact //function of relay set on the QPC to HV output state]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.i_iPRESS</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.i_xSP_DI</Name>
-					<Comment><![CDATA[ NO contact //function of relay set on the QPC to HV output state]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.i_iPRESS</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.i_xSP_DI</Name>
-					<Comment><![CDATA[ NO contact //function of relay set on the QPC to HV output state]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.i_iPRESS</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.i_xSP_DI</Name>
-					<Comment><![CDATA[ NO contact //function of relay set on the QPC to HV output state]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.i_xOpnLS</Name>
-					<Comment><![CDATA[IO]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.i_xClsLS</Name>
-					<Type>BOOL</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2" AreaNo="1">
 				<Name>PlcTask Outputs</Name>
-				<Var>
-					<Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.q_xHV_DIS</Name>
-					<Comment><![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_GAUGES.fb_TV3L1_GCC_01.q_xHV_DIS</Name>
-					<Comment><![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_GAUGES.fb_TV5L1_GCC_01.q_xHV_DIS</Name>
-					<Comment><![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
 				<Var>
 					<Name>GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.q_xHVEna_DO</Name>
 					<Comment><![CDATA[ Enable High Voltage when TRUE]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.q_xHVEna_DO</Name>
+					<Name>GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.q_xHVEna_DO</Name>
 					<Comment><![CDATA[ Enable High Voltage when TRUE]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -175,12 +169,32 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_TV5L1_PIP_01.q_xHVEna_DO</Name>
+					<Name>GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.q_xHVEna_DO</Name>
+					<Comment><![CDATA[ Enable High Voltage when TRUE]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.q_xHVEna_DO</Name>
 					<Comment><![CDATA[ Enable High Voltage when TRUE]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_TXI_VAC_VALVES.fb_TV3L1_VGC_01.q_xOPN_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.q_xHV_DIS</Name>
+					<Comment><![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_GCC_01.q_xHV_DIS</Name>
+					<Comment><![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_GCC_01.q_xHV_DIS</Name>
+					<Comment><![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>
@@ -217,12 +231,39 @@
 	</Project>
 	<Mappings>
 		<OwnerA Name="txi_hxr_vac Instance">
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^B940-008-L0S23-PNL-1 (EK1122)^EP1  (EP3174-0002)">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E10 (EL1004)">
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.i_xSP_DI" VarB="PC2L1_PIP_01^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.i_xSP_DI" VarB="ST1L1_PIP_01^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.i_xSP_DI" VarB="TV2L1_PIP_01^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.i_xSP_DI" VarB="TV3L1_PIP_01^Input" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E11 (EL3064)">
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.i_iPRESS" VarB="TV4L1_PIP_01^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E12 (EL2794)">
+				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.q_xHVEna_DO" VarB="TV4L1_PIP_01^Output" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E13 (EL1004)">
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.i_xSP_DI" VarB="TV4L1_PIP_01^Input" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E16 (EK1122)^L0S23-PNL-1 EP1  (EP3174-0002)">
 				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.i_iPRESS_R" VarB="ST1L1-GCC-01^Value"/>
 				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_GAUGES.fb_ST1L1_GPI_01.i_iPRESS_R" VarB="ST1L1-GPI-01^Value"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^B940-008-L0S23-PNL-1 (EK1122)^EP2 (EP2624-0002)">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E16 (EK1122)^L0S23-PNL-1 EP2 (EP2624-0002)">
 				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_GAUGES.fb_ST1L1_GCC_01.q_xHV_DIS" VarB="ST1L1-GCC-01^Output" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E8 (EL3064)">
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.i_iPRESS" VarB="PC2L2_PIP_01^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.i_iPRESS" VarB="ST1L1_PIP_01^Value"/>
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.i_iPRESS" VarB="TV2L1_PIP_01^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.i_iPRESS" VarB="TV3L1_PIP_01^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E9 (EL2794)">
+				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.q_xHVEna_DO" VarB="PC2L2_PIP_01^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.q_xHVEna_DO" VarB="ST1L1_PIP_01^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.q_xHVEna_DO" VarB="TV2L1_PIP_01^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.q_xHVEna_DO" VarB="TV3L1_PIP_01^Output" Size="1"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

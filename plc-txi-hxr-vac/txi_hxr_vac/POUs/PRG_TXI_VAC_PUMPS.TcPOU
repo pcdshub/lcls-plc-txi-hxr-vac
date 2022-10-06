@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="PRG_TXI_VAC_PUMPS" Id="{3fa39cc4-d092-48cb-adaa-6e39f89b2e24}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_TXI_VAC_PUMPS
+VAR
+    dummy_gauge : ST_VG;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//beamline dummy gauge
+dummy_gauge.xPRESS_OK := TRUE;
+dummy_gauge.xAT_VAC := TRUE;
+dummy_gauge.eState := ValidLo;
+dummy_gauge.rPRESS := 1e-4;
+
+//B940-009-R17-PCI-03
+fb_ST1L1_PIP_01(i_stGauge := fb_ST1L1_GPI_01.PG, i_xOverrideMode := xSystemOverrideMode1);
+fb_PC2L1_PIP_01(i_stGauge := dummy_gauge, i_xOverrideMode := xSystemOverrideMode1);
+fb_TV3L1_PIP_01(i_stGauge := dummy_gauge, i_xOverrideMode := xSystemOverrideMode1);
+fb_TV2L1_PIP_01(i_stGauge := dummy_gauge, i_xOverrideMode := xSystemOverrideMode1);
+
+//B940-009-R17-PCI-04
+fb_TV4L1_PIP_01(i_stGauge := fb_TV4L1_GPI_01.PG, i_xOverrideMode := xSystemOverrideMode1);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

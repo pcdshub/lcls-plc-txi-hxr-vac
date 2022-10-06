@@ -10,11 +10,11 @@ END_VAR
 fb_ST1L1_GPI_01(PG=>);
 fb_ST1L1_GCC_01(PG := fb_ST1L1_GPI_01.PG, bEP := TRUE);
 // B950-100H1-L1S1-PNL-1 (H1.1)
-fb_TV3L1_GPI_01(PG=>);
-fb_TV3L1_GCC_01(PG := fb_TV3L1_GPI_01.PG, bEP := TRUE);
+fb_TV2L1_GPI_01(PG=>);
+fb_TV2L1_GCC_01(PG := fb_TV2L1_GPI_01.PG, bEP := TRUE);
 // B950-100H1-L1S3-DRL-1(H1.1)
-fb_TV5L1_GPI_01(PG=>);
-fb_TV5L1_GCC_01(PG := fb_TV5L1_GPI_01.PG, bEP := TRUE);]]></ST>
+fb_TV4L1_GPI_01(PG=>);
+fb_TV4L1_GCC_01(PG := fb_TV4L1_GPI_01.PG, bEP := TRUE);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

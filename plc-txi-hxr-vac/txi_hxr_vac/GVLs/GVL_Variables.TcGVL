@@ -2,6 +2,13 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <GVL Name="GVL_Variables" Id="{27ae65ae-78a3-402e-be34-0df9196b381e}">
     <Declaration><![CDATA[VAR_GLOBAL
+{attribute 'pytmc' := 'pv: TXI:HXR:FEE:VAC:OVRDON;
+    field: ZNAM Override OFF;
+    field: ONAM Override ON;
+     io: io;
+'}
+xSystemOverrideMode1 : BOOL; (* Global system override for the prototype section*)
+
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

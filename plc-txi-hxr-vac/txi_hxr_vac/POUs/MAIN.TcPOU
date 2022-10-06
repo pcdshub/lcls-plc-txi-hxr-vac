@@ -6,7 +6,8 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[PRG_TXI_VAC_GAUGES();]]></ST>
+      <ST><![CDATA[PRG_TXI_VAC_GAUGES();
+PRG_TXI_VAC_PUMPS();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
