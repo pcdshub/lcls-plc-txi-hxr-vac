@@ -20,7 +20,8 @@ fb_TV3L1_PIP_01(i_stGauge := dummy_gauge, i_xOverrideMode := xSystemOverrideMode
 fb_TV2L1_PIP_01(i_stGauge := dummy_gauge, i_xOverrideMode := xSystemOverrideMode1);
 
 //B940-009-R17-PCI-04
-fb_TV4L1_PIP_01(i_stGauge := fb_TV4L1_GPI_01.PG, i_xOverrideMode := xSystemOverrideMode1);]]></ST>
+//fb_TV4L1_PIP_01(i_stGauge := fb_TV4L1_GPI_01.PG, i_xOverrideMode := xSystemOverrideMode1);
+fb_TV4L1_PIP_01(i_stGauge := dummy_gauge, i_xOverrideMode := xSystemOverrideMode1);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

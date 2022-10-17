@@ -2044,7 +2044,7 @@ record(bi, "TXI:TV5L1:GPI:01:PRESS_OK_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:02:Inverted_RBV") {
+record(bi, "TXI:PC2L1:PIP:01:Inverted_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.bOutputInverted
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...p.bOutputInverted")
   field(SCAN, "I/O Intr")
@@ -2058,7 +2058,7 @@ record(bi, "TXI:PIP:02:Inverted_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:02:Inverted") {
+record(bo, "TXI:PC2L1:PIP:01:Inverted") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.bOutputInverted
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...p.bOutputInverted")
   field(DTYP, "asynInt32")
@@ -2070,7 +2070,7 @@ record(bo, "TXI:PIP:02:Inverted") {
   info(archive, "VAL")
 }
 
-record(mbbi, "TXI:PIP:02:STATE_RBV") {
+record(mbbi, "TXI:PC2L1:PIP:01:STATE_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.eState
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.eState")
   field(SCAN, "I/O Intr")
@@ -2092,7 +2092,7 @@ record(mbbi, "TXI:PIP:02:STATE_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "TXI:PIP:02:AutoOn_timer_RBV") {
+record(longin, "TXI:PC2L1:PIP:01:AutoOn_timer_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.iAutoOnTimer
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...Pump.iAutoOnTimer")
   field(SCAN, "I/O Intr")
@@ -2104,7 +2104,7 @@ record(longin, "TXI:PIP:02:AutoOn_timer_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "TXI:PIP:02:AI_Offset_RBV") {
+record(longin, "TXI:PC2L1:PIP:01:AI_Offset_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.iOffset
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.iOffset")
   field(SCAN, "I/O Intr")
@@ -2116,7 +2116,7 @@ record(longin, "TXI:PIP:02:AI_Offset_RBV") {
   info(archive, "VAL")
 }
 
-record(longout, "TXI:PIP:02:AI_Offset") {
+record(longout, "TXI:PC2L1:PIP:01:AI_Offset") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.iOffset
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.iOffset")
   field(DTYP, "asynInt32")
@@ -2126,7 +2126,7 @@ record(longout, "TXI:PIP:02:AI_Offset") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:02:PRESS_AI_RBV") {
+record(ai, "TXI:PC2L1:PIP:01:PRESS_AI_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.i_iPRESS
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...1.stPump.i_iPRESS")
   field(SCAN, "I/O Intr")
@@ -2139,7 +2139,7 @@ record(ai, "TXI:PIP:02:PRESS_AI_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:02:HV_DI_RBV") {
+record(bi, "TXI:PC2L1:PIP:01:HV_DI_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.i_xHV_DI
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...1.stPump.i_xHV_DI")
   field(SCAN, "I/O Intr")
@@ -2153,7 +2153,7 @@ record(bi, "TXI:PIP:02:HV_DI_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:02:FORCE_START_RBV") {
+record(bi, "TXI:PC2L1:PIP:01:FORCE_START_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.pv_xOvrdStart
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.pv_xOvrdStart")
   field(SCAN, "I/O Intr")
@@ -2167,7 +2167,7 @@ record(bi, "TXI:PIP:02:FORCE_START_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:02:FORCE_START") {
+record(bo, "TXI:PC2L1:PIP:01:FORCE_START") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.pv_xOvrdStart
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.pv_xOvrdStart")
   field(DTYP, "asynInt32")
@@ -2179,7 +2179,7 @@ record(bo, "TXI:PIP:02:FORCE_START") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:02:HV_DO_RBV") {
+record(bi, "TXI:PC2L1:PIP:01:HV_DO_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.q_xHVEna_DO
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...tPump.q_xHVEna_DO")
   field(SCAN, "I/O Intr")
@@ -2193,7 +2193,7 @@ record(bi, "TXI:PIP:02:HV_DO_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:02:AT_VAC_SP_RBV") {
+record(ai, "TXI:PC2L1:PIP:01:AT_VAC_SP_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.rHVEna_SP
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.rHVEna_SP")
   field(SCAN, "I/O Intr")
@@ -2210,7 +2210,7 @@ record(ai, "TXI:PIP:02:AT_VAC_SP_RBV") {
   info(archive, "VAL")
 }
 
-record(ao, "TXI:PIP:02:AT_VAC_SP") {
+record(ao, "TXI:PC2L1:PIP:01:AT_VAC_SP") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.rHVEna_SP
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.rHVEna_SP")
   field(PINI, "1")
@@ -2226,7 +2226,7 @@ record(ao, "TXI:PIP:02:AT_VAC_SP") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:02:SP_HYS_RBV") {
+record(ai, "TXI:PC2L1:PIP:01:SP_HYS_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.rHYS_PR
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.rHYS_PR")
   field(SCAN, "I/O Intr")
@@ -2243,7 +2243,7 @@ record(ai, "TXI:PIP:02:SP_HYS_RBV") {
   info(archive, "VAL")
 }
 
-record(ao, "TXI:PIP:02:SP_HYS") {
+record(ao, "TXI:PC2L1:PIP:01:SP_HYS") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.rHYS_PR
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.rHYS_PR")
   field(PINI, "1")
@@ -2259,7 +2259,7 @@ record(ao, "TXI:PIP:02:SP_HYS") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:02:PRESS_RBV") {
+record(ai, "TXI:PC2L1:PIP:01:PRESS_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.rPRESS
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.rPRESS")
   field(SCAN, "I/O Intr")
@@ -2275,7 +2275,7 @@ record(ai, "TXI:PIP:02:PRESS_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "TXI:PIP:02:ILK_DEVICE_RBV") {
+record(waveform, "TXI:PC2L1:PIP:01:ILK_DEVICE_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.sIlkDeviceName
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...mp.sIlkDeviceName")
   field(SCAN, "I/O Intr")
@@ -2291,7 +2291,7 @@ record(waveform, "TXI:PIP:02:ILK_DEVICE_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:02:Auto_On_RBV") {
+record(bi, "TXI:PC2L1:PIP:01:Auto_On_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.xAutoOn
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.xAutoOn")
   field(SCAN, "I/O Intr")
@@ -2305,7 +2305,7 @@ record(bi, "TXI:PIP:02:Auto_On_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:02:Auto_On") {
+record(bo, "TXI:PC2L1:PIP:01:Auto_On") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.xAutoOn
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.xAutoOn")
   field(DTYP, "asynInt32")
@@ -2317,7 +2317,7 @@ record(bo, "TXI:PIP:02:Auto_On") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:02:ERROR_RBV") {
+record(bi, "TXI:PC2L1:PIP:01:ERROR_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.xError
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.xError")
   field(SCAN, "I/O Intr")
@@ -2331,7 +2331,7 @@ record(bi, "TXI:PIP:02:ERROR_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:02:HV_SW_RBV") {
+record(bi, "TXI:PC2L1:PIP:01:HV_SW_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.xHVEna_SW
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.xHVEna_SW")
   field(SCAN, "I/O Intr")
@@ -2345,7 +2345,7 @@ record(bi, "TXI:PIP:02:HV_SW_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:02:HV_SW") {
+record(bo, "TXI:PC2L1:PIP:01:HV_SW") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.xHVEna_SW
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.xHVEna_SW")
   field(DTYP, "asynInt32")
@@ -2357,7 +2357,7 @@ record(bo, "TXI:PIP:02:HV_SW") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:02:ILK_OK_RBV") {
+record(bi, "TXI:PC2L1:PIP:01:ILK_OK_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.xILKOk
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.xILKOk")
   field(SCAN, "I/O Intr")
@@ -2371,7 +2371,7 @@ record(bi, "TXI:PIP:02:ILK_OK_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:02:LOGGER_RBV") {
+record(bi, "TXI:PC2L1:PIP:01:LOGGER_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.xLog
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...IP_01.stPump.xLog")
   field(SCAN, "I/O Intr")
@@ -2385,7 +2385,7 @@ record(bi, "TXI:PIP:02:LOGGER_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:02:LOGGER") {
+record(bo, "TXI:PC2L1:PIP:01:LOGGER") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.xLog
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...IP_01.stPump.xLog")
   field(DTYP, "asynInt32")
@@ -2397,7 +2397,7 @@ record(bo, "TXI:PIP:02:LOGGER") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:02:OVRD_ON_RBV") {
+record(bi, "TXI:PC2L1:PIP:01:OVRD_ON_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.xOverrideMode
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.xOverrideMode")
   field(SCAN, "I/O Intr")
@@ -2411,7 +2411,7 @@ record(bi, "TXI:PIP:02:OVRD_ON_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:02:OVRD_ON") {
+record(bo, "TXI:PC2L1:PIP:01:OVRD_ON") {
   # GVL_TXI_VAC_PUMPS.fb_PC2L1_PIP_01.stPump.xOverrideMode
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.xOverrideMode")
   field(DTYP, "asynInt32")
@@ -2423,7 +2423,7 @@ record(bo, "TXI:PIP:02:OVRD_ON") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:01:Inverted_RBV") {
+record(bi, "TXI:ST1L1:PIP:01:Inverted_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.bOutputInverted
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...p.bOutputInverted")
   field(SCAN, "I/O Intr")
@@ -2437,7 +2437,7 @@ record(bi, "TXI:PIP:01:Inverted_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:01:Inverted") {
+record(bo, "TXI:ST1L1:PIP:01:Inverted") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.bOutputInverted
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...p.bOutputInverted")
   field(DTYP, "asynInt32")
@@ -2449,7 +2449,7 @@ record(bo, "TXI:PIP:01:Inverted") {
   info(archive, "VAL")
 }
 
-record(mbbi, "TXI:PIP:01:STATE_RBV") {
+record(mbbi, "TXI:ST1L1:PIP:01:STATE_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.eState
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.eState")
   field(SCAN, "I/O Intr")
@@ -2471,7 +2471,7 @@ record(mbbi, "TXI:PIP:01:STATE_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "TXI:PIP:01:AutoOn_timer_RBV") {
+record(longin, "TXI:ST1L1:PIP:01:AutoOn_timer_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.iAutoOnTimer
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...Pump.iAutoOnTimer")
   field(SCAN, "I/O Intr")
@@ -2483,7 +2483,7 @@ record(longin, "TXI:PIP:01:AutoOn_timer_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "TXI:PIP:01:AI_Offset_RBV") {
+record(longin, "TXI:ST1L1:PIP:01:AI_Offset_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.iOffset
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.iOffset")
   field(SCAN, "I/O Intr")
@@ -2495,7 +2495,7 @@ record(longin, "TXI:PIP:01:AI_Offset_RBV") {
   info(archive, "VAL")
 }
 
-record(longout, "TXI:PIP:01:AI_Offset") {
+record(longout, "TXI:ST1L1:PIP:01:AI_Offset") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.iOffset
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.iOffset")
   field(DTYP, "asynInt32")
@@ -2505,7 +2505,7 @@ record(longout, "TXI:PIP:01:AI_Offset") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:01:PRESS_AI_RBV") {
+record(ai, "TXI:ST1L1:PIP:01:PRESS_AI_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.i_iPRESS
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...1.stPump.i_iPRESS")
   field(SCAN, "I/O Intr")
@@ -2518,7 +2518,7 @@ record(ai, "TXI:PIP:01:PRESS_AI_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:01:HV_DI_RBV") {
+record(bi, "TXI:ST1L1:PIP:01:HV_DI_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.i_xHV_DI
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...1.stPump.i_xHV_DI")
   field(SCAN, "I/O Intr")
@@ -2532,7 +2532,7 @@ record(bi, "TXI:PIP:01:HV_DI_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:01:FORCE_START_RBV") {
+record(bi, "TXI:ST1L1:PIP:01:FORCE_START_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.pv_xOvrdStart
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.pv_xOvrdStart")
   field(SCAN, "I/O Intr")
@@ -2546,7 +2546,7 @@ record(bi, "TXI:PIP:01:FORCE_START_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:01:FORCE_START") {
+record(bo, "TXI:ST1L1:PIP:01:FORCE_START") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.pv_xOvrdStart
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.pv_xOvrdStart")
   field(DTYP, "asynInt32")
@@ -2558,7 +2558,7 @@ record(bo, "TXI:PIP:01:FORCE_START") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:01:HV_DO_RBV") {
+record(bi, "TXI:ST1L1:PIP:01:HV_DO_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.q_xHVEna_DO
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...tPump.q_xHVEna_DO")
   field(SCAN, "I/O Intr")
@@ -2572,7 +2572,7 @@ record(bi, "TXI:PIP:01:HV_DO_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:01:AT_VAC_SP_RBV") {
+record(ai, "TXI:ST1L1:PIP:01:AT_VAC_SP_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.rHVEna_SP
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.rHVEna_SP")
   field(SCAN, "I/O Intr")
@@ -2589,7 +2589,7 @@ record(ai, "TXI:PIP:01:AT_VAC_SP_RBV") {
   info(archive, "VAL")
 }
 
-record(ao, "TXI:PIP:01:AT_VAC_SP") {
+record(ao, "TXI:ST1L1:PIP:01:AT_VAC_SP") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.rHVEna_SP
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.rHVEna_SP")
   field(PINI, "1")
@@ -2605,7 +2605,7 @@ record(ao, "TXI:PIP:01:AT_VAC_SP") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:01:SP_HYS_RBV") {
+record(ai, "TXI:ST1L1:PIP:01:SP_HYS_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.rHYS_PR
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.rHYS_PR")
   field(SCAN, "I/O Intr")
@@ -2622,7 +2622,7 @@ record(ai, "TXI:PIP:01:SP_HYS_RBV") {
   info(archive, "VAL")
 }
 
-record(ao, "TXI:PIP:01:SP_HYS") {
+record(ao, "TXI:ST1L1:PIP:01:SP_HYS") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.rHYS_PR
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.rHYS_PR")
   field(PINI, "1")
@@ -2638,7 +2638,7 @@ record(ao, "TXI:PIP:01:SP_HYS") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:01:PRESS_RBV") {
+record(ai, "TXI:ST1L1:PIP:01:PRESS_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.rPRESS
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.rPRESS")
   field(SCAN, "I/O Intr")
@@ -2654,7 +2654,7 @@ record(ai, "TXI:PIP:01:PRESS_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "TXI:PIP:01:ILK_DEVICE_RBV") {
+record(waveform, "TXI:ST1L1:PIP:01:ILK_DEVICE_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.sIlkDeviceName
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...mp.sIlkDeviceName")
   field(SCAN, "I/O Intr")
@@ -2670,7 +2670,7 @@ record(waveform, "TXI:PIP:01:ILK_DEVICE_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:01:Auto_On_RBV") {
+record(bi, "TXI:ST1L1:PIP:01:Auto_On_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xAutoOn
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.xAutoOn")
   field(SCAN, "I/O Intr")
@@ -2684,7 +2684,7 @@ record(bi, "TXI:PIP:01:Auto_On_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:01:Auto_On") {
+record(bo, "TXI:ST1L1:PIP:01:Auto_On") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xAutoOn
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.xAutoOn")
   field(DTYP, "asynInt32")
@@ -2696,7 +2696,7 @@ record(bo, "TXI:PIP:01:Auto_On") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:01:ERROR_RBV") {
+record(bi, "TXI:ST1L1:PIP:01:ERROR_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xError
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.xError")
   field(SCAN, "I/O Intr")
@@ -2710,7 +2710,7 @@ record(bi, "TXI:PIP:01:ERROR_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:01:HV_SW_RBV") {
+record(bi, "TXI:ST1L1:PIP:01:HV_SW_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xHVEna_SW
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.xHVEna_SW")
   field(SCAN, "I/O Intr")
@@ -2724,7 +2724,7 @@ record(bi, "TXI:PIP:01:HV_SW_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:01:HV_SW") {
+record(bo, "TXI:ST1L1:PIP:01:HV_SW") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xHVEna_SW
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.xHVEna_SW")
   field(DTYP, "asynInt32")
@@ -2736,7 +2736,7 @@ record(bo, "TXI:PIP:01:HV_SW") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:01:ILK_OK_RBV") {
+record(bi, "TXI:ST1L1:PIP:01:ILK_OK_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xILKOk
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.xILKOk")
   field(SCAN, "I/O Intr")
@@ -2750,7 +2750,7 @@ record(bi, "TXI:PIP:01:ILK_OK_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:01:LOGGER_RBV") {
+record(bi, "TXI:ST1L1:PIP:01:LOGGER_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xLog
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...IP_01.stPump.xLog")
   field(SCAN, "I/O Intr")
@@ -2764,7 +2764,7 @@ record(bi, "TXI:PIP:01:LOGGER_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:01:LOGGER") {
+record(bo, "TXI:ST1L1:PIP:01:LOGGER") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xLog
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...IP_01.stPump.xLog")
   field(DTYP, "asynInt32")
@@ -2776,7 +2776,7 @@ record(bo, "TXI:PIP:01:LOGGER") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:01:OVRD_ON_RBV") {
+record(bi, "TXI:ST1L1:PIP:01:OVRD_ON_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xOverrideMode
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.xOverrideMode")
   field(SCAN, "I/O Intr")
@@ -2790,7 +2790,7 @@ record(bi, "TXI:PIP:01:OVRD_ON_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:01:OVRD_ON") {
+record(bo, "TXI:ST1L1:PIP:01:OVRD_ON") {
   # GVL_TXI_VAC_PUMPS.fb_ST1L1_PIP_01.stPump.xOverrideMode
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.xOverrideMode")
   field(DTYP, "asynInt32")
@@ -2802,7 +2802,7 @@ record(bo, "TXI:PIP:01:OVRD_ON") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:04:Inverted_RBV") {
+record(bi, "TXI:TV2L1:PIP:01:Inverted_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.bOutputInverted
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...p.bOutputInverted")
   field(SCAN, "I/O Intr")
@@ -2816,7 +2816,7 @@ record(bi, "TXI:PIP:04:Inverted_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:04:Inverted") {
+record(bo, "TXI:TV2L1:PIP:01:Inverted") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.bOutputInverted
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...p.bOutputInverted")
   field(DTYP, "asynInt32")
@@ -2828,7 +2828,7 @@ record(bo, "TXI:PIP:04:Inverted") {
   info(archive, "VAL")
 }
 
-record(mbbi, "TXI:PIP:04:STATE_RBV") {
+record(mbbi, "TXI:TV2L1:PIP:01:STATE_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.eState
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.eState")
   field(SCAN, "I/O Intr")
@@ -2850,7 +2850,7 @@ record(mbbi, "TXI:PIP:04:STATE_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "TXI:PIP:04:AutoOn_timer_RBV") {
+record(longin, "TXI:TV2L1:PIP:01:AutoOn_timer_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.iAutoOnTimer
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...Pump.iAutoOnTimer")
   field(SCAN, "I/O Intr")
@@ -2862,7 +2862,7 @@ record(longin, "TXI:PIP:04:AutoOn_timer_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "TXI:PIP:04:AI_Offset_RBV") {
+record(longin, "TXI:TV2L1:PIP:01:AI_Offset_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.iOffset
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.iOffset")
   field(SCAN, "I/O Intr")
@@ -2874,7 +2874,7 @@ record(longin, "TXI:PIP:04:AI_Offset_RBV") {
   info(archive, "VAL")
 }
 
-record(longout, "TXI:PIP:04:AI_Offset") {
+record(longout, "TXI:TV2L1:PIP:01:AI_Offset") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.iOffset
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.iOffset")
   field(DTYP, "asynInt32")
@@ -2884,7 +2884,7 @@ record(longout, "TXI:PIP:04:AI_Offset") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:04:PRESS_AI_RBV") {
+record(ai, "TXI:TV2L1:PIP:01:PRESS_AI_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.i_iPRESS
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...1.stPump.i_iPRESS")
   field(SCAN, "I/O Intr")
@@ -2897,7 +2897,7 @@ record(ai, "TXI:PIP:04:PRESS_AI_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:04:HV_DI_RBV") {
+record(bi, "TXI:TV2L1:PIP:01:HV_DI_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.i_xHV_DI
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...1.stPump.i_xHV_DI")
   field(SCAN, "I/O Intr")
@@ -2911,7 +2911,7 @@ record(bi, "TXI:PIP:04:HV_DI_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:04:FORCE_START_RBV") {
+record(bi, "TXI:TV2L1:PIP:01:FORCE_START_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.pv_xOvrdStart
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.pv_xOvrdStart")
   field(SCAN, "I/O Intr")
@@ -2925,7 +2925,7 @@ record(bi, "TXI:PIP:04:FORCE_START_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:04:FORCE_START") {
+record(bo, "TXI:TV2L1:PIP:01:FORCE_START") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.pv_xOvrdStart
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.pv_xOvrdStart")
   field(DTYP, "asynInt32")
@@ -2937,7 +2937,7 @@ record(bo, "TXI:PIP:04:FORCE_START") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:04:HV_DO_RBV") {
+record(bi, "TXI:TV2L1:PIP:01:HV_DO_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.q_xHVEna_DO
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...tPump.q_xHVEna_DO")
   field(SCAN, "I/O Intr")
@@ -2951,7 +2951,7 @@ record(bi, "TXI:PIP:04:HV_DO_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:04:AT_VAC_SP_RBV") {
+record(ai, "TXI:TV2L1:PIP:01:AT_VAC_SP_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.rHVEna_SP
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.rHVEna_SP")
   field(SCAN, "I/O Intr")
@@ -2968,7 +2968,7 @@ record(ai, "TXI:PIP:04:AT_VAC_SP_RBV") {
   info(archive, "VAL")
 }
 
-record(ao, "TXI:PIP:04:AT_VAC_SP") {
+record(ao, "TXI:TV2L1:PIP:01:AT_VAC_SP") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.rHVEna_SP
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.rHVEna_SP")
   field(PINI, "1")
@@ -2984,7 +2984,7 @@ record(ao, "TXI:PIP:04:AT_VAC_SP") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:04:SP_HYS_RBV") {
+record(ai, "TXI:TV2L1:PIP:01:SP_HYS_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.rHYS_PR
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.rHYS_PR")
   field(SCAN, "I/O Intr")
@@ -3001,7 +3001,7 @@ record(ai, "TXI:PIP:04:SP_HYS_RBV") {
   info(archive, "VAL")
 }
 
-record(ao, "TXI:PIP:04:SP_HYS") {
+record(ao, "TXI:TV2L1:PIP:01:SP_HYS") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.rHYS_PR
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.rHYS_PR")
   field(PINI, "1")
@@ -3017,7 +3017,7 @@ record(ao, "TXI:PIP:04:SP_HYS") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:04:PRESS_RBV") {
+record(ai, "TXI:TV2L1:PIP:01:PRESS_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.rPRESS
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.rPRESS")
   field(SCAN, "I/O Intr")
@@ -3033,7 +3033,7 @@ record(ai, "TXI:PIP:04:PRESS_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "TXI:PIP:04:ILK_DEVICE_RBV") {
+record(waveform, "TXI:TV2L1:PIP:01:ILK_DEVICE_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.sIlkDeviceName
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...mp.sIlkDeviceName")
   field(SCAN, "I/O Intr")
@@ -3049,7 +3049,7 @@ record(waveform, "TXI:PIP:04:ILK_DEVICE_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:04:Auto_On_RBV") {
+record(bi, "TXI:TV2L1:PIP:01:Auto_On_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.xAutoOn
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.xAutoOn")
   field(SCAN, "I/O Intr")
@@ -3063,7 +3063,7 @@ record(bi, "TXI:PIP:04:Auto_On_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:04:Auto_On") {
+record(bo, "TXI:TV2L1:PIP:01:Auto_On") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.xAutoOn
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.xAutoOn")
   field(DTYP, "asynInt32")
@@ -3075,7 +3075,7 @@ record(bo, "TXI:PIP:04:Auto_On") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:04:ERROR_RBV") {
+record(bi, "TXI:TV2L1:PIP:01:ERROR_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.xError
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.xError")
   field(SCAN, "I/O Intr")
@@ -3089,7 +3089,7 @@ record(bi, "TXI:PIP:04:ERROR_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:04:HV_SW_RBV") {
+record(bi, "TXI:TV2L1:PIP:01:HV_SW_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.xHVEna_SW
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.xHVEna_SW")
   field(SCAN, "I/O Intr")
@@ -3103,7 +3103,7 @@ record(bi, "TXI:PIP:04:HV_SW_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:04:HV_SW") {
+record(bo, "TXI:TV2L1:PIP:01:HV_SW") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.xHVEna_SW
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.xHVEna_SW")
   field(DTYP, "asynInt32")
@@ -3115,7 +3115,7 @@ record(bo, "TXI:PIP:04:HV_SW") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:04:ILK_OK_RBV") {
+record(bi, "TXI:TV2L1:PIP:01:ILK_OK_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.xILKOk
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.xILKOk")
   field(SCAN, "I/O Intr")
@@ -3129,7 +3129,7 @@ record(bi, "TXI:PIP:04:ILK_OK_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:04:LOGGER_RBV") {
+record(bi, "TXI:TV2L1:PIP:01:LOGGER_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.xLog
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...IP_01.stPump.xLog")
   field(SCAN, "I/O Intr")
@@ -3143,7 +3143,7 @@ record(bi, "TXI:PIP:04:LOGGER_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:04:LOGGER") {
+record(bo, "TXI:TV2L1:PIP:01:LOGGER") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.xLog
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...IP_01.stPump.xLog")
   field(DTYP, "asynInt32")
@@ -3155,7 +3155,7 @@ record(bo, "TXI:PIP:04:LOGGER") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:04:OVRD_ON_RBV") {
+record(bi, "TXI:TV2L1:PIP:01:OVRD_ON_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.xOverrideMode
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.xOverrideMode")
   field(SCAN, "I/O Intr")
@@ -3169,7 +3169,7 @@ record(bi, "TXI:PIP:04:OVRD_ON_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:04:OVRD_ON") {
+record(bo, "TXI:TV2L1:PIP:01:OVRD_ON") {
   # GVL_TXI_VAC_PUMPS.fb_TV2L1_PIP_01.stPump.xOverrideMode
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.xOverrideMode")
   field(DTYP, "asynInt32")
@@ -3181,7 +3181,7 @@ record(bo, "TXI:PIP:04:OVRD_ON") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:03:Inverted_RBV") {
+record(bi, "TXI:TV3L1:PIP:01:Inverted_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.bOutputInverted
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...p.bOutputInverted")
   field(SCAN, "I/O Intr")
@@ -3195,7 +3195,7 @@ record(bi, "TXI:PIP:03:Inverted_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:03:Inverted") {
+record(bo, "TXI:TV3L1:PIP:01:Inverted") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.bOutputInverted
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...p.bOutputInverted")
   field(DTYP, "asynInt32")
@@ -3207,7 +3207,7 @@ record(bo, "TXI:PIP:03:Inverted") {
   info(archive, "VAL")
 }
 
-record(mbbi, "TXI:PIP:03:STATE_RBV") {
+record(mbbi, "TXI:TV3L1:PIP:01:STATE_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.eState
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.eState")
   field(SCAN, "I/O Intr")
@@ -3229,7 +3229,7 @@ record(mbbi, "TXI:PIP:03:STATE_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "TXI:PIP:03:AutoOn_timer_RBV") {
+record(longin, "TXI:TV3L1:PIP:01:AutoOn_timer_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.iAutoOnTimer
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...Pump.iAutoOnTimer")
   field(SCAN, "I/O Intr")
@@ -3241,7 +3241,7 @@ record(longin, "TXI:PIP:03:AutoOn_timer_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "TXI:PIP:03:AI_Offset_RBV") {
+record(longin, "TXI:TV3L1:PIP:01:AI_Offset_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.iOffset
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.iOffset")
   field(SCAN, "I/O Intr")
@@ -3253,7 +3253,7 @@ record(longin, "TXI:PIP:03:AI_Offset_RBV") {
   info(archive, "VAL")
 }
 
-record(longout, "TXI:PIP:03:AI_Offset") {
+record(longout, "TXI:TV3L1:PIP:01:AI_Offset") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.iOffset
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.iOffset")
   field(DTYP, "asynInt32")
@@ -3263,7 +3263,7 @@ record(longout, "TXI:PIP:03:AI_Offset") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:03:PRESS_AI_RBV") {
+record(ai, "TXI:TV3L1:PIP:01:PRESS_AI_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.i_iPRESS
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...1.stPump.i_iPRESS")
   field(SCAN, "I/O Intr")
@@ -3276,7 +3276,7 @@ record(ai, "TXI:PIP:03:PRESS_AI_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:03:HV_DI_RBV") {
+record(bi, "TXI:TV3L1:PIP:01:HV_DI_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.i_xHV_DI
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...1.stPump.i_xHV_DI")
   field(SCAN, "I/O Intr")
@@ -3290,7 +3290,7 @@ record(bi, "TXI:PIP:03:HV_DI_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:03:FORCE_START_RBV") {
+record(bi, "TXI:TV3L1:PIP:01:FORCE_START_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.pv_xOvrdStart
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.pv_xOvrdStart")
   field(SCAN, "I/O Intr")
@@ -3304,7 +3304,7 @@ record(bi, "TXI:PIP:03:FORCE_START_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:03:FORCE_START") {
+record(bo, "TXI:TV3L1:PIP:01:FORCE_START") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.pv_xOvrdStart
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.pv_xOvrdStart")
   field(DTYP, "asynInt32")
@@ -3316,7 +3316,7 @@ record(bo, "TXI:PIP:03:FORCE_START") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:03:HV_DO_RBV") {
+record(bi, "TXI:TV3L1:PIP:01:HV_DO_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.q_xHVEna_DO
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...tPump.q_xHVEna_DO")
   field(SCAN, "I/O Intr")
@@ -3330,7 +3330,7 @@ record(bi, "TXI:PIP:03:HV_DO_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:03:AT_VAC_SP_RBV") {
+record(ai, "TXI:TV3L1:PIP:01:AT_VAC_SP_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.rHVEna_SP
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.rHVEna_SP")
   field(SCAN, "I/O Intr")
@@ -3347,7 +3347,7 @@ record(ai, "TXI:PIP:03:AT_VAC_SP_RBV") {
   info(archive, "VAL")
 }
 
-record(ao, "TXI:PIP:03:AT_VAC_SP") {
+record(ao, "TXI:TV3L1:PIP:01:AT_VAC_SP") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.rHVEna_SP
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.rHVEna_SP")
   field(PINI, "1")
@@ -3363,7 +3363,7 @@ record(ao, "TXI:PIP:03:AT_VAC_SP") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:03:SP_HYS_RBV") {
+record(ai, "TXI:TV3L1:PIP:01:SP_HYS_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.rHYS_PR
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.rHYS_PR")
   field(SCAN, "I/O Intr")
@@ -3380,7 +3380,7 @@ record(ai, "TXI:PIP:03:SP_HYS_RBV") {
   info(archive, "VAL")
 }
 
-record(ao, "TXI:PIP:03:SP_HYS") {
+record(ao, "TXI:TV3L1:PIP:01:SP_HYS") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.rHYS_PR
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.rHYS_PR")
   field(PINI, "1")
@@ -3396,7 +3396,7 @@ record(ao, "TXI:PIP:03:SP_HYS") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:03:PRESS_RBV") {
+record(ai, "TXI:TV3L1:PIP:01:PRESS_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.rPRESS
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.rPRESS")
   field(SCAN, "I/O Intr")
@@ -3412,7 +3412,7 @@ record(ai, "TXI:PIP:03:PRESS_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "TXI:PIP:03:ILK_DEVICE_RBV") {
+record(waveform, "TXI:TV3L1:PIP:01:ILK_DEVICE_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.sIlkDeviceName
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...mp.sIlkDeviceName")
   field(SCAN, "I/O Intr")
@@ -3428,7 +3428,7 @@ record(waveform, "TXI:PIP:03:ILK_DEVICE_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:03:Auto_On_RBV") {
+record(bi, "TXI:TV3L1:PIP:01:Auto_On_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xAutoOn
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.xAutoOn")
   field(SCAN, "I/O Intr")
@@ -3442,7 +3442,7 @@ record(bi, "TXI:PIP:03:Auto_On_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:03:Auto_On") {
+record(bo, "TXI:TV3L1:PIP:01:Auto_On") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xAutoOn
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.xAutoOn")
   field(DTYP, "asynInt32")
@@ -3454,7 +3454,7 @@ record(bo, "TXI:PIP:03:Auto_On") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:03:ERROR_RBV") {
+record(bi, "TXI:TV3L1:PIP:01:ERROR_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xError
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.xError")
   field(SCAN, "I/O Intr")
@@ -3468,7 +3468,7 @@ record(bi, "TXI:PIP:03:ERROR_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:03:HV_SW_RBV") {
+record(bi, "TXI:TV3L1:PIP:01:HV_SW_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xHVEna_SW
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.xHVEna_SW")
   field(SCAN, "I/O Intr")
@@ -3482,7 +3482,7 @@ record(bi, "TXI:PIP:03:HV_SW_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:03:HV_SW") {
+record(bo, "TXI:TV3L1:PIP:01:HV_SW") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xHVEna_SW
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.xHVEna_SW")
   field(DTYP, "asynInt32")
@@ -3494,7 +3494,7 @@ record(bo, "TXI:PIP:03:HV_SW") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:03:ILK_OK_RBV") {
+record(bi, "TXI:TV3L1:PIP:01:ILK_OK_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xILKOk
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.xILKOk")
   field(SCAN, "I/O Intr")
@@ -3508,7 +3508,7 @@ record(bi, "TXI:PIP:03:ILK_OK_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:03:LOGGER_RBV") {
+record(bi, "TXI:TV3L1:PIP:01:LOGGER_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xLog
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...IP_01.stPump.xLog")
   field(SCAN, "I/O Intr")
@@ -3522,7 +3522,7 @@ record(bi, "TXI:PIP:03:LOGGER_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:03:LOGGER") {
+record(bo, "TXI:TV3L1:PIP:01:LOGGER") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xLog
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...IP_01.stPump.xLog")
   field(DTYP, "asynInt32")
@@ -3534,7 +3534,7 @@ record(bo, "TXI:PIP:03:LOGGER") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:03:OVRD_ON_RBV") {
+record(bi, "TXI:TV3L1:PIP:01:OVRD_ON_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xOverrideMode
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.xOverrideMode")
   field(SCAN, "I/O Intr")
@@ -3548,7 +3548,7 @@ record(bi, "TXI:PIP:03:OVRD_ON_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:03:OVRD_ON") {
+record(bo, "TXI:TV3L1:PIP:01:OVRD_ON") {
   # GVL_TXI_VAC_PUMPS.fb_TV3L1_PIP_01.stPump.xOverrideMode
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.xOverrideMode")
   field(DTYP, "asynInt32")
@@ -3560,7 +3560,7 @@ record(bo, "TXI:PIP:03:OVRD_ON") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:05:Inverted_RBV") {
+record(bi, "TXI:TV4L1:PIP:01:Inverted_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.bOutputInverted
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...p.bOutputInverted")
   field(SCAN, "I/O Intr")
@@ -3574,7 +3574,7 @@ record(bi, "TXI:PIP:05:Inverted_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:05:Inverted") {
+record(bo, "TXI:TV4L1:PIP:01:Inverted") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.bOutputInverted
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...p.bOutputInverted")
   field(DTYP, "asynInt32")
@@ -3586,7 +3586,7 @@ record(bo, "TXI:PIP:05:Inverted") {
   info(archive, "VAL")
 }
 
-record(mbbi, "TXI:PIP:05:STATE_RBV") {
+record(mbbi, "TXI:TV4L1:PIP:01:STATE_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.eState
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.eState")
   field(SCAN, "I/O Intr")
@@ -3608,7 +3608,7 @@ record(mbbi, "TXI:PIP:05:STATE_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "TXI:PIP:05:AutoOn_timer_RBV") {
+record(longin, "TXI:TV4L1:PIP:01:AutoOn_timer_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.iAutoOnTimer
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...Pump.iAutoOnTimer")
   field(SCAN, "I/O Intr")
@@ -3620,7 +3620,7 @@ record(longin, "TXI:PIP:05:AutoOn_timer_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "TXI:PIP:05:AI_Offset_RBV") {
+record(longin, "TXI:TV4L1:PIP:01:AI_Offset_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.iOffset
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.iOffset")
   field(SCAN, "I/O Intr")
@@ -3632,7 +3632,7 @@ record(longin, "TXI:PIP:05:AI_Offset_RBV") {
   info(archive, "VAL")
 }
 
-record(longout, "TXI:PIP:05:AI_Offset") {
+record(longout, "TXI:TV4L1:PIP:01:AI_Offset") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.iOffset
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.iOffset")
   field(DTYP, "asynInt32")
@@ -3642,7 +3642,7 @@ record(longout, "TXI:PIP:05:AI_Offset") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:05:PRESS_AI_RBV") {
+record(ai, "TXI:TV4L1:PIP:01:PRESS_AI_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.i_iPRESS
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...1.stPump.i_iPRESS")
   field(SCAN, "I/O Intr")
@@ -3655,7 +3655,7 @@ record(ai, "TXI:PIP:05:PRESS_AI_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:05:HV_DI_RBV") {
+record(bi, "TXI:TV4L1:PIP:01:HV_DI_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.i_xHV_DI
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...1.stPump.i_xHV_DI")
   field(SCAN, "I/O Intr")
@@ -3669,7 +3669,7 @@ record(bi, "TXI:PIP:05:HV_DI_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:05:FORCE_START_RBV") {
+record(bi, "TXI:TV4L1:PIP:01:FORCE_START_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.pv_xOvrdStart
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.pv_xOvrdStart")
   field(SCAN, "I/O Intr")
@@ -3683,7 +3683,7 @@ record(bi, "TXI:PIP:05:FORCE_START_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:05:FORCE_START") {
+record(bo, "TXI:TV4L1:PIP:01:FORCE_START") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.pv_xOvrdStart
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.pv_xOvrdStart")
   field(DTYP, "asynInt32")
@@ -3695,7 +3695,7 @@ record(bo, "TXI:PIP:05:FORCE_START") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:05:HV_DO_RBV") {
+record(bi, "TXI:TV4L1:PIP:01:HV_DO_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.q_xHVEna_DO
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...tPump.q_xHVEna_DO")
   field(SCAN, "I/O Intr")
@@ -3709,7 +3709,7 @@ record(bi, "TXI:PIP:05:HV_DO_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:05:AT_VAC_SP_RBV") {
+record(ai, "TXI:TV4L1:PIP:01:AT_VAC_SP_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.rHVEna_SP
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.rHVEna_SP")
   field(SCAN, "I/O Intr")
@@ -3726,7 +3726,7 @@ record(ai, "TXI:PIP:05:AT_VAC_SP_RBV") {
   info(archive, "VAL")
 }
 
-record(ao, "TXI:PIP:05:AT_VAC_SP") {
+record(ao, "TXI:TV4L1:PIP:01:AT_VAC_SP") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.rHVEna_SP
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.rHVEna_SP")
   field(PINI, "1")
@@ -3742,7 +3742,7 @@ record(ao, "TXI:PIP:05:AT_VAC_SP") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:05:SP_HYS_RBV") {
+record(ai, "TXI:TV4L1:PIP:01:SP_HYS_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.rHYS_PR
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.rHYS_PR")
   field(SCAN, "I/O Intr")
@@ -3759,7 +3759,7 @@ record(ai, "TXI:PIP:05:SP_HYS_RBV") {
   info(archive, "VAL")
 }
 
-record(ao, "TXI:PIP:05:SP_HYS") {
+record(ao, "TXI:TV4L1:PIP:01:SP_HYS") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.rHYS_PR
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.rHYS_PR")
   field(PINI, "1")
@@ -3775,7 +3775,7 @@ record(ao, "TXI:PIP:05:SP_HYS") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:PIP:05:PRESS_RBV") {
+record(ai, "TXI:TV4L1:PIP:01:PRESS_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.rPRESS
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.rPRESS")
   field(SCAN, "I/O Intr")
@@ -3791,7 +3791,7 @@ record(ai, "TXI:PIP:05:PRESS_RBV") {
   info(archive, "VAL")
 }
 
-record(waveform, "TXI:PIP:05:ILK_DEVICE_RBV") {
+record(waveform, "TXI:TV4L1:PIP:01:ILK_DEVICE_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.sIlkDeviceName
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...mp.sIlkDeviceName")
   field(SCAN, "I/O Intr")
@@ -3807,7 +3807,7 @@ record(waveform, "TXI:PIP:05:ILK_DEVICE_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:05:Auto_On_RBV") {
+record(bi, "TXI:TV4L1:PIP:01:Auto_On_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xAutoOn
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.xAutoOn")
   field(SCAN, "I/O Intr")
@@ -3821,7 +3821,7 @@ record(bi, "TXI:PIP:05:Auto_On_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:05:Auto_On") {
+record(bo, "TXI:TV4L1:PIP:01:Auto_On") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xAutoOn
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...01.stPump.xAutoOn")
   field(DTYP, "asynInt32")
@@ -3833,7 +3833,7 @@ record(bo, "TXI:PIP:05:Auto_On") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:05:ERROR_RBV") {
+record(bi, "TXI:TV4L1:PIP:01:ERROR_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xError
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.xError")
   field(SCAN, "I/O Intr")
@@ -3847,7 +3847,7 @@ record(bi, "TXI:PIP:05:ERROR_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:05:HV_SW_RBV") {
+record(bi, "TXI:TV4L1:PIP:01:HV_SW_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xHVEna_SW
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.xHVEna_SW")
   field(SCAN, "I/O Intr")
@@ -3861,7 +3861,7 @@ record(bi, "TXI:PIP:05:HV_SW_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:05:HV_SW") {
+record(bo, "TXI:TV4L1:PIP:01:HV_SW") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xHVEna_SW
   field(DESC, "GVL_TXI_VAC_PUMPS.fb....stPump.xHVEna_SW")
   field(DTYP, "asynInt32")
@@ -3873,7 +3873,7 @@ record(bo, "TXI:PIP:05:HV_SW") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:05:ILK_OK_RBV") {
+record(bi, "TXI:TV4L1:PIP:01:ILK_OK_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xILKOk
   field(DESC, "GVL_TXI_VAC_PUMPS.fb..._01.stPump.xILKOk")
   field(SCAN, "I/O Intr")
@@ -3887,7 +3887,7 @@ record(bi, "TXI:PIP:05:ILK_OK_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:05:LOGGER_RBV") {
+record(bi, "TXI:TV4L1:PIP:01:LOGGER_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xLog
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...IP_01.stPump.xLog")
   field(SCAN, "I/O Intr")
@@ -3901,7 +3901,7 @@ record(bi, "TXI:PIP:05:LOGGER_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:05:LOGGER") {
+record(bo, "TXI:TV4L1:PIP:01:LOGGER") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xLog
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...IP_01.stPump.xLog")
   field(DTYP, "asynInt32")
@@ -3913,7 +3913,7 @@ record(bo, "TXI:PIP:05:LOGGER") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:PIP:05:OVRD_ON_RBV") {
+record(bi, "TXI:TV4L1:PIP:01:OVRD_ON_RBV") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xOverrideMode
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.xOverrideMode")
   field(SCAN, "I/O Intr")
@@ -3927,7 +3927,7 @@ record(bi, "TXI:PIP:05:OVRD_ON_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:PIP:05:OVRD_ON") {
+record(bo, "TXI:TV4L1:PIP:01:OVRD_ON") {
   # GVL_TXI_VAC_PUMPS.fb_TV4L1_PIP_01.stPump.xOverrideMode
   field(DESC, "GVL_TXI_VAC_PUMPS.fb...ump.xOverrideMode")
   field(DTYP, "asynInt32")
