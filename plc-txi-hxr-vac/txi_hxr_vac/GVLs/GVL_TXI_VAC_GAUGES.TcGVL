@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <GVL Name="GVL_TXI_VAC_GAUGES" Id="{716e6ff7-4b20-47dc-ba4c-6ff2f55b9074}">
     <Declaration><![CDATA[VAR_GLOBAL
 
@@ -15,14 +15,20 @@ fb_ST1L1_GPI_01: FB_MKS275;
 
 // B950-100H1-L1S1-PNL-1 (H1.1)
 {attribute 'pytmc' := ' pv: TXI:TV2L1:GCC:01 '}
+{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S01-EP2 (EP3174-0002)^TV2L1-GCC-1^Value'}
+{attribute 'TcLinkTo' := 	'.q_xHV_DIS		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S01-EP3 (EP2624-0002)^TV2L1-GCC-1^Output'}
 fb_TV2L1_GCC_01: FB_MKS500;
 {attribute 'pytmc' := ' pv: TXI:TV2L1:GPI:01 '}
+{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S01-EP2 (EP3174-0002)^TV2L1-GPI-1^Value'}
 fb_TV2L1_GPI_01: FB_MKS275;
 
 // B950-100H1-L1S3-DRL-1 (H1.1)
-{attribute 'pytmc' := ' pv: TXI:TV5L1:GCC:01 '}
+{attribute 'pytmc' := ' pv: TXI:TV4L1:GCC:01 '}
+{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S03-EP2 (EP3174-0002)^TV4L1-GCC-1^Value'}
+{attribute 'TcLinkTo' := 	'.q_xHV_DIS		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S03-EP3 (EP2624-0002)^TV4L1-GCC-1^Output'}
 fb_TV4L1_GCC_01: FB_MKS500;
-{attribute 'pytmc' := ' pv: TXI:TV5L1:GPI:01 '}
+{attribute 'pytmc' := ' pv: TXI:TV45L1:GPI:01 '}
+{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S03-EP2 (EP3174-0002)^TV4L1-GPI-1^Value'}
 fb_TV4L1_GPI_01: FB_MKS275;
 
 END_VAR]]></Declaration>
