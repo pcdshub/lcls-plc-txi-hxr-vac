@@ -9,7 +9,7 @@ PROJECT_PATH := ../../plc-txi-hxr-vac/plc-txi-hxr-vac.tsproj
 PLC := txi_hxr_vac
 
 PYTMC_OPTS := 
-PREFIX := PLC:$(PLC)
+PREFIX := PLC:TXI:HXR:VAC
 
 # With two $$, as in $$(IOC) below, this will be expanded in the
 # environment of st.cmd:
