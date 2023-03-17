@@ -1,11 +1,11 @@
-#!c:/Repos/ads-ioc/R0.6.0///bin/rhel7-x86_64/adsIoc
+#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.6.0/bin/rhel7-x86_64/adsIoc
 ################### AUTO-GENERATED DO NOT EDIT ###################
 #
 #         Project: plc-txi-hxr-vac.tsproj
 #        PLC name: txi_hxr_vac (txi_hxr_vac Instance)
-# Generated using: pytmc 2.14.1+0.g20d35b3.dirty
-# Project version: unknown
-#    Project hash: unknown
+# Generated using: pytmc 2.14.1
+# Project version: cbebaeb
+#    Project hash: cbebaeb58f85096bc0d63ff6d0d0f1cab5452cd8
 #     PLC IP/host: 172.21.136.28
 #      PLC Net ID: 172.21.136.28.1.1
 #  ** Production mode IOC **
@@ -26,7 +26,7 @@
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
-epicsEnvSet("ENGINEER", "" )
+epicsEnvSet("ENGINEER", "jozamudi" )
 epicsEnvSet("LOCATION", "PLC:TXI:HXR:VAC" )
 epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
 epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
@@ -49,7 +49,7 @@ epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
 epicsEnvSet("ADS_TIME_SOURCE",  "0")
 
 # Add a route to the PLC automatically:
-system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.136.28 ^172.*$")
+system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.136.28 ^172.*")
 
 # adsAsynPortDriverConfigure(portName, ipaddr, amsaddr, amsport,
 #    asynParamTableSize, priority, noAutoConnect, defaultSampleTimeMS,
@@ -87,7 +87,7 @@ dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:TXI:HXR:VAC,IDX=1")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:TXI:HXR:VAC")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:TXI:HXR:VAC,PROJECT=plc-txi-hxr-vac.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.14.1+0.g20d35b3.dirty,PLC_HOST=172.21.136.28")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:TXI:HXR:VAC,PROJECT=plc-txi-hxr-vac.tsproj,HASH=cbebaeb,VERSION=cbebaeb,PYTMC=2.14.1,PLC_HOST=172.21.136.28")
 
 #   LCLS General: * (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:HXR:VAC,DEPENDENCY=LCLS_General,VERSION=*,VENDOR=SLAC")
