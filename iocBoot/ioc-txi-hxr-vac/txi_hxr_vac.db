@@ -1715,7 +1715,7 @@ record(bi, "TXI:TV4L1:GCC:01:PRESS_OK_RBV") {
   info(archive, "VAL")
 }
 
-record(mbbi, "TXI:TV45L1:GPI:01:STATE_RBV") {
+record(mbbi, "TXI:TV4L1:GPI:01:STATE_RBV") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.eState
   field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.eState")
   field(SCAN, "I/O Intr")
@@ -1743,7 +1743,7 @@ record(mbbi, "TXI:TV45L1:GPI:01:STATE_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "TXI:TV45L1:GPI:01:AutoOn_timer_RBV") {
+record(longin, "TXI:TV4L1:GPI:01:AutoOn_timer_RBV") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.iAutoOnTimer
   field(DESC, "GVL_TXI_VAC_GAUGES.f...1.PG.iAutoOnTimer")
   field(SCAN, "I/O Intr")
@@ -1755,7 +1755,7 @@ record(longin, "TXI:TV45L1:GPI:01:AutoOn_timer_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "TXI:TV45L1:GPI:01:PRESS_AI_RBV") {
+record(longin, "TXI:TV4L1:GPI:01:PRESS_AI_RBV") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.i_iPRESS_R
   field(DESC, "GVL_TXI_VAC_GAUGES.f..._01.PG.i_iPRESS_R")
   field(SCAN, "I/O Intr")
@@ -1767,7 +1767,7 @@ record(longin, "TXI:TV45L1:GPI:01:PRESS_AI_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:TV45L1:GPI:01:DISC_ACTIVE_RBV") {
+record(bi, "TXI:TV4L1:GPI:01:DISC_ACTIVE_RBV") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.i_xDisc_Active
   field(DESC, "GVL_TXI_VAC_GAUGES.f...PG.i_xDisc_Active")
   field(SCAN, "I/O Intr")
@@ -1781,7 +1781,7 @@ record(bi, "TXI:TV45L1:GPI:01:DISC_ACTIVE_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:TV45L1:GPI:01:HV_ON_RBV") {
+record(bi, "TXI:TV4L1:GPI:01:HV_ON_RBV") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.i_xHV_ON
   field(DESC, "GVL_TXI_VAC_GAUGES.f...PI_01.PG.i_xHV_ON")
   field(SCAN, "I/O Intr")
@@ -1795,7 +1795,7 @@ record(bi, "TXI:TV45L1:GPI:01:HV_ON_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:TV45L1:GPI:01:HV_DIS_DO_RBV") {
+record(bi, "TXI:TV4L1:GPI:01:HV_DIS_DO_RBV") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.q_xHV_DIS
   field(DESC, "GVL_TXI_VAC_GAUGES.f...I_01.PG.q_xHV_DIS")
   field(SCAN, "I/O Intr")
@@ -1809,7 +1809,7 @@ record(bi, "TXI:TV45L1:GPI:01:HV_DIS_DO_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:TV45L1:GPI:01:SP_HYS_RBV") {
+record(ai, "TXI:TV4L1:GPI:01:SP_HYS_RBV") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.rHYS_PR
   field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rHYS_PR")
   field(SCAN, "I/O Intr")
@@ -1826,7 +1826,7 @@ record(ai, "TXI:TV45L1:GPI:01:SP_HYS_RBV") {
   info(archive, "VAL")
 }
 
-record(ao, "TXI:TV45L1:GPI:01:SP_HYS") {
+record(ao, "TXI:TV4L1:GPI:01:SP_HYS") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.rHYS_PR
   field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rHYS_PR")
   field(PINI, "1")
@@ -1842,7 +1842,7 @@ record(ao, "TXI:TV45L1:GPI:01:SP_HYS") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:TV45L1:GPI:01:PRESS_RBV") {
+record(ai, "TXI:TV4L1:GPI:01:PRESS_RBV") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.rPRESS
   field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.rPRESS")
   field(SCAN, "I/O Intr")
@@ -1858,7 +1858,7 @@ record(ai, "TXI:TV45L1:GPI:01:PRESS_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:TV45L1:GPI:01:PRO_SP_RBV") {
+record(ai, "TXI:TV4L1:GPI:01:PRO_SP_RBV") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.rPRO_SP
   field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rPRO_SP")
   field(SCAN, "I/O Intr")
@@ -1875,7 +1875,7 @@ record(ai, "TXI:TV45L1:GPI:01:PRO_SP_RBV") {
   info(archive, "VAL")
 }
 
-record(ao, "TXI:TV45L1:GPI:01:PRO_SP") {
+record(ao, "TXI:TV4L1:GPI:01:PRO_SP") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.rPRO_SP
   field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rPRO_SP")
   field(PINI, "1")
@@ -1891,7 +1891,7 @@ record(ao, "TXI:TV45L1:GPI:01:PRO_SP") {
   info(archive, "VAL")
 }
 
-record(ai, "TXI:TV45L1:GPI:01:VAC_SP_RBV") {
+record(ai, "TXI:TV4L1:GPI:01:VAC_SP_RBV") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.rVAC_SP
   field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rVAC_SP")
   field(SCAN, "I/O Intr")
@@ -1908,7 +1908,7 @@ record(ai, "TXI:TV45L1:GPI:01:VAC_SP_RBV") {
   info(archive, "VAL")
 }
 
-record(ao, "TXI:TV45L1:GPI:01:VAC_SP") {
+record(ao, "TXI:TV4L1:GPI:01:VAC_SP") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.rVAC_SP
   field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.rVAC_SP")
   field(PINI, "1")
@@ -1924,7 +1924,7 @@ record(ao, "TXI:TV45L1:GPI:01:VAC_SP") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:TV45L1:GPI:01:AT_VAC_RBV") {
+record(bi, "TXI:TV4L1:GPI:01:AT_VAC_RBV") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.xAT_VAC
   field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.xAT_VAC")
   field(SCAN, "I/O Intr")
@@ -1938,7 +1938,7 @@ record(bi, "TXI:TV45L1:GPI:01:AT_VAC_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:TV45L1:GPI:01:Auto_On_RBV") {
+record(bi, "TXI:TV4L1:GPI:01:Auto_On_RBV") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.xAutoOn
   field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.xAutoOn")
   field(SCAN, "I/O Intr")
@@ -1952,7 +1952,7 @@ record(bi, "TXI:TV45L1:GPI:01:Auto_On_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:TV45L1:GPI:01:Auto_On") {
+record(bo, "TXI:TV4L1:GPI:01:Auto_On") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.xAutoOn
   field(DESC, "GVL_TXI_VAC_GAUGES.f...GPI_01.PG.xAutoOn")
   field(DTYP, "asynInt32")
@@ -1964,7 +1964,7 @@ record(bo, "TXI:TV45L1:GPI:01:Auto_On") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:TV45L1:GPI:01:HV_SW_RBV") {
+record(bi, "TXI:TV4L1:GPI:01:HV_SW_RBV") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.xHV_SW
   field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.xHV_SW")
   field(SCAN, "I/O Intr")
@@ -1978,7 +1978,7 @@ record(bi, "TXI:TV45L1:GPI:01:HV_SW_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:TV45L1:GPI:01:HV_SW") {
+record(bo, "TXI:TV4L1:GPI:01:HV_SW") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.xHV_SW
   field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.xHV_SW")
   field(DTYP, "asynInt32")
@@ -1990,7 +1990,7 @@ record(bo, "TXI:TV45L1:GPI:01:HV_SW") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:TV45L1:GPI:01:ILK_OK_RBV") {
+record(bi, "TXI:TV4L1:GPI:01:ILK_OK_RBV") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.xILKOk
   field(DESC, "GVL_TXI_VAC_GAUGES.f..._GPI_01.PG.xILKOk")
   field(SCAN, "I/O Intr")
@@ -2004,7 +2004,7 @@ record(bi, "TXI:TV45L1:GPI:01:ILK_OK_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:TV45L1:GPI:01:LOGGER_RBV") {
+record(bi, "TXI:TV4L1:GPI:01:LOGGER_RBV") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.xLog
   field(DESC, "GVL_TXI_VAC_GAUGES.f...L1_GPI_01.PG.xLog")
   field(SCAN, "I/O Intr")
@@ -2018,7 +2018,7 @@ record(bi, "TXI:TV45L1:GPI:01:LOGGER_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "TXI:TV45L1:GPI:01:LOGGER") {
+record(bo, "TXI:TV4L1:GPI:01:LOGGER") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.xLog
   field(DESC, "GVL_TXI_VAC_GAUGES.f...L1_GPI_01.PG.xLog")
   field(DTYP, "asynInt32")
@@ -2030,7 +2030,7 @@ record(bo, "TXI:TV45L1:GPI:01:LOGGER") {
   info(archive, "VAL")
 }
 
-record(bi, "TXI:TV45L1:GPI:01:PRESS_OK_RBV") {
+record(bi, "TXI:TV4L1:GPI:01:PRESS_OK_RBV") {
   # GVL_TXI_VAC_GAUGES.fb_TV4L1_GPI_01.PG.xPRESS_OK
   field(DESC, "GVL_TXI_VAC_GAUGES.f...I_01.PG.xPRESS_OK")
   field(SCAN, "I/O Intr")
