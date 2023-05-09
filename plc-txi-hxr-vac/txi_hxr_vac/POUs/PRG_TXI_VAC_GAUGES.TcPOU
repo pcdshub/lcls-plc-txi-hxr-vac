@@ -3,7 +3,7 @@
   <POU Name="PRG_TXI_VAC_GAUGES" Id="{76913ddf-a32b-46e6-aed6-520cb4659897}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_TXI_VAC_GAUGES
 VAR
-	bm_dummy_gauge: ST_VG;
+    bm_dummy_gauge: ST_VG;
 END_VAR
 ]]></Declaration>
     <Implementation>
