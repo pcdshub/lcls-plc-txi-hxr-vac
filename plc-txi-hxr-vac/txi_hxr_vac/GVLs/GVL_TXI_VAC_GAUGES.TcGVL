@@ -30,7 +30,7 @@ fb_TV4L1_PLEG_GCC_01: FB_MKS500;
 {attribute 'pytmc' := ' pv: TV4L1:PLEG:GPI:01 '}
 {attribute 'TcLinkTo' := 	'.i_iPRESS_R	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S03-EP2 (EP3174-0002)^TV4L1-GPI-1^Value'}
 fb_TV4L1_PLEG_GPI_01: FB_MKS275;
-{attribute 'pytmc' := pv: TV4L1:PLEG:GFS:01 '}
+{attribute 'pytmc' := ' pv: TV4L1:PLEG:GFS:01 '}
 fb_TV4L1_PLEG_GFS_01 : FB_MKS422;
 
 END_VAR]]></Declaration>
