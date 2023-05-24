@@ -1,11 +1,11 @@
-#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.6.0/bin/rhel7-x86_64/adsIoc
+#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.6.1/bin/rhel7-x86_64/adsIoc
 ################### AUTO-GENERATED DO NOT EDIT ###################
 #
 #         Project: plc-txi-hxr-vac.tsproj
 #        PLC name: txi_hxr_vac (txi_hxr_vac Instance)
 # Generated using: pytmc 2.14.1
-# Project version: cbebaeb
-#    Project hash: cbebaeb58f85096bc0d63ff6d0d0f1cab5452cd8
+# Project version: 46f8dde
+#    Project hash: 46f8dde7515f67fc7af91da1857dc1eacd3fd539
 #     PLC IP/host: 172.21.136.28
 #      PLC Net ID: 172.21.136.28.1.1
 #  ** Production mode IOC **
@@ -13,20 +13,20 @@
 #
 # Libraries:
 #
-#   LCLS General: * (SLAC)
-#   LCLS Vacuum: * (SLAC - LCLS)
-#   PMPS: * (SLAC - LCLS)
-#   Tc2_Standard: * (Beckhoff Automation GmbH)
-#   Tc2_System: * (Beckhoff Automation GmbH)
-#   Tc2_TcpIp: * (Beckhoff Automation GmbH)
-#   Tc3_Module: * (Beckhoff Automation GmbH)
+#   LCLS General: * -> 2.8.1 (SLAC)
+#   LCLS Vacuum: * -> 2.3.1 (SLAC - LCLS)
+#   PMPS: * -> 3.0.14 (SLAC - LCLS)
+#   Tc2_Standard: * -> 3.3.3.0 (Beckhoff Automation GmbH)
+#   Tc2_System: * -> 3.4.26.0 (Beckhoff Automation GmbH)
+#   Tc2_TcpIp: * -> 3.3.6.0 (Beckhoff Automation GmbH)
+#   Tc3_Module: * -> 3.3.21.0 (Beckhoff Automation GmbH)
 #
 ################### AUTO-GENERATED DO NOT EDIT ###################
 < envPaths
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
-epicsEnvSet("ENGINEER", "jozamudi" )
+epicsEnvSet("ENGINEER", "jjoshi" )
 epicsEnvSet("LOCATION", "PLC:TXI:HXR:VAC" )
 epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
 epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
@@ -42,7 +42,7 @@ epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
 epicsEnvSet("IPADDR",           "172.21.136.28")
 epicsEnvSet("AMSID",            "172.21.136.28.1.1")
 epicsEnvSet("AMS_PORT",         "851")
-epicsEnvSet("ADS_MAX_PARAMS",   "1413")
+epicsEnvSet("ADS_MAX_PARAMS",   "3161")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
 epicsEnvSet("ADS_MAX_DELAY_MS", "100")
 epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
@@ -87,30 +87,30 @@ dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:TXI:HXR:VAC,IDX=1")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:TXI:HXR:VAC")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:TXI:HXR:VAC,PROJECT=plc-txi-hxr-vac.tsproj,HASH=cbebaeb,VERSION=cbebaeb,PYTMC=2.14.1,PLC_HOST=172.21.136.28")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:TXI:HXR:VAC,PROJECT=plc-txi-hxr-vac.tsproj,HASH=46f8dde,VERSION=46f8dde,PYTMC=2.14.1,PLC_HOST=172.21.136.28")
 
-#   LCLS General: * (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:HXR:VAC,DEPENDENCY=LCLS_General,VERSION=*,VENDOR=SLAC")
-#   LCLS Vacuum: * (SLAC - LCLS)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:HXR:VAC,DEPENDENCY=LCLS_Vacuum,VERSION=*,VENDOR=SLAC - LCLS")
-#   PMPS: * (SLAC - LCLS)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:HXR:VAC,DEPENDENCY=PMPS,VERSION=*,VENDOR=SLAC - LCLS")
-#   Tc2_Standard: * (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:HXR:VAC,DEPENDENCY=Tc2_Standard,VERSION=*,VENDOR=Beckhoff Automation GmbH")
-#   Tc2_System: * (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:HXR:VAC,DEPENDENCY=Tc2_System,VERSION=*,VENDOR=Beckhoff Automation GmbH")
-#   Tc2_TcpIp: * (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:HXR:VAC,DEPENDENCY=Tc2_TcpIp,VERSION=*,VENDOR=Beckhoff Automation GmbH")
-#   Tc3_Module: * (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:HXR:VAC,DEPENDENCY=Tc3_Module,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+#   LCLS General: * -> 2.8.1 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:HXR:VAC,DEPENDENCY=LCLS_General,VERSION=2.8.1,VENDOR=SLAC")
+#   LCLS Vacuum: * -> 2.3.1 (SLAC - LCLS)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:HXR:VAC,DEPENDENCY=LCLS_Vacuum,VERSION=2.3.1,VENDOR=SLAC - LCLS")
+#   PMPS: * -> 3.0.14 (SLAC - LCLS)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:HXR:VAC,DEPENDENCY=PMPS,VERSION=3.0.14,VENDOR=SLAC - LCLS")
+#   Tc2_Standard: * -> 3.3.3.0 (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:HXR:VAC,DEPENDENCY=Tc2_Standard,VERSION=3.3.3.0,VENDOR=Beckhoff Automation GmbH")
+#   Tc2_System: * -> 3.4.26.0 (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:HXR:VAC,DEPENDENCY=Tc2_System,VERSION=3.4.26.0,VENDOR=Beckhoff Automation GmbH")
+#   Tc2_TcpIp: * -> 3.3.6.0 (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:HXR:VAC,DEPENDENCY=Tc2_TcpIp,VERSION=3.3.6.0,VENDOR=Beckhoff Automation GmbH")
+#   Tc3_Module: * -> 3.3.21.0 (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:HXR:VAC,DEPENDENCY=Tc3_Module,VERSION=3.3.21.0,VENDOR=Beckhoff Automation GmbH")
 
 cd "$(IOC_TOP)"
 
 ## PLC Project Database files ##
 dbLoadRecords("txi_hxr_vac.db", "PORT=$(ASYN_PORT),PREFIX=PLC:TXI:HXR:VAC:,IOCNAME=$(IOC),IOC=$(IOC)")
 
-# Total records: 413
-callbackSetQueueSize(2826)
+# Total records: 2161
+callbackSetQueueSize(6322)
 
 # Autosave and archive settings:
 save_restoreSet_status_prefix("PLC:TXI:HXR:VAC:")
