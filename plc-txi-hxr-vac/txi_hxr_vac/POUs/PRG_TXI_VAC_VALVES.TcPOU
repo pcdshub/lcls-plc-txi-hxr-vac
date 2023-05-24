@@ -5,7 +5,32 @@
 VAR
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[fb_TV2L1_PLEG_VGC_01(
+    i_stUSG := fb_ST1L1_PPS_PIP_01.q_IG,
+    i_stDSG := fb_TV2L1_PLEG_PIP_01.q_IG,
+    i_xDis_DPIlk := FALSE,
+    i_xEPS_OK := TRUE,
+    i_xPMPS_OK := TRUE,
+    i_xExt_OK := TRUE,
+    i_xOverrideMode := xSystemOverrideMode1,
+    io_fbFFHWO := g_FastFaultOutput1,
+    fbArbiter := fbArbiter1
+);
+
+fb_TV4L1_PLEG_VGC_01(
+    i_stUSG := fb_TV3L1_PLEG_PIP_01.q_IG,
+    i_stDSG := fb_TV4L1_PLEG_PIP_01.q_IG,
+    i_xDis_DPIlk := FALSE,
+    i_xEPS_OK := TRUE,
+    i_xPMPS_OK := TRUE,
+    i_xExt_OK := TRUE,
+    i_xOverrideMode := xSystemOverrideMode1,
+    io_fbFFHWO := g_FastFaultOutput1,
+    fbArbiter := fbArbiter1
+);
+
+//Fast Shutter Valve interface
+ //fb_TV2L1_PLEG_VFS_Interface(IG:=fb_TV2L1_PLEG_GFS_01, iq_stValve=> , Veto_Valve:= , i_xVAC_FAULT_OK=>);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

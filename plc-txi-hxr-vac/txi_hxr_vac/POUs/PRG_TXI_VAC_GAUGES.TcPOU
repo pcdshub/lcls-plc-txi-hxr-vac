@@ -3,18 +3,28 @@
   <POU Name="PRG_TXI_VAC_GAUGES" Id="{76913ddf-a32b-46e6-aed6-520cb4659897}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_TXI_VAC_GAUGES
 VAR
+    bm_dummy_gauge: ST_VG;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// B940-008-L0S23-PNL-1
-fb_ST1L1_GPI_01(PG=>);
-fb_ST1L1_GCC_01(PG := fb_ST1L1_GPI_01.PG, bEP := TRUE);
+      <ST><![CDATA[//beamline dummy gauge
+bm_dummy_gauge.xPRESS_OK := TRUE;
+bm_dummy_gauge.xAT_VAC := TRUE;
+bm_dummy_gauge.eState := ValidLo;
+bm_dummy_gauge.rPRESS := 1e-4;
+
+
+// B940-008-L0S23-PNL-1
+fb_ST1L1_PPS_GPI_01(PG=>);
+fb_ST1L1_PPS_GCC_01(PG := fb_ST1L1_PPS_GPI_01.PG, bEP := TRUE);
 // B950-100H1-L1S1-PNL-1 (H1.1)
-fb_TV2L1_GPI_01(PG=>);
-fb_TV2L1_GCC_01(PG := fb_TV2L1_GPI_01.PG, bEP := TRUE);
+fb_TV2L1_PLEG_GPI_01(PG=>);
+fb_TV2L1_PLEG_GCC_01(PG := fb_TV2L1_PLEG_GPI_01.PG, bEP := TRUE);
 // B950-100H1-L1S3-DRL-1(H1.1)
-fb_TV4L1_GPI_01(PG=>);
-fb_TV4L1_GCC_01(PG := fb_TV4L1_GPI_01.PG, bEP := TRUE);]]></ST>
+fb_TV4L1_PLEG_GPI_01(PG=>);
+fb_TV4L1_PLEG_GCC_01(PG := fb_TV4L1_PLEG_GPI_01.PG, bEP := TRUE);
+//MKS422
+fb_TV4L1_PLEG_GFS_01(PG := bm_dummy_gauge); ]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

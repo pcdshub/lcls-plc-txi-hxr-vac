@@ -2,8 +2,14 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <GVL Name="GVL_TXI_VAC_VALVES" Id="{6e5440ff-fca3-4407-9cea-dbea0139c389}">
     <Declaration><![CDATA[VAR_GLOBAL
-{attribute 'pytmc' := ' pv: TXI:VGC:01 '}
-fb_TV3L1_VGC_01: FB_VGC;
+{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S01-EP1 (EP2338-0002)^Channel 1^Input;
+                             .i_xClsLS	:=	TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S01-EP1 (EP2338-0002)^Channel 2^Input;
+                             .q_xOPN_DO	:=	TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S01-EP1 (EP2338-0002)^Channel 11^Output'}
+{attribute 'pytmc' := ' pv: TV2L1:PLEG:VGC:01 '}
+fb_TV2L1_PLEG_VGC_01: FB_VGC;
+
+{attribute 'pytmc' := ' pv: TV4L1:PLEG:VGC:01 '}
+fb_TV4L1_PLEG_VGC_01: FB_VGC;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
