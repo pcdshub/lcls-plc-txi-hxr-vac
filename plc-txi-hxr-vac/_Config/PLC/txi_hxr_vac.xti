@@ -311,8 +311,20 @@
 	</Project>
 	<Mappings>
 		<OwnerA Name="txi_hxr_vac Instance">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E10 (EL1004)">
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_PC2L1_L2SI_PIP_01.i_xSP_DI" VarB="PC2L1_PIP_01^Input" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_ST1L1_PPS_PIP_01.i_xSP_DI" VarB="ST1L1_PIP_01^Input" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_TV2L1_PLEG_PIP_01.i_xSP_DI" VarB="TV2L1_PIP_01^Input" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_TV3L1_PLEG_PIP_01.i_xSP_DI" VarB="TV3L1_PIP_01^Input" AutoLink="true" Size="1"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E11 (EL3064)">
 				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_TV4L1_PLEG_PIP_01.i_iPRESS" VarB="TV4L1_PIP_01^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E12 (EL2794)">
+				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_PUMPS.fb_TV4L1_PLEG_PIP_01.q_xHVEna_DO" VarB="TV4L1_PIP_01^Output" AutoLink="true" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E13 (EL1004)">
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_TV4L1_PLEG_PIP_01.i_xSP_DI" VarB="TV4L1_PIP_01^Input" AutoLink="true" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E16 (EK1122)^L0S23-PNL-1 EP1  (EP3174-0002)">
 				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GCC_01.i_iPRESS_R" VarB="ST1L1-GCC-01^Value" AutoLink="true"/>
@@ -339,6 +351,12 @@
 				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_ST1L1_PPS_PIP_01.i_iPRESS" VarB="ST1L1_PIP_01^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_TV2L1_PLEG_PIP_01.i_iPRESS" VarB="TV2L1_PIP_01^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_TV3L1_PLEG_PIP_01.i_iPRESS" VarB="TV3L1_PIP_01^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E9 (EL2794)">
+				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_PUMPS.fb_PC2L1_L2SI_PIP_01.q_xHVEna_DO" VarB="PC2L1_PIP_01^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_PUMPS.fb_ST1L1_PPS_PIP_01.q_xHVEna_DO" VarB="ST1L1_PIP_01^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_PUMPS.fb_TV2L1_PLEG_PIP_01.q_xHVEna_DO" VarB="TV2L1_PIP_01^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_PUMPS.fb_TV3L1_PLEG_PIP_01.q_xHVEna_DO" VarB="TV3L1_PIP_01^Output" AutoLink="true" Size="1"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

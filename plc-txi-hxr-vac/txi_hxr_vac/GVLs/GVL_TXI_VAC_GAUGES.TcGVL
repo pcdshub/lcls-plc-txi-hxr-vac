@@ -6,7 +6,7 @@
 // B940-008-L0S23-PNL-1 (Fee)
 {attribute 'pytmc' := ' pv: ST1L1:PPS:GCC:01 '}
 {attribute 'TcLinkTo' := 	'.i_iPRESS_R	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E16 (EK1122)^L0S23-PNL-1 EP1  (EP3174-0002)^ST1L1-GCC-01^Value;
-                                .q_xHV_DIS		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^B940-008-L0S23-PNL-1 (EK1122)^EP2 (EP2624-0002)^ST1L1-GCC-01^Output '}
+                             .q_xHV_DIS		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E16 (EK1122)^L0S23-PNL-1 EP2 (EP2624-0002)^ST1L1-GCC-01^Output '}
 fb_ST1L1_PPS_GCC_01: FB_MKS500;
 
 {attribute 'pytmc' := ' pv: ST1L1:PPS:GPI:01 '}
