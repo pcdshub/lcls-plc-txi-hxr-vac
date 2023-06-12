@@ -8,6 +8,9 @@
 {attribute 'pytmc' := ' pv: TV2L1:PLEG:VGC:01 '}
 fb_TV2L1_PLEG_VGC_01: FB_VGC;
 
+{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S03-EP1 (EP2338-0002)^Channel 1^Input;
+                             .i_xClsLS	:=	TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S03-EP1 (EP2338-0002)^Channel 2^Input;
+                             .q_xOPN_DO	:=	TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S03-EP1 (EP2338-0002)^Channel 11^Output'}
 {attribute 'pytmc' := ' pv: TV4L1:PLEG:VGC:01 '}
 fb_TV4L1_PLEG_VGC_01: FB_VGC;
 END_VAR]]></Declaration>
