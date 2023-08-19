@@ -21,6 +21,10 @@
     <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="GVLs\GVL_Interfaces.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="GVLs\GVL_TXI_VAC_GAUGES.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>

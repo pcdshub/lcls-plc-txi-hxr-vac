@@ -15,6 +15,9 @@ dummy_gauge.rPRESS := 1e-4;
 
 //B940-009-R17-PCI-03
 fb_PC2L1_L2SI_PIP_01(i_stGauge := dummy_gauge, i_xOverrideMode := xSystemOverrideMode1);
+GVL_Interfaces.PC2L1_PIP_01_Interface_rPress := fb_PC2L1_L2SI_PIP_01.q_IG.rPRESS;
+GVL_Interfaces.PC2L1_PIP_01_Interface_xAT_VAC := fb_PC2L1_L2SI_PIP_01.q_IG.xAT_VAC;
+GVL_Interfaces.PC2L1_PIP_01_Interface_xPRESS_OK := fb_PC2L1_L2SI_PIP_01.q_IG.xPRESS_OK;
 fb_ST1L1_PPS_PIP_01(i_stGauge := fb_ST1L1_PPS_GPI_01.PG, i_xOverrideMode := xSystemOverrideMode1);
 fb_TV2L1_PLEG_PIP_01(i_stGauge := fb_TV2L1_PLEG_GPI_01.PG, i_xOverrideMode := xSystemOverrideMode1);
 fb_TV3L1_PLEG_PIP_01(i_stGauge := fb_TV2L1_PLEG_GPI_01.PG, i_xOverrideMode := xSystemOverrideMode1);

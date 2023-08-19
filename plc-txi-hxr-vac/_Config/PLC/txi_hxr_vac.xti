@@ -168,6 +168,14 @@
 			<Vars VarGrpType="2" AreaNo="1">
 				<Name>PlcTask Outputs</Name>
 				<Var>
+					<Name>GVL_Interfaces.PC2L1_PIP_01_Interface_xAT_VAC</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Interfaces.PC2L1_PIP_01_Interface_xPRESS_OK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GCC_01.q_xHV_DIS</Name>
 					<Comment><![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]></Comment>
 					<Type>BOOL</Type>
@@ -223,6 +231,10 @@
 				<Var>
 					<Name>GVL_Variables.g_FastFaultOutput1.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Interfaces.PC2L1_PIP_01_Interface_rPress</Name>
+					<Type>REAL</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="8" AreaNo="4">
