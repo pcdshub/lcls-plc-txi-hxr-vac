@@ -168,6 +168,19 @@
 			<Vars VarGrpType="2" AreaNo="1">
 				<Name>PlcTask Outputs</Name>
 				<Var>
+					<Name>GVL_Interfaces.PC2L1_PIP_01_Interface_xAT_VAC</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Interfaces.PC2L1_PIP_01_Interface_xPRESS_OK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Interfaces.PC2L1_PIP_01_Interface_rPress</Name>
+					<Comment><![CDATA[Adding Interface with LFE VAC PLC, PC2L1_VGC reading PC2L1_PIP               ]]></Comment>
+					<Type>REAL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GCC_01.q_xHV_DIS</Name>
 					<Comment><![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]></Comment>
 					<Type>BOOL</Type>
@@ -325,6 +338,11 @@
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E13 (EL1004)">
 				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_PUMPS.fb_TV4L1_PLEG_PIP_01.i_xSP_DI" VarB="TV4L1_PIP_01^Input" AutoLink="true" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E15 (EL6692)">
+				<Link VarA="PlcTask Outputs^GVL_Interfaces.PC2L1_PIP_01_Interface_rPress" VarB="IO Outputs^PC2L1_PIP_01_rPress" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Interfaces.PC2L1_PIP_01_Interface_xAT_VAC" VarB="IO Outputs^PC2L1_PIP_01_AT_VAC" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Interfaces.PC2L1_PIP_01_Interface_xPRESS_OK" VarB="IO Outputs^PC2L1_PIP_01_PRESS_OK" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E16 (EK1122)^L0S23-PNL-1 EP1  (EP3174-0002)">
 				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GCC_01.i_iPRESS_R" VarB="ST1L1-GCC-01^Value" AutoLink="true"/>
