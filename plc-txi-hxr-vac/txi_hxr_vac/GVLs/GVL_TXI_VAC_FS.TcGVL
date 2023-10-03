@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <GVL Name="GVL_TXI_VAC_FS" Id="{896c9686-1fce-43e8-a341-266f48b3fbc2}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	fb_TV2L1_VFS_1 : FB_VFS;
+END_VAR ]]></Declaration>
+  </GVL>
+</TcPlcObject>

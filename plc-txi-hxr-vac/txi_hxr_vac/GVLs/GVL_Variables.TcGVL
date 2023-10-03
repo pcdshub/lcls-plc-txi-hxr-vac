@@ -9,7 +9,7 @@
 '}
 xSystemOverrideMode1 : BOOL; (* Global system override for the prototype section*)
 
-{attribute 'pytmc' := ' pv: PLC:TXI:VAC:FFO:01 '}
+{attribute 'pytmc' := ' pv: PLC:TXI:HXR:VAC:FFO:01 '}
 {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO (EL2202)]^Channel 1^Output'}
 g_FastFaultOutput1  :   FB_HardwareFFOutput:= (i_sNetID:='172.21.42.126.1.1'); // change i_sNetID ??
 
