@@ -19,6 +19,328 @@
 				<Parameter>[5]</Parameter>
 			</Format>
 		</DataType>
+		<DataType>
+			<Name GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</Name>
+			<BitSize>64</BitSize>
+			<SubItem>
+				<Name>nTran</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>xAttOK</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{76269EAC-36F0-4513-B811-3725FD02409A}"/>
+				<Hide GUID="{E96BEA56-6301-4A6A-BF6A-F08340C87594}"/>
+				<Hide GUID="{FE32F9A9-7E7A-413D-8D77-0C99C34D8CD9}"/>
+				<Hide GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}"/>
+				<Hide GUID="{D6F0EA12-B425-4603-9C4B-B4FD442416C3}"/>
+				<Hide GUID="{0FF3CAED-DFFA-453E-8BDC-2F6EE7142B14}"/>
+				<Hide GUID="{AC42932A-79BD-4670-8CF2-1DDEA2EE41C7}"/>
+				<Hide GUID="{EE241488-3DC7-4C48-A9D8-BB32379587BC}"/>
+				<Hide GUID="{EE241488-3DC7-4C48-A9D8-BB32379587BC}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{67AC048F-B785-4A4D-B941-B11E2213F502}">ST_PMPS_Aperture_IO</Name>
+			<BitSize>96</BitSize>
+			<SubItem>
+				<Name>Width</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[ distance between horizontal slits (x)]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Width
+            io: i
+            field: EGU mm</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>Height</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[ distance between vertical slits (y)]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Height
+            io: i
+            field: EGU mm</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>xOK</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ status of aperture, false if error or in motion]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>64</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: OK
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</Name>
+			<BitSize>1760</BitSize>
+			<SubItem>
+				<Name>nTran</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment TxtId=""><![CDATA[Requested pre-optic attenuation - 1 is full transmission]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+				<Default>
+					<Min>0</Min>
+					<Max>1</Max>
+					<Value>1</Value>
+				</Default>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Attenuation
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>nRate</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<Comment><![CDATA[ Pulse-rate ]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+				<Default>
+					<Value>120</Value>
+				</Default>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Rate
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>neVRange</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<Comment><![CDATA[ Photon energy ranges ]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+				<Default>
+					<Value>4294967295</Value>
+				</Default>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: PhotonEnergy
+        io: i</Value>
+					</Property>
+					<Property>
+						<Name>plcAttribute_displaymode</Name>
+						<Value>binary</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>neV</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment TxtId=""><![CDATA[Current Photon energy as calculated by the arbiter]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nBCRange</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>128</BitOffs>
+				<Default>
+					<Min>0</Min>
+					<Max>65535</Max>
+					<Value>0</Value>
+				</Default>
+			</SubItem>
+			<SubItem>
+				<Name>nBeamClass</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>144</BitOffs>
+				<Default>
+					<Min>0</Min>
+					<Value>0</Value>
+				</Default>
+			</SubItem>
+			<SubItem>
+				<Name>nMachineMode</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>152</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>astAttenuators</Name>
+				<Type GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</Type>
+				<ArrayInfo>
+					<LBound>1</LBound>
+					<Elements>16</Elements>
+				</ArrayInfo>
+				<Comment><![CDATA[ Beamline attenuators ]]></Comment>
+				<BitSize>1024</BitSize>
+				<BitOffs>160</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: AuxAttenuator
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>astApertures</Name>
+				<Type GUID="{67AC048F-B785-4A4D-B941-B11E2213F502}">ST_PMPS_Aperture_IO</Type>
+				<ArrayInfo>
+					<LBound>1</LBound>
+					<Elements>4</Elements>
+				</ArrayInfo>
+				<BitSize>384</BitSize>
+				<BitOffs>1184</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>aVetoDevices</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<ArrayInfo>
+					<LBound>1</LBound>
+					<Elements>16</Elements>
+				</ArrayInfo>
+				<Comment><![CDATA[ Stopper statuses ]]></Comment>
+				<BitSize>128</BitSize>
+				<BitOffs>1568</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: AuxAttenuator
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>xValidToggle</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ Toggle for watchdog]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>1696</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>xValid</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>1704</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Valid
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>nCohortInt</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<Comment><![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>1728</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Attenuation
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{ADE62DDD-CAE3-4FE3-BE11-F358D7D0CDD8}"/>
+				<Hide GUID="{729DFDAA-EB68-494E-B247-D86DA3C0AE5E}"/>
+				<Hide GUID="{41059C79-1015-4C2C-AFF4-697A824775D7}"/>
+				<Hide GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}"/>
+				<Hide GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}"/>
+				<Hide GUID="{C64C88BE-2BD8-4AC6-ACD6-2A08570B4923}"/>
+				<Hide GUID="{B472A77E-9430-445F-AD24-21E649F6ACD1}"/>
+				<Hide GUID="{559ADF00-CB27-4B7D-8DEA-9DBCF390B12B}"/>
+				<Hide GUID="{E1A510FA-6CE5-40B2-9617-7C29C5B7C692}"/>
+				<Hide GUID="{3F6D5E74-4433-4A11-8ADE-14BBEED361D6}"/>
+				<Hide GUID="{6E597FBD-95E0-4E3A-8361-F15F77CF10FA}"/>
+				<Hide GUID="{5F9FBCD0-8C11-4386-87CB-253F17D55690}"/>
+				<Hide GUID="{5F9FBCD0-8C11-4386-87CB-253F17D55690}"/>
+				<Hide GUID="{F4D82764-2299-4BB7-86C4-99ED0EBA5A76}"/>
+				<Hide GUID="{1E08C18A-0551-4C52-916A-1A7A2B58BA24}"/>
+				<Hide GUID="{1E08C18A-0551-4C52-916A-1A7A2B58BA24}"/>
+				<Hide GUID="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}"/>
+				<Hide GUID="{7BACB0F9-4BD8-4ADE-B8B1-2D069E1D0190}"/>
+				<Hide GUID="{C338245C-50EC-4E6D-B363-9DA04BB5DFA5}"/>
+				<Hide GUID="{0E623A01-D6F4-41DD-A8F2-FBC77EE11035}"/>
+				<Hide GUID="{B8136069-15B2-4545-8E40-00504F2F580D}"/>
+				<Hide GUID="{4A38F9D3-765E-4C94-9AAB-7EB5DFA13820}"/>
+				<Hide GUID="{C9AB5DB1-1B57-42EF-8E17-FBE97768475C}"/>
+				<Hide GUID="{43851ABC-CF8A-4AF9-A768-E27D209879D8}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{9AC07ACF-B050-96BB-23D8-8C6C280F01CD}" Namespace="LCLS_Vacuum" AutoDeleteType="true">E_VGC</Name>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[Vented]]></Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[AtVacuum]]></Text>
+				<Enum>1</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERR_DiffPress]]></Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERR_LostVac]]></Text>
+				<Enum>3</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERR_ExtFault]]></Text>
+				<Enum>4</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[At_Vac]]></Text>
+				<Enum>5</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Triggered]]></Text>
+				<Enum>6</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Vac_Fault]]></Text>
+				<Enum>7</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Cls_Timeout]]></Text>
+				<Enum>8</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Opn_Timeout]]></Text>
+				<Enum>9</Enum>
+			</EnumInfo>
+		</DataType>
 	</DataTypes>
 	<Project GUID="{00C412AD-FF1C-43FB-A0A3-43F3252AE370}" Name="txi_hxr_vac" PrjFilePath="..\..\txi_hxr_vac\txi_hxr_vac.plcproj" TmcFilePath="..\..\txi_hxr_vac\txi_hxr_vac.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
 		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="txi_hxr_vac\txi_hxr_vac.tmc">
@@ -35,6 +357,18 @@
 					<Name>LCLS_Vacuum.Global_Variables.g_stSystem.I_EcatMaster1</Name>
 					<Comment><![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]></Comment>
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				</Var>
+				<Var>
+					<Name>MAIN.fbArbiterIO.i_stCurrentBP</Name>
+					<Type GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</Type>
+				</Var>
+				<Var>
+					<Name>MAIN.fbArbiterIO.xTxPDO_toggle</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>MAIN.fbArbiterIO.xTxPDO_state</Name>
+					<Type>BIT</Type>
 				</Var>
 				<Var>
 					<Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GCC_01.i_iPRESS_R</Name>
@@ -164,6 +498,56 @@
 					<Name>GVL_TXI_VAC_VALVES.fb_TV4L1_PLEG_VGC_01.i_xClsLS</Name>
 					<Type>BOOL</Type>
 				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xOpnLS</Name>
+					<Comment><![CDATA[IO]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xClsLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xTrigger</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xVetoValveOpenDO</Name>
+					<Comment><![CDATA[VETO Devices]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xVetoValveClosed</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xPress_OK</Name>
+					<Comment><![CDATA[To be linked to the Fast sensor structure signal IG.xPRESS_OK, to make sure that the device is connected]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xOPN_SW</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xCLS_SW</Name>
+					<Comment><![CDATA[external open signal e.g epics]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xVAC_FAULT_Reset</Name>
+					<Comment><![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xOverrideMode</Name>
+					<Comment><![CDATA[To be linked to global override bit. This Overrides Vacuum logic only, EPS, MPS and PMPS are still enforces]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xOverrideOpen</Name>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2" AreaNo="1">
 				<Name>PlcTask Outputs</Name>
@@ -177,8 +561,12 @@
 				</Var>
 				<Var>
 					<Name>GVL_Interfaces.PC2L1_PIP_01_Interface_rPress</Name>
-					<Comment><![CDATA[Adding Interface with LFE VAC PLC, PC2L1_VGC reading PC2L1_PIP               ]]></Comment>
+					<Comment><![CDATA[Adding Interface with LFE VAC PLC, PC2L1_VGC reading PC2L1_PIP]]></Comment>
 					<Type>REAL</Type>
+				</Var>
+				<Var>
+					<Name>MAIN.fbArbiterIO.q_stRequestedBP</Name>
+					<Type GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</Type>
 				</Var>
 				<Var>
 					<Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GCC_01.q_xHV_DIS</Name>
@@ -235,6 +623,56 @@
 				</Var>
 				<Var>
 					<Name>GVL_Variables.g_FastFaultOutput1.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_xClose_A</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_xClose_B</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_xClose_C</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_xOPN_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_xTrigger</Name>
+					<Comment><![CDATA[Interface]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_xVFS_Open</Name>
+					<Comment><![CDATA[Interface]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_xVFS_Closed</Name>
+					<Comment><![CDATA[Interface]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_xVAC_FAULT_OK</Name>
+					<Comment><![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_xMPS_OK</Name>
+					<Comment><![CDATA[MPS Fault OK, is set when the Valve is Open and there is no trigger]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_eVFS_State</Name>
+					<Comment><![CDATA[Interface]]></Comment>
+					<Type GUID="{9AC07ACF-B050-96BB-23D8-8C6C280F01CD}" Namespace="LCLS_Vacuum">E_VGC</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>

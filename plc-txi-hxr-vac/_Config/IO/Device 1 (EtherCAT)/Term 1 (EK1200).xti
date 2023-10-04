@@ -46,7 +46,7 @@
 		<Box File="E13 (EL1004).xti" Id="14">
 			<EtherCAT PortABoxInfo="#x0100000d"/>
 		</Box>
-		<Box File="E14 (EL2202).xti" Id="15">
+		<Box File="PMPS_FFO (EL2202).xti" Id="15">
 			<EtherCAT PortABoxInfo="#x0100000e"/>
 		</Box>
 		<Box File="E15 (EL6692).xti" Id="16">
@@ -58,7 +58,7 @@
 		<Box File="E17 (EK1122).xti" Id="21">
 			<EtherCAT PortABoxInfo="#x02000011"/>
 		</Box>
-		<Box File="Term 66 (EL6695).xti" Id="66">
+		<Box File="PMPS PRE (EL6695).xti" Id="66">
 			<EtherCAT PortABoxInfo="#x02000015"/>
 		</Box>
 		<Box File="Term 22 (EL9011).xti" Id="22">
