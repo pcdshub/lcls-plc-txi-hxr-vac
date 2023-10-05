@@ -1,0 +1,179 @@
+Box Hierarchy
+-------------
+
+
+#. **Term 1 (EK1200) [ID: 1]**
+        EK1200-5000 EtherCAT Power supply (2A E-Bus)
+
+    #. E1 (EL3064) [ID: 2]
+            EL3064 4Ch. Ana. Input 0-10V
+
+
+
+    #. E2 (EL3064) [ID: 3]
+            EL3064 4Ch. Ana. Input 0-10V
+
+
+
+    #. E3 (EL2794) [ID: 4]
+            EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof
+
+
+
+    #. E4 (EL6070) [ID: 5]
+            EL6070 1Ch. Licensing-Terminal
+
+
+
+    #. E5 (EL9505) [ID: 6]
+            EL9505 Power supply terminal 5V
+
+
+
+    #. E6 (EL1124) [ID: 7]
+            EL1124 4Ch. Dig. Input 5V, 10µs, Sensor Power
+
+
+
+    #. E7 (EL9410) [ID: 8]
+            EL9410 E-Bus Power Supplier  (Diagnostics)
+
+
+
+    #. E8 (EL3064) [ID: 9]
+            EL3064 4Ch. Ana. Input 0-10V
+
+
+
+    #. E9 (EL2794) [ID: 10]
+            EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof
+
+
+
+    #. E10 (EL1004) [ID: 11]
+            EL1004 4Ch. Dig. Input 24V, 3ms
+
+
+
+    #. E11 (EL3064) [ID: 12]
+            EL3064 4Ch. Ana. Input 0-10V
+
+
+
+    #. E12 (EL2794) [ID: 13]
+            EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof
+
+
+
+    #. E13 (EL1004) [ID: 14]
+            EL1004 4Ch. Dig. Input 24V, 3ms
+
+
+
+    #. PMPS_FFO (EL2202) [ID: 15]
+            EL2202 2Ch. Dig. Output 24V, 0.5A
+
+
+
+    #. E15 (EL6692) [ID: 16]
+            EL6692 EtherCAT Bridge terminal (Primary)
+
+
+
+    #. E16 (EK1122) [ID: 17]
+            EK1122 2 port EtherCAT junction
+
+        #. **L0S23-PNL-1 EP1  (EP3174-0002) [ID: 18]**
+                EP3174-0002 4Ch. Ana. Input +/-10V, 0-10V, 0/4-20mA configurable
+
+
+
+        #. **L0S23-PNL-1 EP2 (EP2624-0002) [ID: 19]**
+                EP2624-0002 4Ch. Relay Output, NO (125V AC / 30V DC)
+
+
+
+        #. **Term 20 (EK0000) [ID: 20]**
+                
+
+
+
+
+
+    #. E17 (EK1122) [ID: 21]
+            EK1122 2 port EtherCAT junction
+
+        #. **100H1-L1S01-EP1 (EP2338-0002) [ID: 45]**
+                EP2338-0002 8 Ch. Dig. Input/Output 24V, 0,5A, M12
+
+
+
+        #. **100H1-L1S01-EP2 (EP3174-0002) [ID: 48]**
+                EP3174-0002 4Ch. Ana. Input +/-10V, 0-10V, 0/4-20mA configurable
+
+
+
+        #. **100H1-L1S01-EP3 (EP2624-0002) [ID: 46]**
+                EP2624-0002 4Ch. Relay Output, NO (125V AC / 30V DC)
+
+
+
+        #. **100H1-L1S01-EK0 (EK1100) [ID: 50]**
+                EK1100 EtherCAT Coupler (2A E-Bus)
+
+            #. E1 (EL2202) [ID: 51]
+                    EL2202 2Ch. Dig. Output 24V, 0.5A
+
+
+
+            #. E2 (EL2202) [ID: 52]
+                    EL2202 2Ch. Dig. Output 24V, 0.5A
+
+
+
+            #. E3 (EL1004) [ID: 53]
+                    EL1004 4Ch. Dig. Input 24V, 3ms
+
+
+
+            #. E4 (EL9011) [ID: 57]
+                    EL9011 End Terminal
+
+
+
+
+
+        #. **100H1-L1S03-EP1 (EP2338-0002) [ID: 54]**
+                EP2338-0002 8 Ch. Dig. Input/Output 24V, 0,5A, M12
+
+
+
+        #. **100H1-L1S03-EP2 (EP3174-0002) [ID: 55]**
+                EP3174-0002 4Ch. Ana. Input +/-10V, 0-10V, 0/4-20mA configurable
+
+
+
+        #. **100H1-L1S03-EP3 (EP2624-0002) [ID: 56]**
+                EP2624-0002 4Ch. Relay Output, NO (125V AC / 30V DC)
+
+
+
+
+
+    #. PMPS PRE (EL6695) [ID: 66]
+            EL6695 EtherCAT Bridge terminal (Primary)
+
+
+
+    #. Term 22 (EL9011) [ID: 22]
+            EL9011 End Terminal
+
+
+
+    #. Term 23 (EL9010) [ID: 23]
+            EL9010 End Terminal
+
+
+
+
+
