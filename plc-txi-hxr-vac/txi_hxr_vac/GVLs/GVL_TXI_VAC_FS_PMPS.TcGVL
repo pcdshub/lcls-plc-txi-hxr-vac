@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL_TXI_VAC_FS_PMPS" Id="{aaf04969-d148-4f2b-89f2-53881f3f74c9}">
     <Declaration><![CDATA[VAR_GLOBAL
     {attribute 'pytmc' := '
-        pv: PLC:TXI:HXR:VAC:L1:FFO:02
+        pv: PLC:TXI:LFE:VAC:FFO:02
     '}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO (EL2202)]^Channel 2^Output'}
     g_FastFaultOutput2  :	FB_HardwareFFOutput:= (i_sNetID:='172.21.42.126.1.1');	//FFO for Fast Shutter Valves downstream of ST1L1

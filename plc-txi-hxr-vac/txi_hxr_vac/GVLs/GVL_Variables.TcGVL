@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL_Variables" Id="{27ae65ae-78a3-402e-be34-0df9196b381e}">
     <Declaration><![CDATA[VAR_GLOBAL
-{attribute 'pytmc' := 'pv: TXI:HXR:FEE:VAC:OVRDON;
+{attribute 'pytmc' := 'pv: TXI:LFE:VAC:OVRDON;
     field: ZNAM Override OFF;
     field: ONAM Override ON;
     io: io;
 '}
 xSystemOverrideMode1 : BOOL; (* Global system override for the prototype section*)
 
-{attribute 'pytmc' := ' pv: PLC:TXI:HXR:VAC:FFO:01 '}
+{attribute 'pytmc' := ' pv: PLC:TXI:LFE:VAC:FFO:01 '}
 {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO (EL2202)]^Channel 1^Output'}
 g_FastFaultOutput1  :   FB_HardwareFFOutput:= (i_sNetID:='172.21.42.126.1.1'); // change i_sNetID ??
 
-{attribute 'pytmc' := ' pv: PLC:TXI:VAC:ARB:01 '}
+{attribute 'pytmc' := ' pv: PLC:TXI:LFE:VAC:ARB:01 '}
 fbArbiter1 : FB_Arbiter(1);
 
 fbLogHandler : FB_loghandler;

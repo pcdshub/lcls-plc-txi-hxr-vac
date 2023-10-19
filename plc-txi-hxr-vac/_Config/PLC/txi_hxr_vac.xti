@@ -822,6 +822,14 @@
 				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_PUMPS.fb_TV2L1_PLEG_PIP_01.q_xHVEna_DO" VarB="TV2L1_PIP_01^Output" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_PUMPS.fb_TV3L1_PLEG_PIP_01.q_xHVEna_DO" VarB="TV3L1_PIP_01^Output" AutoLink="true" Size="1"/>
 			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS PRE (EL6695)">
+				<Link VarA="PlcTask Inputs^MAIN.fbArbiterIO.i_stCurrentBP" VarB="IO Inputs^CurrentBP"/>
+				<Link VarA="PlcTask Outputs^MAIN.fbArbiterIO.q_stRequestedBP" VarB="IO Outputs^RequestedBP"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_FFO (EL2202)">
+				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_FS_PMPS.g_FastFaultOutput2.q_xFastFaultOut" VarB="Channel 2^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_Variables.g_FastFaultOutput1.q_xFastFaultOut" VarB="Channel 1^Output" AutoLink="true" Size="1"/>
+			</OwnerB>
 		</OwnerA>
 	</Mappings>
 </TcSmItem>
