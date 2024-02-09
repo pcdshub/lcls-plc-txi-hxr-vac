@@ -1110,8 +1110,8 @@ PDO Channel 4 (Index #x1a03, Flags #x0011, SyncMan 0)
    </details>
 
 
-PMPS_FFO (EL2202)
-^^^^^^^^^^^^^^^^^
+FFO
+^^^
 
 
 .. raw:: html
@@ -1123,7 +1123,7 @@ PMPS_FFO (EL2202)
     :header: Name, Data
     :align: center
 
-    Name, PMPS_FFO (EL2202)
+    Name, FFO
     ID, 15
         SyncMan, 000f01004400010003000000000000000000000f44090000
         Fmmu, 0000000000000000000f00020100000001000000060000000000000000000000
@@ -2593,8 +2593,8 @@ E4 (EL9011)
    </details>
 
 
-PMPS PRE (EL6695)
-^^^^^^^^^^^^^^^^^
+PMPS_PRE
+^^^^^^^^
 
 
 .. raw:: html
@@ -2606,7 +2606,7 @@ PMPS PRE (EL6695)
     :header: Name, Data
     :align: center
 
-    Name, PMPS PRE (EL6695)
+    Name, PMPS_PRE
     ID, 66
         BootStrapData, 0010140200141402
         SyncMan, 0010000426000100010000008000da050004001026010000

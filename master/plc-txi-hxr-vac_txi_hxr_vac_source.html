@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DUTs &mdash; pcdshub/lcls-plc-txi-hxr-vac  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
+      <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -46,7 +50,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="plc-txi-hxr-vac_pragmas.html">Pragmas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-txi-hxr-vac_nc.html">NC Settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plc-txi-hxr-vac_ethercat.html">Box Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plc-txi-hxr-vac_ethercat.html">EtherCAT Terminals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-txi-hxr-vac_boxes.html">Boxes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-txi-hxr-vac_links.html">Links</a></li>
 </ul>
@@ -135,9 +139,9 @@
 <h2>GVL_TXI_VAC_FS_PMPS<a class="headerlink" href="#gvl-txi-vac-fs-pmps" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VAR_GLOBAL</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">PLC</span><span class="p">:</span><span class="n">TXI</span><span class="p">:</span><span class="n">HXR</span><span class="p">:</span><span class="n">VAC</span><span class="p">:</span><span class="n">L1</span><span class="p">:</span><span class="n">FFO</span><span class="p">:</span><span class="mi">02</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">PLC</span><span class="p">:</span><span class="n">TXI</span><span class="p">:</span><span class="n">LFE</span><span class="p">:</span><span class="n">VAC</span><span class="p">:</span><span class="n">FFO</span><span class="p">:</span><span class="mi">02</span>
     <span class="s1">&#39;}</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.q_xFastFaultOut:=TIIB[PMPS_FFO (EL2202)]^Channel 2^Output&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.q_xFastFaultOut:=TIIB[FFO]^Channel 2^Output&#39;</span><span class="p">}</span>
     <span class="n">g_FastFaultOutput2</span>  <span class="p">:</span>   <span class="n">FB_HardwareFFOutput</span><span class="o">:=</span> <span class="p">(</span><span class="n">i_sNetID</span><span class="o">:=</span><span class="s1">&#39;172.21.42.126.1.1&#39;</span><span class="p">);</span>  <span class="o">//</span><span class="n">FFO</span> <span class="k">for</span> <span class="n">Fast</span> <span class="n">Shutter</span> <span class="n">Valves</span> <span class="n">downstream</span> <span class="n">of</span> <span class="n">ST1L1</span>
 <span class="n">END_VAR</span>
 </pre></div>
@@ -241,15 +245,15 @@
 <section id="gvl-variables">
 <h2>GVL_Variables<a class="headerlink" href="#gvl-variables" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>VAR_GLOBAL
-{attribute &#39;pytmc&#39; := &#39;pv: TXI:HXR:FEE:VAC:OVRDON;
+{attribute &#39;pytmc&#39; := &#39;pv: TXI:LFE:VAC:OVRDON;
     field: ZNAM Override OFF;
     field: ONAM Override ON;
     io: io;
 &#39;}
 xSystemOverrideMode1 : BOOL; (* Global system override for the prototype section*)
 
-{attribute &#39;pytmc&#39; := &#39; pv: PLC:TXI:HXR:VAC:FFO:01 &#39;}
-{attribute &#39;TcLinkTo&#39; := &#39;.q_xFastFaultOut:=TIIB[PMPS_FFO (EL2202)]^Channel 1^Output&#39;}
+{attribute &#39;pytmc&#39; := &#39; pv: PLC:TXI:LFE:VAC:FFO:01 &#39;}
+{attribute &#39;TcLinkTo&#39; := &#39;.q_xFastFaultOut:=TIIB[FFO]^Channel 1^Output&#39;}
 g_FastFaultOutput1  :   FB_HardwareFFOutput:= (i_sNetID:=&#39;172.21.42.126.1.1&#39;); // change i_sNetID ??
 
 {attribute &#39;pytmc&#39; := &#39; pv: PLC:TXI:VAC:ARB:01 &#39;}
@@ -429,7 +433,7 @@ END_VAR
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2024, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
