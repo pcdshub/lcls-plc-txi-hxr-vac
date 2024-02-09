@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{4212E99B-B31E-D9CC-A6D8-1F3B36EDF3C6}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{4F11C4D7-6D6D-EBF7-FEDB-DA0DF79F5980}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
@@ -22218,6 +22218,745 @@ contributing fast faults, unless the FFO is currently vetoed.
       </Properties>
     </DataType>
     <DataType>
+      <Name Namespace="LCLS_Vacuum">E_ValvePositionState</Name>
+      <BitSize>16</BitSize>
+      <BaseType>INT</BaseType>
+      <EnumInfo>
+        <Text>OPEN</Text>
+        <Enum>0</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>CLOSED</Text>
+        <Enum>1</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>MOVING</Text>
+        <Enum>2</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>INVALID</Text>
+        <Enum>3</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>OPEN_F</Text>
+        <Enum>4</Enum>
+      </EnumInfo>
+    </DataType>
+    <DataType>
+      <Name Namespace="LCLS_Vacuum">FB_Valve</Name>
+      <BitSize>82304</BitSize>
+      <SubItem>
+        <Name>fbLogger</Name>
+        <Type Namespace="LCLS_General">FB_LogMessage</Type>
+        <Comment> For logging</Comment>
+        <BitSize>81984</BitSize>
+        <BitOffs>64</BitOffs>
+        <Default>
+          <SubItem>
+            <Name>.eSubsystem</Name>
+            <Value>1</Value>
+          </SubItem>
+          <SubItem>
+            <Name>.nMinTimeViolationAcceptable</Name>
+            <Value>10</Value>
+          </SubItem>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>ePrevState</Name>
+        <Type Namespace="LCLS_Vacuum">E_ValvePositionState</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>82048</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>tErrorPresent</Name>
+        <Type Namespace="Tc2_Standard">R_TRIG</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>82080</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>tAction</Name>
+        <Type Namespace="Tc2_Standard">R_TRIG</Type>
+        <Comment> Primary action of this device (OPN_DO, etc.)</Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>82144</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>tOverrideActivated</Name>
+        <Type Namespace="Tc2_Standard">R_TRIG</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>82208</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bRestorePersistentData</Name>
+        <Type>BOOL</Type>
+        <Comment> For Persistent Data</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>82272</BitOffs>
+        <Default>
+          <Value>1</Value>
+        </Default>
+      </SubItem>
+      <Action>
+        <Name>ACT_Logger</Name>
+      </Action>
+      <Method>
+        <Name>__GetInterfacePointer</Name>
+        <ReturnType>BOOL</ReturnType>
+        <ReturnBitSize>8</ReturnBitSize>
+        <Parameter>
+          <Name>pRef</Name>
+          <Type PointerTo="2">DWORD</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>__GetInterfaceReference</Name>
+        <ReturnType>BOOL</ReturnType>
+        <ReturnBitSize>8</ReturnBitSize>
+        <Parameter>
+          <Name>nInterfaceId</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>pRef</Name>
+          <Type PointerTo="2">DWORD</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+      </Method>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name Namespace="LCLS_Vacuum">E_VGC</Name>
+      <BitSize>16</BitSize>
+      <BaseType>INT</BaseType>
+      <EnumInfo>
+        <Text>Vented</Text>
+        <Enum>0</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>AtVacuum</Text>
+        <Enum>1</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>ERR_DiffPress</Text>
+        <Enum>2</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>ERR_LostVac</Text>
+        <Enum>3</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>ERR_ExtFault</Text>
+        <Enum>4</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>At_Vac</Text>
+        <Enum>5</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>Triggered</Text>
+        <Enum>6</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>Vac_Fault</Text>
+        <Enum>7</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>Cls_Timeout</Text>
+        <Enum>8</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>Opn_Timeout</Text>
+        <Enum>9</Enum>
+      </EnumInfo>
+    </DataType>
+    <DataType>
+      <Name Namespace="LCLS_Vacuum">FB_VFS</Name>
+      <Comment> This function block implements basic functionality for Fast Shutter/Valves
+ Create a separate virtual PLC for the fast shutter logic, and tie/map this task to the FAST I/O portion of the ethercat bus,
+ so we can scan these I/Os faster than the rest of the vacuum I/Os.
+The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0.050ms.
+</Comment>
+      <BitSize>111616</BitSize>
+      <ExtendsType Namespace="LCLS_Vacuum">FB_Valve</ExtendsType>
+      <SubItem>
+        <Name>i_xPMPS_OK</Name>
+        <Type>BOOL</Type>
+        <Comment>External MPS interlock, Set to TRUE when no PMPS interlock is required</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>82304</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_xExt_OK</Name>
+        <Type>BOOL</Type>
+        <Comment>Other External Interlock, Set to True when no external interlock is required</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>82312</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_sDevName</Name>
+        <Type Namespace="Tc2_System">T_MaxString</Type>
+        <Comment> Device name for diagnostic</Comment>
+        <BitSize>2048</BitSize>
+        <BitOffs>82320</BitOffs>
+        <Default>
+          <String>VGC</String>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_xVeto_Enable</Name>
+        <Type>BOOL</Type>
+        <Comment>Set to TRUE if there is a Veto Valve to this VFS</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>84368</BitOffs>
+        <Default>
+          <Value>0</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>io_fbFFHWO</Name>
+        <Type Namespace="PMPS" ReferenceTo="true">FB_HardwareFFOutput</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>84384</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>InOut</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>xOPN_OK</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>84416</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>xERR_ExtFault</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>84424</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>xVeto</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>84432</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fbFF</Name>
+        <Type Namespace="PMPS">FB_FastFault</Type>
+        <Comment> PMPS</Comment>
+        <BitSize>25088</BitSize>
+        <BitOffs>84448</BitOffs>
+        <Default>
+          <SubItem>
+            <Name>.i_DevName</Name>
+            <String>VFS</String>
+          </SubItem>
+          <SubItem>
+            <Name>.i_Desc</Name>
+            <String>Fault occurs when fast valve is not in open state</String>
+          </SubItem>
+          <SubItem>
+            <Name>.i_TypeCode</Name>
+            <Value>4112</Value>
+          </SubItem>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>rDiffPressAllowed</Name>
+        <Type>REAL</Type>
+        <Comment> Torr, Default value comes from Vat Valve Manual</Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>109536</BitOffs>
+        <Default>
+          <Value>22.5</Value>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>rDiffPress</Name>
+        <Type>REAL</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>109568</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>set</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>109600</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>reset</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>109608</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>xFirstPass</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>109616</BitOffs>
+        <Default>
+          <Value>1</Value>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>rtOPN_SW</Name>
+        <Type Namespace="Tc2_Standard">R_TRIG</Type>
+        <Comment>fbFSInit		:	R_TRIG;</Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>109632</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>tonDelOK</Name>
+        <Type Namespace="Tc2_Standard">TON</Type>
+        <BitSize>224</BitSize>
+        <BitOffs>109696</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>rtOK</Name>
+        <Type Namespace="Tc2_Standard">R_TRIG</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>109920</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>tonOvrd</Name>
+        <Type Namespace="Tc2_Standard">TON</Type>
+        <BitSize>224</BitSize>
+        <BitOffs>109984</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>tDelOK</Name>
+        <Type>TIME</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>110208</BitOffs>
+        <Default>
+          <Value>60000</Value>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>tOvrd</Name>
+        <Type>TIME</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>110240</BitOffs>
+        <Default>
+          <Value>10000</Value>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>rTrigOverrideOpen</Name>
+        <Type Namespace="Tc2_Standard">R_TRIG</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>110272</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>xClose</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>110336</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>xOpen</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>110344</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>CloseTimer</Name>
+        <Type Namespace="Tc2_Standard">TON</Type>
+        <BitSize>224</BitSize>
+        <BitOffs>110368</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>TimDur</Name>
+        <Type>TIME</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>110592</BitOffs>
+        <Default>
+          <Value>20</Value>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>OpenTimer</Name>
+        <Type Namespace="Tc2_Standard">TON</Type>
+        <BitSize>224</BitSize>
+        <BitOffs>110624</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>OpenTimDur</Name>
+        <Type>TIME</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>110848</BitOffs>
+        <Default>
+          <Value>2000</Value>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>tCLSTimeOutDuration</Name>
+        <Type>TIME</Type>
+        <Comment> Timeouts</Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>110880</BitOffs>
+        <Default>
+          <Value>500</Value>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>tOPNTimeOutDuration</Name>
+        <Type>TIME</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>110912</BitOffs>
+        <Default>
+          <Value>10000</Value>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>tOPNtimeout</Name>
+        <Type Namespace="Tc2_Standard">TON</Type>
+        <BitSize>224</BitSize>
+        <BitOffs>110944</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>tCLStimeout</Name>
+        <Type Namespace="Tc2_Standard">TON</Type>
+        <BitSize>224</BitSize>
+        <BitOffs>111168</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>i_xOpnLS</Name>
+        <Type>BOOL</Type>
+        <Comment>IO</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>111392</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_xClsLS</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>111400</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>q_xClose_A</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>111408</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>q_xClose_B</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>111416</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>q_xClose_C</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>111424</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>q_xOPN_DO</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>111432</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_xTrigger</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>111440</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_xVetoValveOpenDO</Name>
+        <Type>BOOL</Type>
+        <Comment>VETO Devices</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>111448</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_xVetoValveClosed</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>111456</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_xPress_OK</Name>
+        <Type>BOOL</Type>
+        <Comment>To be linked to the Fast sensor structure signal IG.xPRESS_OK, to make sure that the device is connected</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>111464</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_xOPN_SW</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>111472</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_xCLS_SW</Name>
+        <Type>BOOL</Type>
+        <Comment>external open signal e.g epics</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>111480</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_xVAC_FAULT_Reset</Name>
+        <Type>BOOL</Type>
+        <Comment>Valve Vacuum OK, is set to False when there is Vacuum Fault</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>111488</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_xOverrideMode</Name>
+        <Type>BOOL</Type>
+        <Comment>To be linked to global override bit. This Overrides Vacuum logic only, EPS, MPS and PMPS are still enforces</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>111496</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_xOverrideOpen</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>111504</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>q_xTrigger</Name>
+        <Type>BOOL</Type>
+        <Comment>Interface</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>111512</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>q_xVFS_Open</Name>
+        <Type>BOOL</Type>
+        <Comment>Interface</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>111520</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>q_xVFS_Closed</Name>
+        <Type>BOOL</Type>
+        <Comment>Interface</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>111528</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>q_xVAC_FAULT_OK</Name>
+        <Type>BOOL</Type>
+        <Comment>Valve Vacuum OK, is set to False when there is Vacuum Fault</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>111536</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>q_xMPS_OK</Name>
+        <Type>BOOL</Type>
+        <Comment>MPS Fault OK, is set when the Valve is Open and there is no trigger</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>111544</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>q_eVFS_State</Name>
+        <Type Namespace="LCLS_Vacuum">E_VGC</Type>
+        <Comment>Interface</Comment>
+        <BitSize>16</BitSize>
+        <BitOffs>111552</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <Action>
+        <Name>ACT_ResetAlarms</Name>
+      </Action>
+      <Action>
+        <Name>IO</Name>
+      </Action>
+      <Method>
+        <Name>__GetInterfaceReference</Name>
+        <ReturnType>BOOL</ReturnType>
+        <ReturnBitSize>8</ReturnBitSize>
+        <Parameter>
+          <Name>nInterfaceId</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>pRef</Name>
+          <Type PointerTo="2">DWORD</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>__GetInterfacePointer</Name>
+        <ReturnType>BOOL</ReturnType>
+        <ReturnBitSize>8</ReturnBitSize>
+        <Parameter>
+          <Name>pRef</Name>
+          <Type PointerTo="2">DWORD</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+      </Method>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
       <Name Namespace="LCLS_General.Tc2_Utilities">E_PersistentMode</Name>
       <BitSize>16</BitSize>
       <BaseType>INT</BaseType>
@@ -24207,166 +24946,6 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
       </Properties>
     </DataType>
     <DataType>
-      <Name Namespace="LCLS_Vacuum">E_ValvePositionState</Name>
-      <BitSize>16</BitSize>
-      <BaseType>INT</BaseType>
-      <EnumInfo>
-        <Text>OPEN</Text>
-        <Enum>0</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>CLOSED</Text>
-        <Enum>1</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>MOVING</Text>
-        <Enum>2</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>INVALID</Text>
-        <Enum>3</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>OPEN_F</Text>
-        <Enum>4</Enum>
-      </EnumInfo>
-    </DataType>
-    <DataType>
-      <Name Namespace="LCLS_Vacuum">FB_Valve</Name>
-      <BitSize>82304</BitSize>
-      <SubItem>
-        <Name>fbLogger</Name>
-        <Type Namespace="LCLS_General">FB_LogMessage</Type>
-        <Comment> For logging</Comment>
-        <BitSize>81984</BitSize>
-        <BitOffs>64</BitOffs>
-        <Default>
-          <SubItem>
-            <Name>.eSubsystem</Name>
-            <Value>1</Value>
-          </SubItem>
-          <SubItem>
-            <Name>.nMinTimeViolationAcceptable</Name>
-            <Value>10</Value>
-          </SubItem>
-        </Default>
-      </SubItem>
-      <SubItem>
-        <Name>ePrevState</Name>
-        <Type Namespace="LCLS_Vacuum">E_ValvePositionState</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>82048</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>tErrorPresent</Name>
-        <Type Namespace="Tc2_Standard">R_TRIG</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>82080</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>tAction</Name>
-        <Type Namespace="Tc2_Standard">R_TRIG</Type>
-        <Comment> Primary action of this device (OPN_DO, etc.)</Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>82144</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>tOverrideActivated</Name>
-        <Type Namespace="Tc2_Standard">R_TRIG</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>82208</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bRestorePersistentData</Name>
-        <Type>BOOL</Type>
-        <Comment> For Persistent Data</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>82272</BitOffs>
-        <Default>
-          <Value>1</Value>
-        </Default>
-      </SubItem>
-      <Action>
-        <Name>ACT_Logger</Name>
-      </Action>
-      <Method>
-        <Name>__GetInterfacePointer</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>pRef</Name>
-          <Type PointerTo="2">DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>__GetInterfaceReference</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>nInterfaceId</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>pRef</Name>
-          <Type PointerTo="2">DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name Namespace="LCLS_Vacuum">E_VGC</Name>
-      <BitSize>16</BitSize>
-      <BaseType>INT</BaseType>
-      <EnumInfo>
-        <Text>Vented</Text>
-        <Enum>0</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>AtVacuum</Text>
-        <Enum>1</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>ERR_DiffPress</Text>
-        <Enum>2</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>ERR_LostVac</Text>
-        <Enum>3</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>ERR_ExtFault</Text>
-        <Enum>4</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>At_Vac</Text>
-        <Enum>5</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>Triggered</Text>
-        <Enum>6</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>Vac_Fault</Text>
-        <Enum>7</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>Cls_Timeout</Text>
-        <Enum>8</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>Opn_Timeout</Text>
-        <Enum>9</Enum>
-      </EnumInfo>
-    </DataType>
-    <DataType>
       <Name Namespace="LCLS_Vacuum">ST_ValveBase</Name>
       <BitSize>800</BitSize>
       <SubItem>
@@ -26310,7 +26889,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         <Name>nTimestamp</Name>
         <Type>ULINT</Type>
         <BitSize>64</BitSize>
-        <GetCodeOffs>80347756</GetCodeOffs>
+        <GetCodeOffs>80347788</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="45">__getnTimestamp</Name>
@@ -28291,31 +28870,31 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         <Name>bBusy</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>80347308</GetCodeOffs>
+        <GetCodeOffs>80347340</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>bError</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>80347352</GetCodeOffs>
+        <GetCodeOffs>80347384</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>hrErrorCode</Name>
         <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>80347316</GetCodeOffs>
+        <GetCodeOffs>80347348</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nStringSize</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>80347340</GetCodeOffs>
+        <GetCodeOffs>80347372</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventText</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>80347360</GetCodeOffs>
+        <GetCodeOffs>80347392</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="0">__getbBusy</Name>
@@ -31656,585 +32235,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
       </Properties>
     </DataType>
     <DataType>
-      <Name Namespace="LCLS_Vacuum">FB_VFS</Name>
-      <Comment> This function block implements basic functionality for Fast Shutter/Valves
- Create a separate virtual PLC for the fast shutter logic, and tie/map this task to the FAST I/O portion of the ethercat bus,
- so we can scan these I/Os faster than the rest of the vacuum I/Os.
-The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0.050ms.
-</Comment>
-      <BitSize>111616</BitSize>
-      <ExtendsType Namespace="LCLS_Vacuum">FB_Valve</ExtendsType>
-      <SubItem>
-        <Name>i_xPMPS_OK</Name>
-        <Type>BOOL</Type>
-        <Comment>External MPS interlock, Set to TRUE when no PMPS interlock is required</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>82304</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_xExt_OK</Name>
-        <Type>BOOL</Type>
-        <Comment>Other External Interlock, Set to True when no external interlock is required</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>82312</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_sDevName</Name>
-        <Type Namespace="Tc2_System">T_MaxString</Type>
-        <Comment> Device name for diagnostic</Comment>
-        <BitSize>2048</BitSize>
-        <BitOffs>82320</BitOffs>
-        <Default>
-          <String>VGC</String>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_xVeto_Enable</Name>
-        <Type>BOOL</Type>
-        <Comment>Set to TRUE if there is a Veto Valve to this VFS</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>84368</BitOffs>
-        <Default>
-          <Value>0</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>io_fbFFHWO</Name>
-        <Type Namespace="PMPS" ReferenceTo="true">FB_HardwareFFOutput</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>84384</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>InOut</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>xOPN_OK</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>84416</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>xERR_ExtFault</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>84424</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>xVeto</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>84432</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fbFF</Name>
-        <Type Namespace="PMPS">FB_FastFault</Type>
-        <Comment> PMPS</Comment>
-        <BitSize>25088</BitSize>
-        <BitOffs>84448</BitOffs>
-        <Default>
-          <SubItem>
-            <Name>.i_DevName</Name>
-            <String>VFS</String>
-          </SubItem>
-          <SubItem>
-            <Name>.i_Desc</Name>
-            <String>Fault occurs when fast valve is not in open state</String>
-          </SubItem>
-          <SubItem>
-            <Name>.i_TypeCode</Name>
-            <Value>4112</Value>
-          </SubItem>
-        </Default>
-      </SubItem>
-      <SubItem>
-        <Name>rDiffPressAllowed</Name>
-        <Type>REAL</Type>
-        <Comment> Torr, Default value comes from Vat Valve Manual</Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>109536</BitOffs>
-        <Default>
-          <Value>22.5</Value>
-        </Default>
-      </SubItem>
-      <SubItem>
-        <Name>rDiffPress</Name>
-        <Type>REAL</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>109568</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>set</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>109600</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>reset</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>109608</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>xFirstPass</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>109616</BitOffs>
-        <Default>
-          <Value>1</Value>
-        </Default>
-      </SubItem>
-      <SubItem>
-        <Name>rtOPN_SW</Name>
-        <Type Namespace="Tc2_Standard">R_TRIG</Type>
-        <Comment>fbFSInit		:	R_TRIG;</Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>109632</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>tonDelOK</Name>
-        <Type Namespace="Tc2_Standard">TON</Type>
-        <BitSize>224</BitSize>
-        <BitOffs>109696</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>rtOK</Name>
-        <Type Namespace="Tc2_Standard">R_TRIG</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>109920</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>tonOvrd</Name>
-        <Type Namespace="Tc2_Standard">TON</Type>
-        <BitSize>224</BitSize>
-        <BitOffs>109984</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>tDelOK</Name>
-        <Type>TIME</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>110208</BitOffs>
-        <Default>
-          <Value>60000</Value>
-        </Default>
-      </SubItem>
-      <SubItem>
-        <Name>tOvrd</Name>
-        <Type>TIME</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>110240</BitOffs>
-        <Default>
-          <Value>10000</Value>
-        </Default>
-      </SubItem>
-      <SubItem>
-        <Name>rTrigOverrideOpen</Name>
-        <Type Namespace="Tc2_Standard">R_TRIG</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>110272</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>xClose</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>110336</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>xOpen</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>110344</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>CloseTimer</Name>
-        <Type Namespace="Tc2_Standard">TON</Type>
-        <BitSize>224</BitSize>
-        <BitOffs>110368</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>TimDur</Name>
-        <Type>TIME</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>110592</BitOffs>
-        <Default>
-          <Value>20</Value>
-        </Default>
-      </SubItem>
-      <SubItem>
-        <Name>OpenTimer</Name>
-        <Type Namespace="Tc2_Standard">TON</Type>
-        <BitSize>224</BitSize>
-        <BitOffs>110624</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>OpenTimDur</Name>
-        <Type>TIME</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>110848</BitOffs>
-        <Default>
-          <Value>2000</Value>
-        </Default>
-      </SubItem>
-      <SubItem>
-        <Name>tCLSTimeOutDuration</Name>
-        <Type>TIME</Type>
-        <Comment> Timeouts</Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>110880</BitOffs>
-        <Default>
-          <Value>500</Value>
-        </Default>
-      </SubItem>
-      <SubItem>
-        <Name>tOPNTimeOutDuration</Name>
-        <Type>TIME</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>110912</BitOffs>
-        <Default>
-          <Value>10000</Value>
-        </Default>
-      </SubItem>
-      <SubItem>
-        <Name>tOPNtimeout</Name>
-        <Type Namespace="Tc2_Standard">TON</Type>
-        <BitSize>224</BitSize>
-        <BitOffs>110944</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>tCLStimeout</Name>
-        <Type Namespace="Tc2_Standard">TON</Type>
-        <BitSize>224</BitSize>
-        <BitOffs>111168</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>i_xOpnLS</Name>
-        <Type>BOOL</Type>
-        <Comment>IO</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>111392</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_xClsLS</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>111400</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>q_xClose_A</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>111408</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>q_xClose_B</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>111416</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>q_xClose_C</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>111424</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>q_xOPN_DO</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>111432</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_xTrigger</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>111440</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_xVetoValveOpenDO</Name>
-        <Type>BOOL</Type>
-        <Comment>VETO Devices</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>111448</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_xVetoValveClosed</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>111456</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_xPress_OK</Name>
-        <Type>BOOL</Type>
-        <Comment>To be linked to the Fast sensor structure signal IG.xPRESS_OK, to make sure that the device is connected</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>111464</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_xOPN_SW</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>111472</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_xCLS_SW</Name>
-        <Type>BOOL</Type>
-        <Comment>external open signal e.g epics</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>111480</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_xVAC_FAULT_Reset</Name>
-        <Type>BOOL</Type>
-        <Comment>Valve Vacuum OK, is set to False when there is Vacuum Fault</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>111488</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_xOverrideMode</Name>
-        <Type>BOOL</Type>
-        <Comment>To be linked to global override bit. This Overrides Vacuum logic only, EPS, MPS and PMPS are still enforces</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>111496</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_xOverrideOpen</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>111504</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>q_xTrigger</Name>
-        <Type>BOOL</Type>
-        <Comment>Interface</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>111512</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>q_xVFS_Open</Name>
-        <Type>BOOL</Type>
-        <Comment>Interface</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>111520</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>q_xVFS_Closed</Name>
-        <Type>BOOL</Type>
-        <Comment>Interface</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>111528</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>q_xVAC_FAULT_OK</Name>
-        <Type>BOOL</Type>
-        <Comment>Valve Vacuum OK, is set to False when there is Vacuum Fault</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>111536</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>q_xMPS_OK</Name>
-        <Type>BOOL</Type>
-        <Comment>MPS Fault OK, is set when the Valve is Open and there is no trigger</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>111544</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>q_eVFS_State</Name>
-        <Type Namespace="LCLS_Vacuum">E_VGC</Type>
-        <Comment>Interface</Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>111552</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <Action>
-        <Name>ACT_ResetAlarms</Name>
-      </Action>
-      <Action>
-        <Name>IO</Name>
-      </Action>
-      <Method>
-        <Name>__GetInterfaceReference</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>nInterfaceId</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>pRef</Name>
-          <Type PointerTo="2">DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>__GetInterfacePointer</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>pRef</Name>
-          <Type PointerTo="2">DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
       <Name>VERSION</Name>
       <BitSize>64</BitSize>
       <SubItem>
@@ -33990,7 +33990,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>81002496</ByteSize>
+          <ByteSize>81068032</ByteSize>
           <Symbol>
             <Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
             <Comment> AMS Net ID used for FB_EcatDiag, among others </Comment>
@@ -34084,350 +34084,6 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
             <BitOffs>633639457</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GCC_01.i_iPRESS_R</Name>
-            <Comment> Controls and I/Os</Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>633891824</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GCC_01.i_xHV_ON</Name>
-            <Comment>  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>633891848</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GCC_01.i_xDisc_Active</Name>
-            <Comment> Discharge Current Active // 'TcLinkTo' (EL1124) ^Input</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>633891856</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GPI_01.i_iPRESS_R</Name>
-            <Comment> input Pressure // Link to analog Input</Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>633978688</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_PLEG_GCC_01.i_iPRESS_R</Name>
-            <Comment> Controls and I/Os</Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634066928</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_PLEG_GCC_01.i_xHV_ON</Name>
-            <Comment>  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634066952</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_PLEG_GCC_01.i_xDisc_Active</Name>
-            <Comment> Discharge Current Active // 'TcLinkTo' (EL1124) ^Input</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634066960</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_PLEG_GPI_01.i_iPRESS_R</Name>
-            <Comment> input Pressure // Link to analog Input</Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634153792</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GCC_01.i_iPRESS_R</Name>
-            <Comment> Controls and I/Os</Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634242032</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GCC_01.i_xHV_ON</Name>
-            <Comment>  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634242056</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GCC_01.i_xDisc_Active</Name>
-            <Comment> Discharge Current Active // 'TcLinkTo' (EL1124) ^Input</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634242064</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GPI_01.i_iPRESS_R</Name>
-            <Comment> input Pressure // Link to analog Input</Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634328896</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GFS_01.i_iPRESS_R</Name>
-            <Comment> Controls and I/Os</Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634416896</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_PUMPS.fb_ST1L1_PPS_PIP_01.i_iPRESS</Name>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634503920</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_PUMPS.fb_ST1L1_PPS_PIP_01.i_xSP_DI</Name>
-            <Comment> NO contact //function of relay set on the QPC to HV output state</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634503936</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_PUMPS.fb_PC2L1_L2SI_PIP_01.i_iPRESS</Name>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634594544</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_PUMPS.fb_PC2L1_L2SI_PIP_01.i_xSP_DI</Name>
-            <Comment> NO contact //function of relay set on the QPC to HV output state</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634594560</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_PUMPS.fb_TV2L1_PLEG_PIP_01.i_iPRESS</Name>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634685168</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_PUMPS.fb_TV2L1_PLEG_PIP_01.i_xSP_DI</Name>
-            <Comment> NO contact //function of relay set on the QPC to HV output state</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634685184</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_PUMPS.fb_TV3L1_PLEG_PIP_01.i_iPRESS</Name>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634775792</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_PUMPS.fb_TV3L1_PLEG_PIP_01.i_xSP_DI</Name>
-            <Comment> NO contact //function of relay set on the QPC to HV output state</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634775808</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PLEG_PIP_01.i_iPRESS</Name>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634866416</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PLEG_PIP_01.i_xSP_DI</Name>
-            <Comment> NO contact //function of relay set on the QPC to HV output state</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634866432</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01.i_xOpnLS</Name>
-            <Comment>IO</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>635047552</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01.i_xClsLS</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>635047560</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_VALVES.fb_TV4L1_PLEG_VGC_01.i_xOpnLS</Name>
-            <Comment>IO</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>635224896</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_VALVES.fb_TV4L1_PLEG_VGC_01.i_xClsLS</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>635224904</BitOffs>
-          </Symbol>
-          <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xOpnLS</Name>
             <Comment>IO</Comment>
             <BitSize>8</BitSize>
@@ -34438,7 +34094,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>642091296</BitOffs>
+            <BitOffs>633915232</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xClsLS</Name>
@@ -34450,7 +34106,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>642091304</BitOffs>
+            <BitOffs>633915240</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xTrigger</Name>
@@ -34462,7 +34118,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>642091344</BitOffs>
+            <BitOffs>633915280</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xVetoValveOpenDO</Name>
@@ -34475,7 +34131,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>642091352</BitOffs>
+            <BitOffs>633915288</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xVetoValveClosed</Name>
@@ -34487,7 +34143,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>642091360</BitOffs>
+            <BitOffs>633915296</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xPress_OK</Name>
@@ -34500,7 +34156,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>642091368</BitOffs>
+            <BitOffs>633915304</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xOPN_SW</Name>
@@ -34512,7 +34168,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>642091376</BitOffs>
+            <BitOffs>633915312</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xCLS_SW</Name>
@@ -34525,7 +34181,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>642091384</BitOffs>
+            <BitOffs>633915320</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xVAC_FAULT_Reset</Name>
@@ -34538,7 +34194,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>642091392</BitOffs>
+            <BitOffs>633915328</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xOverrideMode</Name>
@@ -34551,7 +34207,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>642091400</BitOffs>
+            <BitOffs>633915336</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.i_xOverrideOpen</Name>
@@ -34563,14 +34219,358 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>642091408</BitOffs>
+            <BitOffs>633915344</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GCC_01.i_iPRESS_R</Name>
+            <Comment> Controls and I/Os</Comment>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>634498736</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GCC_01.i_xHV_ON</Name>
+            <Comment>  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>634498760</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GCC_01.i_xDisc_Active</Name>
+            <Comment> Discharge Current Active // 'TcLinkTo' (EL1124) ^Input</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>634498768</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GPI_01.i_iPRESS_R</Name>
+            <Comment> input Pressure // Link to analog Input</Comment>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>634585600</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_PLEG_GCC_01.i_iPRESS_R</Name>
+            <Comment> Controls and I/Os</Comment>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>634673840</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_PLEG_GCC_01.i_xHV_ON</Name>
+            <Comment>  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>634673864</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_PLEG_GCC_01.i_xDisc_Active</Name>
+            <Comment> Discharge Current Active // 'TcLinkTo' (EL1124) ^Input</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>634673872</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_PLEG_GPI_01.i_iPRESS_R</Name>
+            <Comment> input Pressure // Link to analog Input</Comment>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>634760704</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GCC_01.i_iPRESS_R</Name>
+            <Comment> Controls and I/Os</Comment>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>634848944</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GCC_01.i_xHV_ON</Name>
+            <Comment>  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>634848968</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GCC_01.i_xDisc_Active</Name>
+            <Comment> Discharge Current Active // 'TcLinkTo' (EL1124) ^Input</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>634848976</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GPI_01.i_iPRESS_R</Name>
+            <Comment> input Pressure // Link to analog Input</Comment>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>634935808</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GFS_01.i_iPRESS_R</Name>
+            <Comment> Controls and I/Os</Comment>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635023808</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_PUMPS.fb_ST1L1_PPS_PIP_01.i_iPRESS</Name>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635110832</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_PUMPS.fb_ST1L1_PPS_PIP_01.i_xSP_DI</Name>
+            <Comment> NO contact //function of relay set on the QPC to HV output state</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635110848</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_PUMPS.fb_PC2L1_L2SI_PIP_01.i_iPRESS</Name>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635201456</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_PUMPS.fb_PC2L1_L2SI_PIP_01.i_xSP_DI</Name>
+            <Comment> NO contact //function of relay set on the QPC to HV output state</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635201472</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_PUMPS.fb_TV2L1_PLEG_PIP_01.i_iPRESS</Name>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635292080</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_PUMPS.fb_TV2L1_PLEG_PIP_01.i_xSP_DI</Name>
+            <Comment> NO contact //function of relay set on the QPC to HV output state</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635292096</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_PUMPS.fb_TV3L1_PLEG_PIP_01.i_iPRESS</Name>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635382704</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_PUMPS.fb_TV3L1_PLEG_PIP_01.i_xSP_DI</Name>
+            <Comment> NO contact //function of relay set on the QPC to HV output state</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635382720</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PLEG_PIP_01.i_iPRESS</Name>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635473328</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PLEG_PIP_01.i_xSP_DI</Name>
+            <Comment> NO contact //function of relay set on the QPC to HV output state</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635473344</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01.i_xOpnLS</Name>
+            <Comment>IO</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635654464</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01.i_xClsLS</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635654472</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_VALVES.fb_TV4L1_PLEG_VGC_01.i_xOpnLS</Name>
+            <Comment>IO</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635831808</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_VALVES.fb_TV4L1_PLEG_VGC_01.i_xClsLS</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635831816</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>81002496</ByteSize>
+          <ByteSize>81068032</ByteSize>
           <Symbol>
             <Name>GVL_Interfaces.PC2L1_PIP_01_Interface_xAT_VAC</Name>
             <BitSize>8</BitSize>
@@ -34646,170 +34646,6 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
             <BitOffs>633637696</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GCC_01.q_xHV_DIS</Name>
-            <Comment> Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>633891840</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_PLEG_GCC_01.q_xHV_DIS</Name>
-            <Comment> Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634066944</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GCC_01.q_xHV_DIS</Name>
-            <Comment> Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634242048</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GFS_01.q_xHV_DIS</Name>
-            <Comment> Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Default>
-              <Value>1</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634416912</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_PUMPS.fb_ST1L1_PPS_PIP_01.q_xHVEna_DO</Name>
-            <Comment> Enable High Voltage when TRUE</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634503904</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_PUMPS.fb_PC2L1_L2SI_PIP_01.q_xHVEna_DO</Name>
-            <Comment> Enable High Voltage when TRUE</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634594528</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_PUMPS.fb_TV2L1_PLEG_PIP_01.q_xHVEna_DO</Name>
-            <Comment> Enable High Voltage when TRUE</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634685152</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_PUMPS.fb_TV3L1_PLEG_PIP_01.q_xHVEna_DO</Name>
-            <Comment> Enable High Voltage when TRUE</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634775776</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PLEG_PIP_01.q_xHVEna_DO</Name>
-            <Comment> Enable High Voltage when TRUE</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>634866400</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01.q_xOPN_DO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>635047568</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_VALVES.fb_TV4L1_PLEG_VGC_01.q_xOPN_DO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>635224912</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Variables.g_FastFaultOutput1.q_xFastFaultOut</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: FaultHWO
-        io: i
-        field: DESC Hardware Output Status
-     </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>635225288</BitOffs>
-          </Symbol>
-          <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_xClose_A</Name>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
@@ -34819,7 +34655,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>642091312</BitOffs>
+            <BitOffs>633915248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_xClose_B</Name>
@@ -34831,7 +34667,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>642091320</BitOffs>
+            <BitOffs>633915256</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_xClose_C</Name>
@@ -34843,7 +34679,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>642091328</BitOffs>
+            <BitOffs>633915264</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_xOPN_DO</Name>
@@ -34855,7 +34691,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>642091336</BitOffs>
+            <BitOffs>633915272</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_xTrigger</Name>
@@ -34868,7 +34704,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>642091416</BitOffs>
+            <BitOffs>633915352</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_xVFS_Open</Name>
@@ -34881,7 +34717,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>642091424</BitOffs>
+            <BitOffs>633915360</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_xVFS_Closed</Name>
@@ -34894,7 +34730,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>642091432</BitOffs>
+            <BitOffs>633915368</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_xVAC_FAULT_OK</Name>
@@ -34907,7 +34743,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>642091440</BitOffs>
+            <BitOffs>633915376</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_xMPS_OK</Name>
@@ -34920,7 +34756,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>642091448</BitOffs>
+            <BitOffs>633915384</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1.q_eVFS_State</Name>
@@ -34933,7 +34769,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>642091456</BitOffs>
+            <BitOffs>633915392</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_FS_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
@@ -34953,14 +34789,178 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>642091784</BitOffs>
+            <BitOffs>633915720</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GCC_01.q_xHV_DIS</Name>
+            <Comment> Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>634498752</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_PLEG_GCC_01.q_xHV_DIS</Name>
+            <Comment> Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>634673856</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GCC_01.q_xHV_DIS</Name>
+            <Comment> Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>634848960</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GFS_01.q_xHV_DIS</Name>
+            <Comment> Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635023824</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_PUMPS.fb_ST1L1_PPS_PIP_01.q_xHVEna_DO</Name>
+            <Comment> Enable High Voltage when TRUE</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635110816</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_PUMPS.fb_PC2L1_L2SI_PIP_01.q_xHVEna_DO</Name>
+            <Comment> Enable High Voltage when TRUE</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635201440</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_PUMPS.fb_TV2L1_PLEG_PIP_01.q_xHVEna_DO</Name>
+            <Comment> Enable High Voltage when TRUE</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635292064</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_PUMPS.fb_TV3L1_PLEG_PIP_01.q_xHVEna_DO</Name>
+            <Comment> Enable High Voltage when TRUE</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635382688</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PLEG_PIP_01.q_xHVEna_DO</Name>
+            <Comment> Enable High Voltage when TRUE</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635473312</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01.q_xOPN_DO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635654480</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_VALVES.fb_TV4L1_PLEG_VGC_01.q_xOPN_DO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635831824</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Variables.g_FastFaultOutput1.q_xFastFaultOut</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: FaultHWO
+        io: i
+        field: DESC Hardware Output Status
+     </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>635832200</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>81002496</ByteSize>
+          <ByteSize>81068032</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -41157,7 +41157,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
             <Properties>
               <Property>
                 <Name>pytmc</Name>
-                <Value>pv: TXI:HXR:FEE:VAC:OVRDON;
+                <Value>pv: TXI:LFE:VAC:OVRDON;
     field: ZNAM Override OFF;
     field: ONAM Override ON;
     io: io;
@@ -41390,6 +41390,45 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
             <BitOffs>633802272</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1</Name>
+            <BitSize>111616</BitSize>
+            <BaseType Namespace="LCLS_Vacuum">FB_VFS</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>633803840</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_TXI_VAC_FS_PMPS.g_FastFaultOutput2</Name>
+            <Comment>FFO for Fast Shutter Valves downstream of ST1L1</Comment>
+            <BitSize>495296</BitSize>
+            <BaseType Namespace="PMPS">FB_HardwareFFOutput</BaseType>
+            <Default>
+              <SubItem>
+                <Name>.i_sNetID</Name>
+                <String>172.21.42.126.1.1</String>
+              </SubItem>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: PLC:TXI:LFE:VAC:FFO:02
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.q_xFastFaultOut:=TIIB[FFO]^Channel 2^Output</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>633915456</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GCC_01</Name>
             <Comment> B940-008-L0S23-PNL-1 (Fee)</Comment>
             <BitSize>88384</BitSize>
@@ -41408,7 +41447,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>633803840</BitOffs>
+            <BitOffs>634410752</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GPI_01</Name>
@@ -41427,7 +41466,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>633892224</BitOffs>
+            <BitOffs>634499136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_PLEG_GCC_01</Name>
@@ -41447,7 +41486,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>633978944</BitOffs>
+            <BitOffs>634585856</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_PLEG_GPI_01</Name>
@@ -41466,7 +41505,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>634067328</BitOffs>
+            <BitOffs>634674240</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GCC_01</Name>
@@ -41486,7 +41525,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>634154048</BitOffs>
+            <BitOffs>634760960</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GPI_01</Name>
@@ -41505,7 +41544,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>634242432</BitOffs>
+            <BitOffs>634849344</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GFS_01</Name>
@@ -41520,7 +41559,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>634329152</BitOffs>
+            <BitOffs>634936064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_PUMPS.fb_ST1L1_PPS_PIP_01</Name>
@@ -41542,7 +41581,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>634417216</BitOffs>
+            <BitOffs>635024128</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_PUMPS.fb_PC2L1_L2SI_PIP_01</Name>
@@ -41563,7 +41602,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>634507840</BitOffs>
+            <BitOffs>635114752</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_PUMPS.fb_TV2L1_PLEG_PIP_01</Name>
@@ -41584,7 +41623,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>634598464</BitOffs>
+            <BitOffs>635205376</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_PUMPS.fb_TV3L1_PLEG_PIP_01</Name>
@@ -41605,7 +41644,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>634689088</BitOffs>
+            <BitOffs>635296000</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PLEG_PIP_01</Name>
@@ -41627,7 +41666,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>634779712</BitOffs>
+            <BitOffs>635386624</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01</Name>
@@ -41648,7 +41687,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>634870336</BitOffs>
+            <BitOffs>635477248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_TXI_VAC_VALVES.fb_TV4L1_PLEG_VGC_01</Name>
@@ -41669,7 +41708,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>635047680</BitOffs>
+            <BitOffs>635654592</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Variables.g_FastFaultOutput1</Name>
@@ -41685,17 +41724,17 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
             <Properties>
               <Property>
                 <Name>pytmc</Name>
-                <Value> pv: PLC:TXI:HXR:VAC:FFO:01 </Value>
+                <Value> pv: PLC:TXI:LFE:VAC:FFO:01 </Value>
               </Property>
               <Property>
                 <Name>TcLinkTo</Name>
-                <Value>.q_xFastFaultOut:=TIIB[PMPS_FFO (EL2202)]^Channel 1^Output</Value>
+                <Value>.q_xFastFaultOut:=TIIB[FFO]^Channel 1^Output</Value>
               </Property>
               <Property>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>635225024</BitOffs>
+            <BitOffs>635831936</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Variables.fbArbiter1</Name>
@@ -41713,7 +41752,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>635720320</BitOffs>
+            <BitOffs>636327232</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Variables.fbLogHandler</Name>
@@ -41724,46 +41763,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>636194944</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_FS.fb_TV2L1_VFS_1</Name>
-            <BitSize>111616</BitSize>
-            <BaseType Namespace="LCLS_Vacuum">FB_VFS</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>641979904</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_TXI_VAC_FS_PMPS.g_FastFaultOutput2</Name>
-            <Comment>FFO for Fast Shutter Valves downstream of ST1L1</Comment>
-            <BitSize>495296</BitSize>
-            <BaseType Namespace="PMPS">FB_HardwareFFOutput</BaseType>
-            <Default>
-              <SubItem>
-                <Name>.i_sNetID</Name>
-                <String>172.21.42.126.1.1</String>
-              </SubItem>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-    	pv: PLC:TXI:HXR:VAC:L1:FFO:02
-    </Value>
-              </Property>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>.q_xFastFaultOut:=TIIB[PMPS_FFO (EL2202)]^Channel 2^Output</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>642091520</BitOffs>
+            <BitOffs>636801856</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.bLittleEndian</Name>
@@ -42488,7 +42488,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">4</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>0</ContextId>
-          <ByteSize>81002496</ByteSize>
+          <ByteSize>81068032</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -42568,15 +42568,15 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2023-10-03T11:43:21</Value>
+          <Value>2024-02-08T12:06:07</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
-          <Value>593920</Value>
+          <Value>544768</Value>
         </Property>
         <Property>
           <Name>GlobalDataSize</Name>
-          <Value>80019456</Value>
+          <Value>79978496</Value>
         </Property>
       </Properties>
     </Module>
