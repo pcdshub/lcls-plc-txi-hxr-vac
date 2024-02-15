@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_TXI_VAC_FS_Interfaces" Id="{c8537c5c-6ff6-434e-902f-cb0fa5779960}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_TXI_VAC_FS_Interfaces
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//Fast Shutter Valve Interface
+TV2L1_VFS_1_Interface(IG := fb_TV4L1_PLEG_GFS_01.IG, Veto_valve := fb_TV2L1_PLEG_VGC_01.iq_stValve); //Veto Valve? Closest to fast shutter?]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

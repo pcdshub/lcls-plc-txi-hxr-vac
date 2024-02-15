@@ -1,37 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL_TXI_VAC_PUMPS" Id="{90b18ceb-1c3e-4845-8d8c-a86724f4d309}">
     <Declaration><![CDATA[VAR_GLOBAL
 //B940-009-R17-PCI-03
 {attribute 'pytmc' := ' pv: ST1L1:PPS:PIP:01 '}
 {attribute 'TcLinkTo' := 	'.i_iPRESS		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E8 (EL3064)^ST1L1_PIP_01^Value;
-                              .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E9 (EL2794)^ST1L1_PIP_01^Output;
-                               .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E10 (EL1004)^ST1L1_PIP_01^Input	'}
+                             .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E9 (EL2794)^ST1L1_PIP_01^Output;
+                             .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E10 (EL1004)^ST1L1_PIP_01^Input	'}
 fb_ST1L1_PPS_PIP_01: FB_PIP_GAMMA;
 
 {attribute 'pytmc' := ' pv: PC2L1:L2SI:PIP:01 '}
 {attribute 'TcLinkTo' := 	'.i_iPRESS		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E8 (EL3064)^PC2L1_PIP_01^Value  ;
-                               .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E9 (EL2794)^PC2L1_PIP_01^Output	;
-                               .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E10 (EL1004)^PC2L1_PIP_01^Input	'}
+                             .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E9 (EL2794)^PC2L1_PIP_01^Output	;
+                             .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E10 (EL1004)^PC2L1_PIP_01^Input	'}
 fb_PC2L1_L2SI_PIP_01: FB_PIP_GAMMA;
 
 {attribute 'pytmc' := ' pv: TV2L1:PLEG:PIP:01 '}
 {attribute 'TcLinkTo' := 	'.i_iPRESS		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E8 (EL3064)^TV2L1_PIP_01^Value  ;
-                               .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E9 (EL2794)^TV2L1_PIP_01^Output	;
-                                .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E10 (EL1004)^TV2L1_PIP_01^Input	'}
+                             .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E9 (EL2794)^TV2L1_PIP_01^Output	;
+                             .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E10 (EL1004)^TV2L1_PIP_01^Input	'}
 fb_TV2L1_PLEG_PIP_01: FB_PIP_GAMMA;
 
 {attribute 'pytmc' := ' pv: TV3L1:PLEG:PIP:01 '}
 {attribute 'TcLinkTo' := 	'.i_iPRESS		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E8 (EL3064)^TV3L1_PIP_01^Value  ;
-                               .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E9 (EL2794)^TV3L1_PIP_01^Output	;
-                                .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E10 (EL1004)^TV3L1_PIP_01^Input	'}
+                             .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E9 (EL2794)^TV3L1_PIP_01^Output	;
+                             .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E10 (EL1004)^TV3L1_PIP_01^Input	'}
 fb_TV3L1_PLEG_PIP_01: FB_PIP_GAMMA;
 
 //B940-009-R17-PCI-04
 {attribute 'pytmc' := ' pv: TV4L1:PLEG:PIP:01 '}
 {attribute 'TcLinkTo' := 	'.i_iPRESS		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E11 (EL3064)^TV4L1_PIP_01^Value  ;
-                               .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E12 (EL2794)^TV4L1_PIP_01^Output ;
-                                .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E13 (EL1004)^TV4L1_PIP_01^Input	'}
+                             .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E12 (EL2794)^TV4L1_PIP_01^Output ;
+                             .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E13 (EL1004)^TV4L1_PIP_01^Input	'}
 fb_TV4L1_PLEG_PIP_01: FB_PIP_GAMMA;
 
 END_VAR]]></Declaration>
