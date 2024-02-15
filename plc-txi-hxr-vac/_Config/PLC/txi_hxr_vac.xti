@@ -458,10 +458,6 @@
 			<Vars VarGrpType="2">
 				<Name>VFSTask Outputs</Name>
 				<Var>
-					<Name>GVL_TXI_VAC_FS_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_TXI_VAC_FS.TV2L1_VFS_1.q_xClose_A</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -518,6 +514,10 @@
 						<![CDATA[Interface]]>
 					</Comment>
 					<Type GUID="{9AC07ACF-B050-96BB-23D8-8C6C280F01CD}" Namespace="LCLS_Vacuum">E_VGC</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_FS_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
@@ -686,81 +686,40 @@
 					<Type>BIT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01.i_xOpnLS</Name>
+					<Name>GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.i_xVAC_FAULT_OK</Name>
 					<Comment>
-						<![CDATA[IO]]>
+						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01.i_xClsLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_VALVES.fb_TV4L1_PLEG_VGC_01.i_xOpnLS</Name>
+					<Name>GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.i_xTrigger</Name>
 					<Comment>
-						<![CDATA[IO]]>
+						<![CDATA[inputs]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_VALVES.fb_TV4L1_PLEG_VGC_01.i_xClsLS</Name>
+					<Name>GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.i_xVFS_Open</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_ST1L1_PPS_PIP_01.i_iPRESS</Name>
-					<Type>INT</Type>
+					<Name>GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.i_xVFS_Closed</Name>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_ST1L1_PPS_PIP_01.i_xSP_DI</Name>
+					<Name>GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.i_xMPS_OK</Name>
 					<Comment>
-						<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
+						<![CDATA[MPS Fault OK, is set when the Valve is Open and there is no trigger]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_PC2L1_L2SI_PIP_01.i_iPRESS</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_PC2L1_L2SI_PIP_01.i_xSP_DI</Name>
+					<Name>GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.i_eVFS_State</Name>
 					<Comment>
-						<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
+						<![CDATA[Interface]]>
 					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_TV2L1_PLEG_PIP_01.i_iPRESS</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_TV2L1_PLEG_PIP_01.i_xSP_DI</Name>
-					<Comment>
-						<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_TV3L1_PLEG_PIP_01.i_iPRESS</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_TV3L1_PLEG_PIP_01.i_xSP_DI</Name>
-					<Comment>
-						<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PLEG_PIP_01.i_iPRESS</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PLEG_PIP_01.i_xSP_DI</Name>
-					<Comment>
-						<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
-					</Comment>
-					<Type>BOOL</Type>
+					<Type GUID="{9AC07ACF-B050-96BB-23D8-8C6C280F01CD}" Namespace="LCLS_Vacuum">E_VGC</Type>
 				</Var>
 				<Var>
 					<Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GCC_01.i_iPRESS_R</Name>
@@ -854,40 +813,81 @@
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.i_xVAC_FAULT_OK</Name>
+					<Name>GVL_TXI_VAC_PUMPS.fb_ST1L1_PPS_PIP_01.i_iPRESS</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_ST1L1_PPS_PIP_01.i_xSP_DI</Name>
 					<Comment>
-						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
+						<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.i_xTrigger</Name>
+					<Name>GVL_TXI_VAC_PUMPS.fb_PC2L1_L2SI_PIP_01.i_iPRESS</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_PC2L1_L2SI_PIP_01.i_xSP_DI</Name>
 					<Comment>
-						<![CDATA[inputs]]>
+						<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.i_xVFS_Open</Name>
-					<Type>BOOL</Type>
+					<Name>GVL_TXI_VAC_PUMPS.fb_TV2L1_PLEG_PIP_01.i_iPRESS</Name>
+					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.i_xVFS_Closed</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.i_xMPS_OK</Name>
+					<Name>GVL_TXI_VAC_PUMPS.fb_TV2L1_PLEG_PIP_01.i_xSP_DI</Name>
 					<Comment>
-						<![CDATA[MPS Fault OK, is set when the Valve is Open and there is no trigger]]>
+						<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.i_eVFS_State</Name>
+					<Name>GVL_TXI_VAC_PUMPS.fb_TV3L1_PLEG_PIP_01.i_iPRESS</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_TV3L1_PLEG_PIP_01.i_xSP_DI</Name>
 					<Comment>
-						<![CDATA[Interface]]>
+						<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
 					</Comment>
-					<Type GUID="{9AC07ACF-B050-96BB-23D8-8C6C280F01CD}" Namespace="LCLS_Vacuum">E_VGC</Type>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PLEG_PIP_01.i_iPRESS</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PLEG_PIP_01.i_xSP_DI</Name>
+					<Comment>
+						<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01.i_xOpnLS</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01.i_xClsLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_VALVES.fb_TV4L1_PLEG_VGC_01.i_xOpnLS</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_VALVES.fb_TV4L1_PLEG_VGC_01.i_xClsLS</Name>
+					<Type>BOOL</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
@@ -1038,81 +1038,6 @@
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01.q_xOPN_DO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_VALVES.fb_TV4L1_PLEG_VGC_01.q_xOPN_DO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Variables.g_FastFaultOutput1.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_ST1L1_PPS_PIP_01.q_xHVEna_DO</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when TRUE]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_PC2L1_L2SI_PIP_01.q_xHVEna_DO</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when TRUE]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_TV2L1_PLEG_PIP_01.q_xHVEna_DO</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when TRUE]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_TV3L1_PLEG_PIP_01.q_xHVEna_DO</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when TRUE]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PLEG_PIP_01.q_xHVEna_DO</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when TRUE]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GCC_01.q_xHV_DIS</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_PLEG_GCC_01.q_xHV_DIS</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GCC_01.q_xHV_DIS</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GFS_01.q_xHV_DIS</Name>
-					<Comment>
-						<![CDATA[ Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.xCLS_SW</Name>
 					<Comment>
 						<![CDATA[external open signal e.g epics]]>
@@ -1164,6 +1089,81 @@
 				</Var>
 				<Var>
 					<Name>GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.q_xVetoValveClosed</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_GAUGES.fb_ST1L1_PPS_GCC_01.q_xHV_DIS</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_GAUGES.fb_TV2L1_PLEG_GCC_01.q_xHV_DIS</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GCC_01.q_xHV_DIS</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GFS_01.q_xHV_DIS</Name>
+					<Comment>
+						<![CDATA[ Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_ST1L1_PPS_PIP_01.q_xHVEna_DO</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when TRUE]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_PC2L1_L2SI_PIP_01.q_xHVEna_DO</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when TRUE]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_TV2L1_PLEG_PIP_01.q_xHVEna_DO</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when TRUE]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_TV3L1_PLEG_PIP_01.q_xHVEna_DO</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when TRUE]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_PUMPS.fb_TV4L1_PLEG_PIP_01.q_xHVEna_DO</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when TRUE]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01.q_xOPN_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_TXI_VAC_VALVES.fb_TV4L1_PLEG_VGC_01.q_xOPN_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.g_FastFaultOutput1.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>
