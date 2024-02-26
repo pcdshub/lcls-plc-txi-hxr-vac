@@ -2,7 +2,31 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <GVL Name="GVL_TXI_VAC_FS" Id="{896c9686-1fce-43e8-a341-266f48b3fbc2}">
     <Declaration><![CDATA[VAR_GLOBAL
-    fb_TV2L1_VFS_1 : FB_VFS;
+    {attribute 'pytmc' := ' pv: TV1K4:VFS:01 '}
+    {attribute 'TcLinkTo' := 	'.q_xPress_OK        := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xPress_OK;
+                                 .q_xOPN_SW          := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xOPN_SW;
+                                 .q_xCLS_SW          := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xCLS_SW;
+                                 .q_xVAC_FAULT_Reset := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xVAC_FAULT_Reset;
+                                 .q_xOverrideMode    := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xOverrideMode;
+                                 .q_xOverrideOpen    := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xOverrideOpen;
+                                 .i_xTrigger         := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Outputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.q_xTrigger;
+                                 .i_xVFS_Open        := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Outputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.q_xVFS_Open;
+                                 .i_xVFS_Closed      := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Outputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.q_xVFS_Closed;
+                                 .i_xVAC_FAULT_OK    := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Outputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.q_xVAC_FAULT_OK;
+                                 .i_xMPS_OK          := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Outputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.q_xMPS_OK;
+                                 .i_eVFS_State       := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Outputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.q_eVFS_State;
+                                 .q_xVetoValveOpenDO := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xVetoValveOpenDO;
+                                 .q_xVetoValveClosed := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xVetoValveClosed'}
+    TV2L1_VFS_1_Interface : FB_VFS_Interface;
+    {attribute 'TcLinkTo' := 	'
+        .q_xClose_A := TIIB[100H1-L1S01-EK0 (EK1100)]^E1 (EL2202)^Channel 1^Output;
+        .q_xClose_B := TIIB[100H1-L1S01-EK0 (EK1100)]^E1 (EL2202)^Channel 2^Output;
+        .q_xClose_C := TIIB[100H1-L1S01-EK0 (EK1100)]^E2 (EL2202)^Channel 1^Output;
+        .q_xOPN_DO  := TIIB[100H1-L1S01-EK0 (EK1100)]^E2 (EL2202)^Channel 2^Output;
+        .i_xClsLS   := TIIB[100H1-L1S01-EK0 (EK1100)]^E3 (EL1004)^Channel 1^Input;
+        .i_xOpnLS   := TIIB[100H1-L1S01-EK0 (EK1100)]^E3 (EL1004)^Channel 2^Input;
+        .i_xTrigger := TIIB[Term 1 (EK1200)]^E6 (EL1124)^Channel 1^Input'}
+    TV2L1_VFS_1 : FB_VFS;
 END_VAR ]]></Declaration>
   </GVL>
 </TcPlcObject>

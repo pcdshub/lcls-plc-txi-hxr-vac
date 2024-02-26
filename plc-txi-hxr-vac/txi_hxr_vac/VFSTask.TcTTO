@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <Task Name="VFSTask" Id="{d2e21321-884c-42ba-aa7a-4ac989b51d66}">
+    <!--CycleTime in micro seconds.-->
+    <CycleTime>2000</CycleTime>
+    <Priority>15</Priority>
+    <PouCall>
+      <Name>PRG_TXI_VAC_FS</Name>
+    </PouCall>
+    <TaskFBGuid>{81588a6e-1bfc-40b8-9294-4c2ed86c82d3}</TaskFBGuid>
+    <Fb_init>{0ab7bf68-690f-4e58-a51b-8148bf389150}</Fb_init>
+    <Fb_exit>{f16fb1de-15da-45e8-ad88-842b3bee14bc}</Fb_exit>
+    <CycleUpdate>{74aceefb-7e5e-40f9-a838-33de865e51ec}</CycleUpdate>
+    <PostCycleUpdate>{60b01acf-c57d-42e1-9868-bfa69dcfe476}</PostCycleUpdate>
+  </Task>
+</TcPlcObject>

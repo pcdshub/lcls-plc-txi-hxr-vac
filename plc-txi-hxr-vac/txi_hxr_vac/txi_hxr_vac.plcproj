@@ -57,6 +57,9 @@
     <Compile Include="POUs\PRG_TXI_VAC_FS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_TXI_VAC_FS_Interfaces.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_TXI_VAC_GAUGES.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -64,6 +67,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_TXI_VAC_VALVES.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VFSTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
