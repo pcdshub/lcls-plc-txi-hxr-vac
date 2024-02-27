@@ -2,7 +2,7 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <GVL Name="GVL_TXI_VAC_FS" Id="{896c9686-1fce-43e8-a341-266f48b3fbc2}">
     <Declaration><![CDATA[VAR_GLOBAL
-    {attribute 'pytmc' := ' pv: TV1K4:VFS:01 '}
+    {attribute 'pytmc' := ' pv: TV2L1:VFS:01 '}
     {attribute 'TcLinkTo' := 	'.q_xPress_OK        := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xPress_OK;
                                  .q_xOPN_SW          := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xOPN_SW;
                                  .q_xCLS_SW          := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xCLS_SW;
