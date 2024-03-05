@@ -894,16 +894,16 @@
 				<Link VarA="VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xOpnLS" VarB="Channel 2^Input" AutoLink="true" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S01-EP1 (EP2338-0002)">
-				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01.i_xClsLS" VarB="Channel 2^Input" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01.i_xOpnLS" VarB="Channel 1^Input" Size="1"/>
-				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01.q_xOPN_DO" VarB="Channel 11^Output" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_VALVES.fb_TV2L1_PLEG_VGC_01.q_xOPN_DO" VarB="Channel 11^Output" AutoLink="true" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S01-EP2 (EP3174-0002)">
 				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_GAUGES.fb_TV2L1_PLEG_GCC_01.i_iPRESS_R" VarB="TV2L1-GCC-1^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_GAUGES.fb_TV2L1_PLEG_GPI_01.i_iPRESS_R" VarB="TV2L1-GPI-1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S01-EP3 (EP2624-0002)">
-				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_GAUGES.fb_TV2L1_PLEG_GCC_01.q_xHV_DIS" VarB="TV2L1-GCC-1^Output" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_GAUGES.fb_TV2L1_PLEG_GCC_01.q_xHV_DIS" VarB="TV2L1-GCC-1^Output" AutoLink="true" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S03-EP1 (EP2338-0002)">
 				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_VALVES.fb_TV4L1_PLEG_VGC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true" Size="1"/>
@@ -913,6 +913,9 @@
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S03-EP2 (EP3174-0002)">
 				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GCC_01.i_iPRESS_R" VarB="TV4L1-GCC-1^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GPI_01.i_iPRESS_R" VarB="TV4L1-GPI-1^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S03-EP3 (EP2624-0002)">
+				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GCC_01.q_xHV_DIS" VarB="TV4L1-GCC-1^Output" AutoLink="true" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E3 (EL2794)">
 				<Link VarA="PlcTask Outputs^GVL_TXI_VAC_GAUGES.fb_TV4L1_PLEG_GFS_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true" Size="1"/>
