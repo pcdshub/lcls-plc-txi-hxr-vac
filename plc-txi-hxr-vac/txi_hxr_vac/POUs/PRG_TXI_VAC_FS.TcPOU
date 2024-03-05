@@ -7,7 +7,7 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[//Fast Shutter Valve
-fb_TV2L1_VFS_1(
+TV2L1_VFS_1(
     i_xVeto_Enable:=False,
     i_xPMPS_OK:= TRUE,
     i_xExt_OK:= TRUE,
