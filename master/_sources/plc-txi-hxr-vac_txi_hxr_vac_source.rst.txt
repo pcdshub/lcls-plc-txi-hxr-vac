@@ -33,7 +33,31 @@ GVL_TXI_VAC_FS
 ::
 
     VAR_GLOBAL
-        fb_TV2L1_VFS_1 : FB_VFS;
+        {attribute 'pytmc' := ' pv: TV2L1:VFS:01 '}
+        {attribute 'TcLinkTo' := 	'.q_xPress_OK        := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xPress_OK;
+                                     .q_xOPN_SW          := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xOPN_SW;
+                                     .q_xCLS_SW          := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xCLS_SW;
+                                     .q_xVAC_FAULT_Reset := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xVAC_FAULT_Reset;
+                                     .q_xOverrideMode    := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xOverrideMode;
+                                     .q_xOverrideOpen    := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xOverrideOpen;
+                                     .i_xTrigger         := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Outputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.q_xTrigger;
+                                     .i_xVFS_Open        := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Outputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.q_xVFS_Open;
+                                     .i_xVFS_Closed      := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Outputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.q_xVFS_Closed;
+                                     .i_xVAC_FAULT_OK    := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Outputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.q_xVAC_FAULT_OK;
+                                     .i_xMPS_OK          := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Outputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.q_xMPS_OK;
+                                     .i_eVFS_State       := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Outputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.q_eVFS_State;
+                                     .q_xVetoValveOpenDO := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xVetoValveOpenDO;
+                                     .q_xVetoValveClosed := TIPC^txi_hxr_vac^txi_hxr_vac Instance^VFSTask Inputs^GVL_TXI_VAC_FS.TV2L1_VFS_1.i_xVetoValveClosed'}
+        TV2L1_VFS_1_Interface : FB_VFS_Interface;
+        {attribute 'TcLinkTo' := 	'
+            .q_xClose_A := TIIB[100H1-L1S01-EK0 (EK1100)]^E1 (EL2202)^Channel 1^Output;
+            .q_xClose_B := TIIB[100H1-L1S01-EK0 (EK1100)]^E1 (EL2202)^Channel 2^Output;
+            .q_xClose_C := TIIB[100H1-L1S01-EK0 (EK1100)]^E2 (EL2202)^Channel 1^Output;
+            .q_xOPN_DO  := TIIB[100H1-L1S01-EK0 (EK1100)]^E2 (EL2202)^Channel 2^Output;
+            .i_xClsLS   := TIIB[100H1-L1S01-EK0 (EK1100)]^E3 (EL1004)^Channel 1^Input;
+            .i_xOpnLS   := TIIB[100H1-L1S01-EK0 (EK1100)]^E3 (EL1004)^Channel 2^Input;
+            .i_xTrigger := TIIB[Term 1 (EK1200)]^E6 (EL1124)^Channel 1^Input'}
+        TV2L1_VFS_1 : FB_VFS;
     END_VAR
 
 
@@ -64,32 +88,37 @@ GVL_TXI_VAC_GAUGES
 
     // B940-008-L0S23-PNL-1 (Fee)
     {attribute 'pytmc' := ' pv: ST1L1:PPS:GCC:01 '}
-    {attribute 'TcLinkTo' := 	'.i_iPRESS_R	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E16 (EK1122)^L0S23-PNL-1 EP1  (EP3174-0002)^ST1L1-GCC-01^Value;
-                                 .q_xHV_DIS		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E16 (EK1122)^L0S23-PNL-1 EP2 (EP2624-0002)^ST1L1-GCC-01^Output '}
+    {attribute 'TcLinkTo' := '.i_iPRESS_R := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E16 (EK1122)^L0S23-PNL-1 EP1  (EP3174-0002)^ST1L1-GCC-01^Value;
+                              .q_xHV_DIS := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E16 (EK1122)^L0S23-PNL-1 EP2 (EP2624-0002)^ST1L1-GCC-01^Output'}
     fb_ST1L1_PPS_GCC_01: FB_MKS500;
 
     {attribute 'pytmc' := ' pv: ST1L1:PPS:GPI:01 '}
-    {attribute 'TcLinkTo' := 	'.i_iPRESS_R	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E16 (EK1122)^L0S23-PNL-1 EP1  (EP3174-0002)^ST1L1-GPI-01^Value '}
+    {attribute 'TcLinkTo' := '.i_iPRESS_R := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E16 (EK1122)^L0S23-PNL-1 EP1  (EP3174-0002)^ST1L1-GPI-01^Value'}
     fb_ST1L1_PPS_GPI_01: FB_MKS275;
 
     // B950-100H1-L1S1-PNL-1 (H1.1)
     {attribute 'pytmc' := ' pv: TV2L1:PLEG:GCC:01 '}
-    {attribute 'TcLinkTo' := 	'.i_iPRESS_R	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S01-EP2 (EP3174-0002)^TV2L1-GCC-1^Value';
-                                  .q_xHV_DIS		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S01-EP3 (EP2624-0002)^TV2L1-GCC-1^Output'}
+    {attribute 'TcLinkTo' := '.i_iPRESS_R := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S01-EP2 (EP3174-0002)^TV2L1-GCC-1^Value;
+                              .q_xHV_DIS := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S01-EP3 (EP2624-0002)^TV2L1-GCC-1^Output'}
     fb_TV2L1_PLEG_GCC_01: FB_MKS500;
+
     {attribute 'pytmc' := ' pv: TV2L1:PLEG:GPI:01 '}
-    {attribute 'TcLinkTo' := 	'.i_iPRESS_R	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S01-EP2 (EP3174-0002)^TV2L1-GPI-1^Value'}
+    {attribute 'TcLinkTo' := '.i_iPRESS_R := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S01-EP2 (EP3174-0002)^TV2L1-GPI-1^Value'}
     fb_TV2L1_PLEG_GPI_01: FB_MKS275;
 
     // B950-100H1-L1S3-DRL-1 (H1.1)
     {attribute 'pytmc' := ' pv: TV4L1:PLEG:GCC:01 '}
-    {attribute 'TcLinkTo' := 	'.i_iPRESS_R	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S03-EP2 (EP3174-0002)^TV4L1-GCC-1^Value';
-                                    .q_xHV_DIS		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S03-EP3 (EP2624-0002)^TV4L1-GCC-1^Output'}
+    {attribute 'TcLinkTo' := '.i_iPRESS_R := TIIB[100H1-L1S03-EP2 (EP3174-0002)]^TV4L1-GCC-1^Value;
+                              .q_xHV_DIS := TIIB[100H1-L1S03-EP3 (EP2624-0002)]^TV4L1-GCC-1^Output'}
     fb_TV4L1_PLEG_GCC_01: FB_MKS500;
+
     {attribute 'pytmc' := ' pv: TV4L1:PLEG:GPI:01 '}
-    {attribute 'TcLinkTo' := 	'.i_iPRESS_R	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S03-EP2 (EP3174-0002)^TV4L1-GPI-1^Value'}
+    {attribute 'TcLinkTo' := '.i_iPRESS_R := TIIB[100H1-L1S03-EP2 (EP3174-0002)]^TV4L1-GPI-1^Value'}
     fb_TV4L1_PLEG_GPI_01: FB_MKS275;
+
     {attribute 'pytmc' := ' pv: TV4L1:PLEG:GFS:01 '}
+    {attribute 'TcLinkTo' := '.i_iPRESS_R := TIIB[Term 1 (EK1200)]^E1 (EL3064)^AI Standard Channel 1^Value;
+                              .q_xHV_DIS := TIIB[Term 1 (EK1200)]^E3 (EL2794)^Channel 1^Output '}
     fb_TV4L1_PLEG_GFS_01 : FB_MKS422;
 
     END_VAR
@@ -105,34 +134,34 @@ GVL_TXI_VAC_PUMPS
     VAR_GLOBAL
     //B940-009-R17-PCI-03
     {attribute 'pytmc' := ' pv: ST1L1:PPS:PIP:01 '}
-    {attribute 'TcLinkTo' := 	'.i_iPRESS		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E8 (EL3064)^ST1L1_PIP_01^Value;
-                                  .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E9 (EL2794)^ST1L1_PIP_01^Output;
-                                   .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E10 (EL1004)^ST1L1_PIP_01^Input	'}
+    {attribute 'TcLinkTo' :=    '.i_iPRESS      := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E8 (EL3064)^ST1L1_PIP_01^Value;
+                                 .q_xHVEna_DO   := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E9 (EL2794)^ST1L1_PIP_01^Output;
+                                 .i_xSP_DI      := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E10 (EL1004)^ST1L1_PIP_01^Input'}
     fb_ST1L1_PPS_PIP_01: FB_PIP_GAMMA;
 
     {attribute 'pytmc' := ' pv: PC2L1:L2SI:PIP:01 '}
-    {attribute 'TcLinkTo' := 	'.i_iPRESS		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E8 (EL3064)^PC2L1_PIP_01^Value  ;
-                                   .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E9 (EL2794)^PC2L1_PIP_01^Output	;
-                                   .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E10 (EL1004)^PC2L1_PIP_01^Input	'}
+    {attribute 'TcLinkTo' :=    '.i_iPRESS      := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E8 (EL3064)^PC2L1_PIP_01^Value;
+                                 .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E9 (EL2794)^PC2L1_PIP_01^Output;
+                                 .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E10 (EL1004)^PC2L1_PIP_01^Input'}
     fb_PC2L1_L2SI_PIP_01: FB_PIP_GAMMA;
 
     {attribute 'pytmc' := ' pv: TV2L1:PLEG:PIP:01 '}
-    {attribute 'TcLinkTo' := 	'.i_iPRESS		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E8 (EL3064)^TV2L1_PIP_01^Value  ;
-                                   .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E9 (EL2794)^TV2L1_PIP_01^Output	;
-                                    .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E10 (EL1004)^TV2L1_PIP_01^Input	'}
+    {attribute 'TcLinkTo' :=    '.i_iPRESS      := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E8 (EL3064)^TV2L1_PIP_01^Value;
+                                 .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E9 (EL2794)^TV2L1_PIP_01^Output;
+                                 .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E10 (EL1004)^TV2L1_PIP_01^Input'}
     fb_TV2L1_PLEG_PIP_01: FB_PIP_GAMMA;
 
     {attribute 'pytmc' := ' pv: TV3L1:PLEG:PIP:01 '}
-    {attribute 'TcLinkTo' := 	'.i_iPRESS		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E8 (EL3064)^TV3L1_PIP_01^Value  ;
-                                   .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E9 (EL2794)^TV3L1_PIP_01^Output	;
-                                    .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E10 (EL1004)^TV3L1_PIP_01^Input	'}
+    {attribute 'TcLinkTo' :=    '.i_iPRESS      := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E8 (EL3064)^TV3L1_PIP_01^Value;
+                                 .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E9 (EL2794)^TV3L1_PIP_01^Output;
+                                 .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E10 (EL1004)^TV3L1_PIP_01^Input'}
     fb_TV3L1_PLEG_PIP_01: FB_PIP_GAMMA;
 
     //B940-009-R17-PCI-04
     {attribute 'pytmc' := ' pv: TV4L1:PLEG:PIP:01 '}
-    {attribute 'TcLinkTo' := 	'.i_iPRESS		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E11 (EL3064)^TV4L1_PIP_01^Value  ;
-                                   .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E12 (EL2794)^TV4L1_PIP_01^Output ;
-                                    .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E13 (EL1004)^TV4L1_PIP_01^Input	'}
+    {attribute 'TcLinkTo' :=    '.i_iPRESS      := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E11 (EL3064)^TV4L1_PIP_01^Value;
+                                 .q_xHVEna_DO 	:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E12 (EL2794)^TV4L1_PIP_01^Output;
+                                 .i_xSP_DI		:= TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E13 (EL1004)^TV4L1_PIP_01^Input'}
     fb_TV4L1_PLEG_PIP_01: FB_PIP_GAMMA;
 
     END_VAR
@@ -200,12 +229,13 @@ MAIN
 
     PROGRAM MAIN
     VAR
-    fbArbiterIO: FB_SubSysToArbiter_IO;
-    fb_vetoArbiter: FB_VetoArbiter;
+        fbArbiterIO: FB_SubSysToArbiter_IO;
+        fb_vetoArbiter: FB_VetoArbiter;
     END_VAR
     PRG_TXI_VAC_GAUGES();
     PRG_TXI_VAC_PUMPS();
     PRG_TXI_VAC_VALVES();
+    PRG_TXI_VAC_FS_Interfaces();
 
     fbArbiterIO(i_bVeto:=  PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.L_Stopper.ST1L1],
         Arbiter:= fbArbiter1,
@@ -217,10 +247,14 @@ MAIN
 
     g_FastFaultOutput1.Execute(i_xVeto := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.L_Stopper.ST1L1]);
 
+    //Run log handler
+    fbLogHandler();
+
     END_PROGRAM
 
 
 Related:
+    * `PRG_TXI_VAC_FS_Interfaces`_
     * `PRG_TXI_VAC_GAUGES`_
     * `PRG_TXI_VAC_PUMPS`_
     * `PRG_TXI_VAC_VALVES`_
@@ -235,7 +269,7 @@ PRG_TXI_VAC_FS
     VAR
     END_VAR
     //Fast Shutter Valve
-    fb_TV2L1_VFS_1(
+    TV2L1_VFS_1(
         i_xVeto_Enable:=False,
         i_xPMPS_OK:= TRUE,
         i_xExt_OK:= TRUE,
@@ -244,6 +278,22 @@ PRG_TXI_VAC_FS
     );
     (*FastFaultOuput*)
     g_FastFaultOutput2.Execute(bAutoReset:= TRUE);
+
+    END_PROGRAM
+
+
+
+
+PRG_TXI_VAC_FS_Interfaces
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_TXI_VAC_FS_Interfaces
+    VAR
+    END_VAR
+    //Fast Shutter Valve Interface
+    TV2L1_VFS_1_Interface(IG := fb_TV4L1_PLEG_GFS_01.IG, Veto_valve := fb_TV2L1_PLEG_VGC_01.iq_stValve); //Veto Valve? Closest to fast shutter?
 
     END_PROGRAM
 
