@@ -1777,6 +1777,250 @@ LCLS_Vacuum.FB_PIP_Gamma
 
 
     
+LCLS_Vacuum.FB_VFS_Interface
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):ALM_RST
+      - bo
+      - $(SYMBOL).iq_stValve.pv_xAlmRst
+      - | io: output
+
+
+    * - $(PREFIX):ALM_RST_RBV
+      - bi
+      - $(SYMBOL).iq_stValve.pv_xAlmRst
+      - | io: output
+
+
+    * - $(PREFIX):CLS_DI_RBV
+      - bi
+      - $(SYMBOL).iq_stValve.i_xClsLS
+      - | field: ONAM CLOSE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):CLS_SW
+      - bo
+      - $(SYMBOL).iq_stValve.xCLS_SW
+      - | field: ONAM CLOSE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):CLS_SW_RBV
+      - bi
+      - $(SYMBOL).iq_stValve.xCLS_SW
+      - | field: ONAM CLOSE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):ERR_Ext_RBV
+      - bi
+      - $(SYMBOL).iq_stValve.xERR_ExtFault
+      - | field: ONAM External error present
+        | field: ZNAM NO ERROR
+        | io: input
+
+
+    * - $(PREFIX):ErrMsg
+      - waveform
+      - $(SYMBOL).iq_stValve.sErrorMessage
+      - | io: output
+
+
+    * - $(PREFIX):ErrMsg_RBV
+      - waveform
+      - $(SYMBOL).iq_stValve.sErrorMessage
+      - | io: output
+
+
+    * - $(PREFIX):ERROR
+      - bo
+      - $(SYMBOL).iq_stValve.bErrorPresent
+      - | field: ONAM ERROR PRESENT
+        | field: ZNAM NO ERROR
+        | io: output
+
+
+    * - $(PREFIX):ERROR_RBV
+      - bi
+      - $(SYMBOL).iq_stValve.bErrorPresent
+      - | field: ONAM ERROR PRESENT
+        | field: ZNAM NO ERROR
+        | io: output
+
+
+    * - $(PREFIX):EXT_ILK_OK_RBV
+      - bi
+      - $(SYMBOL).iq_stValve.xEXT_OK
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - $(PREFIX):FORCE_OPN
+      - bo
+      - $(SYMBOL).iq_stValve.pv_xOvrdOpn
+      - | field: ONAM FORCE OPEN
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):FORCE_OPN_RBV
+      - bi
+      - $(SYMBOL).iq_stValve.pv_xOvrdOpn
+      - | field: ONAM FORCE OPEN
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):GFS_RBV
+      - waveform
+      - $(SYMBOL).iq_stValve.sGFS
+      - | io: input
+
+
+    * - $(PREFIX):LOGGER
+      - bo
+      - $(SYMBOL).iq_stValve.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):LOGGER_RBV
+      - bi
+      - $(SYMBOL).iq_stValve.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):MPS_FAULT_OK_RBV
+      - bi
+      - $(SYMBOL).i_xMPS_OK
+      - | field: ONAM MPS OK
+        | field: ZNAM MPS FAULT
+        | io: input
+
+
+    * - $(PREFIX):OPN_DI_RBV
+      - bi
+      - $(SYMBOL).iq_stValve.i_xOpnLS
+      - | field: ONAM OPEN
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):OPN_DO_RBV
+      - bi
+      - $(SYMBOL).iq_stValve.q_xOPN_DO
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):OPN_OK_RBV
+      - bi
+      - $(SYMBOL).iq_stValve.xOPN_OK
+      - | field: ONAM OPN ILK OK
+        | field: ZNAM OPN ILK NOT OK
+        | io: input
+
+
+    * - $(PREFIX):OPN_SW
+      - bo
+      - $(SYMBOL).iq_stValve.pv_xOPN_SW
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: output
+
+
+    * - $(PREFIX):OPN_SW_RBV
+      - bi
+      - $(SYMBOL).iq_stValve.pv_xOPN_SW
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: output
+
+
+    * - $(PREFIX):OVRD_ON
+      - bo
+      - $(SYMBOL).iq_stValve.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - $(PREFIX):OVRD_ON_RBV
+      - bi
+      - $(SYMBOL).iq_stValve.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - $(PREFIX):POS_STATE_RBV
+      - mbbi
+      - $(SYMBOL).iq_stValve.eState
+      - | field: FRST OPEN_F
+        | field: ONST CLOSED
+        | field: THST INVALID
+        | field: TWST MOVING
+        | field: ZRST OPEN
+        | io: input
+        | type: mbbi
+
+
+    * - $(PREFIX):STATE_RBV
+      - mbbi
+      - $(SYMBOL).iq_stValve.eVGC_State
+      - | field: EIST Close Timeout
+        | field: FRST Ext Fault
+        | field: FVST AT Vacuum
+        | field: NIST Open Timeout
+        | field: ONST At Vacuum
+        | field: SVST Vacuum Fault
+        | field: SXST Triggered
+        | field: THST Lost Vacuum
+        | field: TWST Differential Pressure
+        | field: ZRST Vented
+        | io: input
+
+
+    * - $(PREFIX):TRIG_RBV
+      - bi
+      - $(SYMBOL).iq_stValve.i_xTrigger
+      - | field: ONAM TRIG_ON
+        | field: ZNAM TRIG_OFF
+        | io: input
+
+
+    * - $(PREFIX):VAC_FAULT_OK_RBV
+      - bi
+      - $(SYMBOL).iq_stValve.i_xVAC_FAULT_OK
+      - | field: ONAM FAULT OK
+        | field: ZNAM FAULT
+        | io: input
+
+
+    * - $(PREFIX):VETO_DEVICE_RBV
+      - waveform
+      - $(SYMBOL).iq_stValve.sVetoDeviceName
+      - | io: input
+
+
+ 
 LCLS_Vacuum.FB_VGC
 ^^^^^^^^^^^^^^^^^^
 
@@ -2551,6 +2795,242 @@ LCLS_Vacuum.ST_ValveBase
         | field: TWST Differential Pressure
         | field: ZRST Vented
         | io: input
+
+
+ 
+LCLS_Vacuum.ST_VFS
+^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):ALM_RST
+      - bo
+      - $(SYMBOL).pv_xAlmRst
+      - | io: output
+
+
+    * - $(PREFIX):ALM_RST_RBV
+      - bi
+      - $(SYMBOL).pv_xAlmRst
+      - | io: output
+
+
+    * - $(PREFIX):CLS_DI_RBV
+      - bi
+      - $(SYMBOL).i_xClsLS
+      - | field: ONAM CLOSE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):CLS_SW
+      - bo
+      - $(SYMBOL).xCLS_SW
+      - | field: ONAM CLOSE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):CLS_SW_RBV
+      - bi
+      - $(SYMBOL).xCLS_SW
+      - | field: ONAM CLOSE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):ERR_Ext_RBV
+      - bi
+      - $(SYMBOL).xERR_ExtFault
+      - | field: ONAM External error present
+        | field: ZNAM NO ERROR
+        | io: input
+
+
+    * - $(PREFIX):ErrMsg
+      - waveform
+      - $(SYMBOL).sErrorMessage
+      - | io: output
+
+
+    * - $(PREFIX):ErrMsg_RBV
+      - waveform
+      - $(SYMBOL).sErrorMessage
+      - | io: output
+
+
+    * - $(PREFIX):ERROR
+      - bo
+      - $(SYMBOL).bErrorPresent
+      - | field: ONAM ERROR PRESENT
+        | field: ZNAM NO ERROR
+        | io: output
+
+
+    * - $(PREFIX):ERROR_RBV
+      - bi
+      - $(SYMBOL).bErrorPresent
+      - | field: ONAM ERROR PRESENT
+        | field: ZNAM NO ERROR
+        | io: output
+
+
+    * - $(PREFIX):EXT_ILK_OK_RBV
+      - bi
+      - $(SYMBOL).xEXT_OK
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - $(PREFIX):FORCE_OPN
+      - bo
+      - $(SYMBOL).pv_xOvrdOpn
+      - | field: ONAM FORCE OPEN
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):FORCE_OPN_RBV
+      - bi
+      - $(SYMBOL).pv_xOvrdOpn
+      - | field: ONAM FORCE OPEN
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):GFS_RBV
+      - waveform
+      - $(SYMBOL).sGFS
+      - | io: input
+
+
+    * - $(PREFIX):LOGGER
+      - bo
+      - $(SYMBOL).xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):LOGGER_RBV
+      - bi
+      - $(SYMBOL).xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):OPN_DI_RBV
+      - bi
+      - $(SYMBOL).i_xOpnLS
+      - | field: ONAM OPEN
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):OPN_DO_RBV
+      - bi
+      - $(SYMBOL).q_xOPN_DO
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):OPN_OK_RBV
+      - bi
+      - $(SYMBOL).xOPN_OK
+      - | field: ONAM OPN ILK OK
+        | field: ZNAM OPN ILK NOT OK
+        | io: input
+
+
+    * - $(PREFIX):OPN_SW
+      - bo
+      - $(SYMBOL).pv_xOPN_SW
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: output
+
+
+    * - $(PREFIX):OPN_SW_RBV
+      - bi
+      - $(SYMBOL).pv_xOPN_SW
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: output
+
+
+    * - $(PREFIX):OVRD_ON
+      - bo
+      - $(SYMBOL).xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - $(PREFIX):OVRD_ON_RBV
+      - bi
+      - $(SYMBOL).xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - $(PREFIX):POS_STATE_RBV
+      - mbbi
+      - $(SYMBOL).eState
+      - | field: FRST OPEN_F
+        | field: ONST CLOSED
+        | field: THST INVALID
+        | field: TWST MOVING
+        | field: ZRST OPEN
+        | io: input
+        | type: mbbi
+
+
+    * - $(PREFIX):STATE_RBV
+      - mbbi
+      - $(SYMBOL).eVGC_State
+      - | field: EIST Close Timeout
+        | field: FRST Ext Fault
+        | field: FVST AT Vacuum
+        | field: NIST Open Timeout
+        | field: ONST At Vacuum
+        | field: SVST Vacuum Fault
+        | field: SXST Triggered
+        | field: THST Lost Vacuum
+        | field: TWST Differential Pressure
+        | field: ZRST Vented
+        | io: input
+
+
+    * - $(PREFIX):TRIG_RBV
+      - bi
+      - $(SYMBOL).i_xTrigger
+      - | field: ONAM TRIG_ON
+        | field: ZNAM TRIG_OFF
+        | io: input
+
+
+    * - $(PREFIX):VAC_FAULT_OK_RBV
+      - bi
+      - $(SYMBOL).i_xVAC_FAULT_OK
+      - | field: ONAM FAULT OK
+        | field: ZNAM FAULT
+        | io: input
+
+
+    * - $(PREFIX):VETO_DEVICE_RBV
+      - waveform
+      - $(SYMBOL).sVetoDeviceName
+      - | io: input
 
 
  
@@ -17655,6 +18135,238 @@ Database Records
       - longin
       - Total log messages on the last cycle
       - | io: input
+
+
+    * - TV2L1:VFS:01:MPS_FAULT_OK_RBV
+      - bi
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.i_xMPS_OK
+      - | field: ONAM MPS OK
+        | field: ZNAM MPS FAULT
+        | io: input
+
+
+    * - TV2L1:VFS:01:ERROR_RBV
+      - bi
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.bErrorPresent
+      - | field: ONAM ERROR PRESENT
+        | field: ZNAM NO ERROR
+        | io: output
+
+
+    * - TV2L1:VFS:01:ERROR
+      - bo
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.bErrorPresent
+      - | field: ONAM ERROR PRESENT
+        | field: ZNAM NO ERROR
+        | io: output
+
+
+    * - TV2L1:VFS:01:POS_STATE_RBV
+      - mbbi
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.eState
+      - | field: FRST OPEN_F
+        | field: ONST CLOSED
+        | field: THST INVALID
+        | field: TWST MOVING
+        | field: ZRST OPEN
+        | io: input
+        | type: mbbi
+
+
+    * - TV2L1:VFS:01:STATE_RBV
+      - mbbi
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.eVGC_State
+      - | field: EIST Close Timeout
+        | field: FRST Ext Fault
+        | field: FVST AT Vacuum
+        | field: NIST Open Timeout
+        | field: ONST At Vacuum
+        | field: SVST Vacuum Fault
+        | field: SXST Triggered
+        | field: THST Lost Vacuum
+        | field: TWST Differential Pressure
+        | field: ZRST Vented
+        | io: input
+
+
+    * - TV2L1:VFS:01:CLS_DI_RBV
+      - bi
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.i_xClsLS
+      - | field: ONAM CLOSE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - TV2L1:VFS:01:OPN_DI_RBV
+      - bi
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.i_xOpnLS
+      - | field: ONAM OPEN
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - TV2L1:VFS:01:TRIG_RBV
+      - bi
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.i_xTrigger
+      - | field: ONAM TRIG_ON
+        | field: ZNAM TRIG_OFF
+        | io: input
+
+
+    * - TV2L1:VFS:01:VAC_FAULT_OK_RBV
+      - bi
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.i_xVAC_FAULT_OK
+      - | field: ONAM FAULT OK
+        | field: ZNAM FAULT
+        | io: input
+
+
+    * - TV2L1:VFS:01:ALM_RST_RBV
+      - bi
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.pv_xAlmRst
+      - | io: output
+
+
+    * - TV2L1:VFS:01:ALM_RST
+      - bo
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.pv_xAlmRst
+      - | io: output
+
+
+    * - TV2L1:VFS:01:OPN_SW_RBV
+      - bi
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.pv_xOPN_SW
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: output
+
+
+    * - TV2L1:VFS:01:OPN_SW
+      - bo
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.pv_xOPN_SW
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: output
+
+
+    * - TV2L1:VFS:01:FORCE_OPN_RBV
+      - bi
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.pv_xOvrdOpn
+      - | field: ONAM FORCE OPEN
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - TV2L1:VFS:01:FORCE_OPN
+      - bo
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.pv_xOvrdOpn
+      - | field: ONAM FORCE OPEN
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - TV2L1:VFS:01:OPN_DO_RBV
+      - bi
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.q_xOPN_DO
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - TV2L1:VFS:01:ErrMsg_RBV
+      - waveform
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.sErrorMessage
+      - | io: output
+
+
+    * - TV2L1:VFS:01:ErrMsg
+      - waveform
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.sErrorMessage
+      - | io: output
+
+
+    * - TV2L1:VFS:01:GFS_RBV
+      - waveform
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.sGFS
+      - | io: input
+
+
+    * - TV2L1:VFS:01:VETO_DEVICE_RBV
+      - waveform
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.sVetoDeviceName
+      - | io: input
+
+
+    * - TV2L1:VFS:01:CLS_SW_RBV
+      - bi
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.xCLS_SW
+      - | field: ONAM CLOSE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - TV2L1:VFS:01:CLS_SW
+      - bo
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.xCLS_SW
+      - | field: ONAM CLOSE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - TV2L1:VFS:01:ERR_Ext_RBV
+      - bi
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.xERR_ExtFault
+      - | field: ONAM External error present
+        | field: ZNAM NO ERROR
+        | io: input
+
+
+    * - TV2L1:VFS:01:EXT_ILK_OK_RBV
+      - bi
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.xEXT_OK
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - TV2L1:VFS:01:LOGGER_RBV
+      - bi
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - TV2L1:VFS:01:LOGGER
+      - bo
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - TV2L1:VFS:01:OPN_OK_RBV
+      - bi
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.xOPN_OK
+      - | field: ONAM OPN ILK OK
+        | field: ZNAM OPN ILK NOT OK
+        | io: input
+
+
+    * - TV2L1:VFS:01:OVRD_ON_RBV
+      - bi
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - TV2L1:VFS:01:OVRD_ON
+      - bo
+      - GVL_TXI_VAC_FS.TV2L1_VFS_1_Interface.iq_stValve.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
 
 
     * - PLC:TXI:LFE:VAC:FFO:02:FF:010:BeamPermitted_RBV
