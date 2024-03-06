@@ -15,7 +15,7 @@ fb_ST1L1_PPS_GPI_01: FB_MKS275;
 
 // B950-100H1-L1S1-PNL-1 (H1.1)
 {attribute 'pytmc' := ' pv: TV2L1:PLEG:GCC:01 '}
-{attribute 'TcLinkTo' := '.i_iPRESS_R := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S01-EP2 (EP3174-0002)^TV2L1-GCC-1^Value';
+{attribute 'TcLinkTo' := '.i_iPRESS_R := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S01-EP2 (EP3174-0002)^TV2L1-GCC-1^Value;
                           .q_xHV_DIS := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S01-EP3 (EP2624-0002)^TV2L1-GCC-1^Output'}
 fb_TV2L1_PLEG_GCC_01: FB_MKS500;
 
@@ -25,12 +25,12 @@ fb_TV2L1_PLEG_GPI_01: FB_MKS275;
 
 // B950-100H1-L1S3-DRL-1 (H1.1)
 {attribute 'pytmc' := ' pv: TV4L1:PLEG:GCC:01 '}
-{attribute 'TcLinkTo' := '.i_iPRESS_R := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S03-EP2 (EP3174-0002)^TV4L1-GCC-1^Value';
-                          .q_xHV_DIS := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S03-EP3 (EP2624-0002)^TV4L1-GCC-1^Output'}
+{attribute 'TcLinkTo' := '.i_iPRESS_R := TIIB[100H1-L1S03-EP2 (EP3174-0002)]^TV4L1-GCC-1^Value;
+                          .q_xHV_DIS := TIIB[100H1-L1S03-EP3 (EP2624-0002)]^TV4L1-GCC-1^Output'}
 fb_TV4L1_PLEG_GCC_01: FB_MKS500;
 
 {attribute 'pytmc' := ' pv: TV4L1:PLEG:GPI:01 '}
-{attribute 'TcLinkTo' := '.i_iPRESS_R := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^E17 (EK1122)^100H1-L1S03-EP2 (EP3174-0002)^TV4L1-GPI-1^Value'}
+{attribute 'TcLinkTo' := '.i_iPRESS_R := TIIB[100H1-L1S03-EP2 (EP3174-0002)]^TV4L1-GPI-1^Value'}
 fb_TV4L1_PLEG_GPI_01: FB_MKS275;
 
 {attribute 'pytmc' := ' pv: TV4L1:PLEG:GFS:01 '}
