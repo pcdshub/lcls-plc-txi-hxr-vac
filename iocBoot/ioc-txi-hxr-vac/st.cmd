@@ -1,11 +1,11 @@
-#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.6.1/bin/rhel7-x86_64/adsIoc
+#!/reg/g/pcds/epics/ioc/common/ads-ioc/R1.0.0/bin/rhel9-x86_64/adsIoc
 ################### AUTO-GENERATED DO NOT EDIT ###################
 #
 #         Project: plc-txi-hxr-vac.tsproj
 #        PLC name: txi_hxr_vac (txi_hxr_vac Instance)
-# Generated using: pytmc 2.14.1
-# Project version: 46f8dde
-#    Project hash: 46f8dde7515f67fc7af91da1857dc1eacd3fd539
+# Generated using: pytmc 2.18.2
+# Project version: 6788fea
+#    Project hash: 6788feaf54dda5626b996c7c50e24eb7677e2bd4
 #     PLC IP/host: 172.21.136.28
 #      PLC Net ID: 172.21.136.28.1.1
 #  ** Production mode IOC **
@@ -22,11 +22,13 @@
 #   Tc3_Module: * -> 3.3.21.0 (Beckhoff Automation GmbH)
 #
 ################### AUTO-GENERATED DO NOT EDIT ###################
+# Run common startup commands for linux soft IOC's
+< $(IOC_COMMON)/All/pre_linux.cmd
 < envPaths
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
-epicsEnvSet("ENGINEER", "jjoshi" )
+epicsEnvSet("ENGINEER", "zlentz" )
 epicsEnvSet("LOCATION", "PLC:TXI:HXR:VAC" )
 epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
 epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
@@ -42,14 +44,14 @@ epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
 epicsEnvSet("IPADDR",           "172.21.136.28")
 epicsEnvSet("AMSID",            "172.21.136.28.1.1")
 epicsEnvSet("AMS_PORT",         "851")
-epicsEnvSet("ADS_MAX_PARAMS",   "3161")
+epicsEnvSet("ADS_MAX_PARAMS",   "4348")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
 epicsEnvSet("ADS_MAX_DELAY_MS", "100")
 epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
 epicsEnvSet("ADS_TIME_SOURCE",  "0")
 
 # Add a route to the PLC automatically:
-system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.136.28 ^172.*")
+system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.136.28 ^172.*$")
 
 # adsAsynPortDriverConfigure(portName, ipaddr, amsaddr, amsport,
 #    asynParamTableSize, priority, noAutoConnect, defaultSampleTimeMS,
@@ -84,10 +86,11 @@ dbLoadRecords("save_restoreStatus.db", "P=PLC:TXI:HXR:VAC:")
 dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 
 ## TwinCAT task, application, and project information databases ##
-dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:TXI:HXR:VAC,IDX=1")
+dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:TXI:HXR:VAC,IDX=1,TASK_PORT=351")
+dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:TXI:HXR:VAC,IDX=2,TASK_PORT=350")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:TXI:HXR:VAC")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:TXI:HXR:VAC,PROJECT=plc-txi-hxr-vac.tsproj,HASH=46f8dde,VERSION=46f8dde,PYTMC=2.14.1,PLC_HOST=172.21.136.28")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:TXI:HXR:VAC,PROJECT=plc-txi-hxr-vac.tsproj,HASH=6788fea,VERSION=6788fea,PYTMC=2.18.2,PLC_HOST=172.21.136.28")
 
 #   LCLS General: * -> 2.8.1 (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:HXR:VAC,DEPENDENCY=LCLS_General,VERSION=2.8.1,VENDOR=SLAC")
@@ -109,8 +112,8 @@ cd "$(IOC_TOP)"
 ## PLC Project Database files ##
 dbLoadRecords("txi_hxr_vac.db", "PORT=$(ASYN_PORT),PREFIX=PLC:TXI:HXR:VAC:,IOCNAME=$(IOC),IOC=$(IOC)")
 
-# Total records: 2161
-callbackSetQueueSize(6322)
+# Total records: 3348
+callbackSetQueueSize(8696)
 
 # Autosave and archive settings:
 save_restoreSet_status_prefix("PLC:TXI:HXR:VAC:")
