@@ -1,0 +1,21 @@
+
+Pragmas
+-------
+
+.. csv-table::
+    :header: PLC Name, Total Pragmas, Errors
+    :align: center
+
+    :ref:`txi_hxr_vac <txi_hxr_vac_overview_pragmas>`, 45, 0
+
+
+.. _txi_hxr_vac_overview_pragmas:
+
+
+txi_hxr_vac
+^^^^^^^^^^^
+
+Total pragmas found: 45
+Total linter errors: 0
+
+
